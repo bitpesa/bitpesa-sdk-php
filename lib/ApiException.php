@@ -63,13 +63,6 @@ class ApiException extends Exception
     protected $responseObject;
 
     /**
-     * Is the error a validation error?
-     *
-     * @var boolean
-     */
-    protected $validationError = false;
-
-    /**
      * Constructor
      *
      * @param string        $message         Error message
@@ -77,12 +70,11 @@ class ApiException extends Exception
      * @param string[]|null $responseHeaders HTTP response header
      * @param mixed         $responseBody    HTTP decoded body of the server response either as \stdClass or string
      */
-    public function __construct($message = "", $code = 0, $responseHeaders = [], $responseBody = null, $isValidationError = false)
+    public function __construct($message = "", $code = 0, $responseHeaders = [], $responseBody = null)
     {
         parent::__construct($message, $code);
         $this->responseHeaders = $responseHeaders;
         $this->responseBody = $responseBody;
-        $this->validationError = $isValidationError;
     }
 
     /**
@@ -125,9 +117,5 @@ class ApiException extends Exception
     public function getResponseObject()
     {
         return $this->responseObject;
-    }
-
-    public function isValidationError() {
-        return $this->validationError;
     }
 }

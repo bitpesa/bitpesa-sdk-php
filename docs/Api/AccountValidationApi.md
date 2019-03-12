@@ -18,30 +18,41 @@ Validates the existence of a bank account and returns the associated customer na
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-```
 
-Set the API Key and Secret on the Configuration object for authentication:
-```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
-  ->setApiKey("<key>")
-  ->setApiSecret("<secret>");
+// Configure API key authorization: AuthorizationKey
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
 
-$apiInstance = new BitPesa\Api\AccountValidationApi();
+// Configure API key authorization: AuthorizationNonce
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
+
+// Configure API key authorization: AuthorizationSecret
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
+
+// Configure API key authorization: AuthorizationSignature
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
+
+
+$apiInstance = new BitPesa\Api\AccountValidationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $account_validation_request = new \BitPesa\Model\AccountValidationRequest(); // \BitPesa\Model\AccountValidationRequest | 
 
 try {
     $result = $apiInstance->postAccountValidations($account_validation_request);
     print_r($result);
 } catch (Exception $e) {
-    if ($e->isValidationError()) {
-        $response = $e->getResponseObject();
-        echo "Validation error(s) occurred when calling the endpoint";
-        print_r($response);
-    } else {
-        echo "An exception occurred when calling AccountValidationApi#postAccountValidations";
-        echo $e->getMessage();
-    }
+    echo 'Exception when calling AccountValidationApi->postAccountValidations: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

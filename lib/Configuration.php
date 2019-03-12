@@ -42,18 +42,39 @@ class Configuration
     private static $defaultConfiguration;
 
     /**
-     * The API key
+     * Associate array to store API key(s)
      *
-     * @var string
+     * @var string[]
      */
-    protected $apiKey;
+    protected $apiKeys = [];
 
     /**
-     * The API secret
+     * Associate array to store API prefix (e.g. Bearer)
+     *
+     * @var string[]
+     */
+    protected $apiKeyPrefixes = [];
+
+    /**
+     * Access token for OAuth/Bearer authentication
      *
      * @var string
      */
-    protected $apiSecret;
+    protected $accessToken = '';
+
+    /**
+     * Username for HTTP basic authentication
+     *
+     * @var string
+     */
+    protected $username = '';
+
+    /**
+     * Password for HTTP basic authentication
+     *
+     * @var string
+     */
+    protected $password = '';
 
     /**
      * The host
@@ -67,7 +88,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'OpenAPI-Generator/0.1.0/PHP';
+    protected $userAgent = 'OpenAPI-Generator/1.0.0/PHP';
 
     /**
      * Debug switch (default set to false)
@@ -101,47 +122,122 @@ class Configuration
     /**
      * Sets API key
      *
-     * @param string $key              API key
+     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
+     * @param string $key              API key or token
      *
      * @return $this
      */
-    public function setApiKey($key)
+    public function setApiKey($apiKeyIdentifier, $key)
     {
-        $this->apiKey = $key;
+        $this->apiKeys[$apiKeyIdentifier] = $key;
         return $this;
     }
 
     /**
      * Gets API key
      *
-     * @return string API key
+     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
+     *
+     * @return string API key or token
      */
-    public function getApiKey()
+    public function getApiKey($apiKeyIdentifier)
     {
-        return $this->apiKey;
+        return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
     }
 
     /**
-     * Sets API secret
+     * Sets the prefix for API key (e.g. Bearer)
      *
-     * @param string $secret              API secret
+     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
+     * @param string $prefix           API key prefix, e.g. Bearer
      *
      * @return $this
      */
-    public function setApiSecret($secret)
+    public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
     {
-        $this->apiSecret = $secret;
+        $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
         return $this;
     }
 
     /**
-     * Gets API secret
+     * Gets API key prefix
      *
-     * @return string API secret
+     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
+     *
+     * @return string
      */
-    public function getApiSecret()
+    public function getApiKeyPrefix($apiKeyIdentifier)
     {
-        return $this->apiSecret;
+        return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
+    }
+
+    /**
+     * Sets the access token for OAuth
+     *
+     * @param string $accessToken Token for OAuth
+     *
+     * @return $this
+     */
+    public function setAccessToken($accessToken)
+    {
+        $this->accessToken = $accessToken;
+        return $this;
+    }
+
+    /**
+     * Gets the access token for OAuth
+     *
+     * @return string Access token for OAuth
+     */
+    public function getAccessToken()
+    {
+        return $this->accessToken;
+    }
+
+    /**
+     * Sets the username for HTTP basic authentication
+     *
+     * @param string $username Username for HTTP basic authentication
+     *
+     * @return $this
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+        return $this;
+    }
+
+    /**
+     * Gets the username for HTTP basic authentication
+     *
+     * @return string Username for HTTP basic authentication
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Sets the password for HTTP basic authentication
+     *
+     * @param string $password Password for HTTP basic authentication
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+        return $this;
+    }
+
+    /**
+     * Gets the password for HTTP basic authentication
+     *
+     * @return string Password for HTTP basic authentication
+     */
+    public function getPassword()
+    {
+        return $this->password;
     }
 
     /**
@@ -301,10 +397,35 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 1.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 0.1.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 1.0.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
+    }
+
+    /**
+     * Get API key (with prefix if set)
+     *
+     * @param  string $apiKeyIdentifier name of apikey
+     *
+     * @return string API key with the prefix
+     */
+    public function getApiKeyWithPrefix($apiKeyIdentifier)
+    {
+        $prefix = $this->getApiKeyPrefix($apiKeyIdentifier);
+        $apiKey = $this->getApiKey($apiKeyIdentifier);
+
+        if ($apiKey === null) {
+            return null;
+        }
+
+        if ($prefix === null) {
+            $keyWithPrefix = $apiKey;
+        } else {
+            $keyWithPrefix = $prefix . ' ' . $apiKey;
+        }
+
+        return $keyWithPrefix;
     }
 
     /**

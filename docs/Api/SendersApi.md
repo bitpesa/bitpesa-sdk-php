@@ -22,30 +22,41 @@ Deletes a single sender by the Sender ID
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-```
 
-Set the API Key and Secret on the Configuration object for authentication:
-```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
-  ->setApiKey("<key>")
-  ->setApiSecret("<secret>");
+// Configure API key authorization: AuthorizationKey
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
 
-$apiInstance = new BitPesa\Api\SendersApi();
+// Configure API key authorization: AuthorizationNonce
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
+
+// Configure API key authorization: AuthorizationSecret
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
+
+// Configure API key authorization: AuthorizationSignature
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
+
+
+$apiInstance = new BitPesa\Api\SendersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $sender_id = 'sender_id_example'; // string | ID of the sender to delete.  Example: `/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
     $result = $apiInstance->deleteSender($sender_id);
     print_r($result);
 } catch (Exception $e) {
-    if ($e->isValidationError()) {
-        $response = $e->getResponseObject();
-        echo "Validation error(s) occurred when calling the endpoint";
-        print_r($response);
-    } else {
-        echo "An exception occurred when calling SendersApi#deleteSender";
-        echo $e->getMessage();
-    }
+    echo 'Exception when calling SendersApi->deleteSender: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -82,30 +93,41 @@ Returns a single sender by the Sender ID
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-```
 
-Set the API Key and Secret on the Configuration object for authentication:
-```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
-  ->setApiKey("<key>")
-  ->setApiSecret("<secret>");
+// Configure API key authorization: AuthorizationKey
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
 
-$apiInstance = new BitPesa\Api\SendersApi();
+// Configure API key authorization: AuthorizationNonce
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
+
+// Configure API key authorization: AuthorizationSecret
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
+
+// Configure API key authorization: AuthorizationSignature
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
+
+
+$apiInstance = new BitPesa\Api\SendersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $sender_id = 'sender_id_example'; // string | ID of the sender to get.  Example: `/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
     $result = $apiInstance->getSender($sender_id);
     print_r($result);
 } catch (Exception $e) {
-    if ($e->isValidationError()) {
-        $response = $e->getResponseObject();
-        echo "Validation error(s) occurred when calling the endpoint";
-        print_r($response);
-    } else {
-        echo "An exception occurred when calling SendersApi#getSender";
-        echo $e->getMessage();
-    }
+    echo 'Exception when calling SendersApi->getSender: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -142,16 +164,34 @@ Get a list of available senders
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-```
 
-Set the API Key and Secret on the Configuration object for authentication:
-```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
-  ->setApiKey("<key>")
-  ->setApiSecret("<secret>");
+// Configure API key authorization: AuthorizationKey
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
 
-$apiInstance = new BitPesa\Api\SendersApi();
+// Configure API key authorization: AuthorizationNonce
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
+
+// Configure API key authorization: AuthorizationSecret
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
+
+// Configure API key authorization: AuthorizationSignature
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
+
+
+$apiInstance = new BitPesa\Api\SendersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 $created_at_from = 'created_at_from_example'; // string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
@@ -161,14 +201,7 @@ try {
     $result = $apiInstance->getSenders($page, $per, $created_at_from, $created_at_to);
     print_r($result);
 } catch (Exception $e) {
-    if ($e->isValidationError()) {
-        $response = $e->getResponseObject();
-        echo "Validation error(s) occurred when calling the endpoint";
-        print_r($response);
-    } else {
-        echo "An exception occurred when calling SendersApi#getSenders";
-        echo $e->getMessage();
-    }
+    echo 'Exception when calling SendersApi->getSenders: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -208,16 +241,34 @@ Updates the sender specified in the URL path.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-```
 
-Set the API Key and Secret on the Configuration object for authentication:
-```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
-  ->setApiKey("<key>")
-  ->setApiSecret("<secret>");
+// Configure API key authorization: AuthorizationKey
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
 
-$apiInstance = new BitPesa\Api\SendersApi();
+// Configure API key authorization: AuthorizationNonce
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
+
+// Configure API key authorization: AuthorizationSecret
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
+
+// Configure API key authorization: AuthorizationSignature
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
+
+
+$apiInstance = new BitPesa\Api\SendersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $sender_id = 'sender_id_example'; // string | ID of the sender to get.  Example: `/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670`
 $sender_request = new \BitPesa\Model\SenderRequest(); // \BitPesa\Model\SenderRequest | 
 
@@ -225,14 +276,7 @@ try {
     $result = $apiInstance->patchSender($sender_id, $sender_request);
     print_r($result);
 } catch (Exception $e) {
-    if ($e->isValidationError()) {
-        $response = $e->getResponseObject();
-        echo "Validation error(s) occurred when calling the endpoint";
-        print_r($response);
-    } else {
-        echo "An exception occurred when calling SendersApi#patchSender";
-        echo $e->getMessage();
-    }
+    echo 'Exception when calling SendersApi->patchSender: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -260,7 +304,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postSenders**
-> \BitPesa\Model\SenderResponse postSenders($sender_request)
+> \BitPesa\Model\SenderResponse postSenders($sender)
 
 Creating a sender
 
@@ -270,17 +314,35 @@ Creates a new sender in our system.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-```
 
-Set the API Key and Secret on the Configuration object for authentication:
-```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
-  ->setApiKey("<key>")
-  ->setApiSecret("<secret>");
+// Configure API key authorization: AuthorizationKey
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
 
-$apiInstance = new BitPesa\Api\SendersApi();
-$sender_request = {
+// Configure API key authorization: AuthorizationNonce
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
+
+// Configure API key authorization: AuthorizationSecret
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
+
+// Configure API key authorization: AuthorizationSignature
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
+
+
+$apiInstance = new BitPesa\Api\SendersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$sender = {
   "sender": {
     "country": "UG",
     "phone_country": "UG",
@@ -307,20 +369,13 @@ $sender_request = {
       "my": "data"
     }
   }
-}; // \BitPesa\Model\SenderRequest | 
+}; // \BitPesa\Model\Sender | 
 
 try {
-    $result = $apiInstance->postSenders($sender_request);
+    $result = $apiInstance->postSenders($sender);
     print_r($result);
 } catch (Exception $e) {
-    if ($e->isValidationError()) {
-        $response = $e->getResponseObject();
-        echo "Validation error(s) occurred when calling the endpoint";
-        print_r($response);
-    } else {
-        echo "An exception occurred when calling SendersApi#postSenders";
-        echo $e->getMessage();
-    }
+    echo 'Exception when calling SendersApi->postSenders: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -329,7 +384,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sender_request** | [**\BitPesa\Model\SenderRequest**](../Model/SenderRequest.md)|  |
+ **sender** | [**\BitPesa\Model\Sender**](../Model/Sender.md)|  |
 
 ### Return type
 

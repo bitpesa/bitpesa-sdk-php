@@ -20,29 +20,40 @@ Fetches a list of currencies available to use in other API requests. Usually the
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-```
 
-Set the API Key and Secret on the Configuration object for authentication:
-```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
-  ->setApiKey("<key>")
-  ->setApiSecret("<secret>");
+// Configure API key authorization: AuthorizationKey
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
 
-$apiInstance = new BitPesa\Api\CurrencyInfoApi();
+// Configure API key authorization: AuthorizationNonce
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
+
+// Configure API key authorization: AuthorizationSecret
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
+
+// Configure API key authorization: AuthorizationSignature
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
+
+
+$apiInstance = new BitPesa\Api\CurrencyInfoApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
     $result = $apiInstance->infoCurrencies();
     print_r($result);
 } catch (Exception $e) {
-    if ($e->isValidationError()) {
-        $response = $e->getResponseObject();
-        echo "Validation error(s) occurred when calling the endpoint";
-        print_r($response);
-    } else {
-        echo "An exception occurred when calling CurrencyInfoApi#infoCurrencies";
-        echo $e->getMessage();
-    }
+    echo 'Exception when calling CurrencyInfoApi->infoCurrencies: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -76,29 +87,40 @@ Fetches a list of currencies available to use as the input currency in other API
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-```
 
-Set the API Key and Secret on the Configuration object for authentication:
-```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
-  ->setApiKey("<key>")
-  ->setApiSecret("<secret>");
+// Configure API key authorization: AuthorizationKey
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
 
-$apiInstance = new BitPesa\Api\CurrencyInfoApi();
+// Configure API key authorization: AuthorizationNonce
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
+
+// Configure API key authorization: AuthorizationSecret
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
+
+// Configure API key authorization: AuthorizationSignature
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
+
+
+$apiInstance = new BitPesa\Api\CurrencyInfoApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
     $result = $apiInstance->infoCurrenciesIn();
     print_r($result);
 } catch (Exception $e) {
-    if ($e->isValidationError()) {
-        $response = $e->getResponseObject();
-        echo "Validation error(s) occurred when calling the endpoint";
-        print_r($response);
-    } else {
-        echo "An exception occurred when calling CurrencyInfoApi#infoCurrenciesIn";
-        echo $e->getMessage();
-    }
+    echo 'Exception when calling CurrencyInfoApi->infoCurrenciesIn: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -132,29 +154,40 @@ Fetches a list of currencies available to use as the output currency and their e
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-```
 
-Set the API Key and Secret on the Configuration object for authentication:
-```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
-  ->setApiKey("<key>")
-  ->setApiSecret("<secret>");
+// Configure API key authorization: AuthorizationKey
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
 
-$apiInstance = new BitPesa\Api\CurrencyInfoApi();
+// Configure API key authorization: AuthorizationNonce
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
+
+// Configure API key authorization: AuthorizationSecret
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
+
+// Configure API key authorization: AuthorizationSignature
+$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
+
+
+$apiInstance = new BitPesa\Api\CurrencyInfoApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
     $result = $apiInstance->infoCurrenciesOut();
     print_r($result);
 } catch (Exception $e) {
-    if ($e->isValidationError()) {
-        $response = $e->getResponseObject();
-        echo "Validation error(s) occurred when calling the endpoint";
-        print_r($response);
-    } else {
-        echo "An exception occurred when calling CurrencyInfoApi#infoCurrenciesOut";
-        echo $e->getMessage();
-    }
+    echo 'Exception when calling CurrencyInfoApi->infoCurrenciesOut: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
