@@ -163,11 +163,10 @@ class Application {
         $sender->setBirthDate('1970-12-31');
         $sender->setDocuments([$document]);
 
+        $sendersApi = new SendersApi();
+        $senderRequest = new SenderRequest();
+        $senderRequest->setSender($sender);
         try {
-            $senderRequest = new SenderRequest();
-            $sendersApi = new SendersApi();
-
-            $senderRequest->setSender($sender);
             $senderResponse = $sendersApi->postSenders($senderRequest);
             $createdSender = $senderResponse->getObject();
             echo "Sender created! ID: {$createdSender->getId()}", PHP_EOL;
