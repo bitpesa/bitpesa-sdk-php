@@ -23,20 +23,10 @@ PHP 7.1 and later
 ## Installation & Usage
 ### Composer
 
-To install via [Composer](http://getcomposer.org/), add the following to `composer.json`:
+To install via [Composer](http://getcomposer.org/), run:
 
 ```
-{
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/bitpesa/bitpesa-php-sdk.git"
-    }
-  ],
-  "require": {
-    "bitpesa/bitpesa-php-sdk": "*@dev"
-  }
-}
+composer require bitpesa/bitpesa-php-sdk
 ```
 
 Then run `composer install`
