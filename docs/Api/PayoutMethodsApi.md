@@ -22,41 +22,30 @@ Deletes a single payout method by the Payout Method ID
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\PayoutMethodsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\PayoutMethodsApi();
 $payout_method_id = 'payout_method_id_example'; // string | ID of the payout method to delete.  Example: `/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
     $result = $apiInstance->deletePayoutMethod($payout_method_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PayoutMethodsApi->deletePayoutMethod: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling PayoutMethodsApi#deletePayoutMethod";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```
@@ -93,41 +82,30 @@ Show a payout method by id
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\PayoutMethodsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\PayoutMethodsApi();
 $payout_method_id = 'payout_method_id_example'; // string | ID of the payout method to get.  Example: `/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
     $result = $apiInstance->getPayoutMethod($payout_method_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PayoutMethodsApi->getPayoutMethod: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling PayoutMethodsApi#getPayoutMethod";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```
@@ -164,34 +142,16 @@ List available payout methods
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\PayoutMethodsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\PayoutMethodsApi();
 $state = array('state_example'); // string[] | Allows filtering results by `state` of the payout method.  Example: `/v1/payout_methods?state[]=enabled`
 $type = array('type_example'); // string[] | Allows filtering results by the specified type.  Example: `/v1/payout_methods?type[]=NGN::Bank`
 $sender_id = 'sender_id_example'; // string | Allows filtering results by the specified sender id.  Example: `/v1/payout_methods?sender_id=bf9ff782-e182-45ac-abea-5bce83ad6670`
@@ -204,7 +164,14 @@ try {
     $result = $apiInstance->getPayoutMethods($state, $type, $sender_id, $page, $per, $created_at_from, $created_at_to);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PayoutMethodsApi->getPayoutMethods: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling PayoutMethodsApi#getPayoutMethods";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```
@@ -247,34 +214,16 @@ Updates the payout method specified in the URL path.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\PayoutMethodsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\PayoutMethodsApi();
 $payout_method_id = 'payout_method_id_example'; // string | ID of the payout method to get.  Example: `/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670`
 $payout_method = new \BitPesa\Model\PayoutMethod(); // \BitPesa\Model\PayoutMethod | 
 
@@ -282,7 +231,14 @@ try {
     $result = $apiInstance->patchPayoutMethod($payout_method_id, $payout_method);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PayoutMethodsApi->patchPayoutMethod: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling PayoutMethodsApi#patchPayoutMethod";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```
@@ -320,41 +276,30 @@ Creates a new payout method in our system.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\PayoutMethodsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\PayoutMethodsApi();
 $payout_method_request = new \BitPesa\Model\PayoutMethodRequest(); // \BitPesa\Model\PayoutMethodRequest | 
 
 try {
     $result = $apiInstance->postPayoutMethods($payout_method_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PayoutMethodsApi->postPayoutMethods: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling PayoutMethodsApi#postPayoutMethods";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```

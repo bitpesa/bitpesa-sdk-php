@@ -22,41 +22,30 @@ Unsubscribes from a webhook specified
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\WebhooksApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\WebhooksApi();
 $webhook_id = 'webhook_id_example'; // string | The ID of webhook to cancel.  Example: `/v1/webhooks/9d4d7b73-a94c-4979-ab57-09074fd55d33`
 
 try {
     $result = $apiInstance->deleteWebhook($webhook_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WebhooksApi->deleteWebhook: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling WebhooksApi#deleteWebhook";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```
@@ -93,41 +82,30 @@ Look up a webhook's details with its ID
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\WebhooksApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\WebhooksApi();
 $webhook_id = 'webhook_id_example'; // string | The ID of the Webhook to look up  Example: `/v1/webhooks/9d4d7b73-a94c-4979-ab57-09074fd55d33`
 
 try {
     $result = $apiInstance->getWebhook($webhook_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WebhooksApi->getWebhook: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling WebhooksApi#getWebhook";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```
@@ -164,40 +142,29 @@ Fetching possible webhook events
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\WebhooksApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\WebhooksApi();
 
 try {
     $result = $apiInstance->getWebhookEvents();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WebhooksApi->getWebhookEvents: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling WebhooksApi#getWebhookEvents";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```
@@ -231,34 +198,16 @@ Get a list of created webhooks
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\WebhooksApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\WebhooksApi();
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 
@@ -266,7 +215,14 @@ try {
     $result = $apiInstance->getWebhooks($page, $per);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WebhooksApi->getWebhooks: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling WebhooksApi#getWebhooks";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```
@@ -304,41 +260,30 @@ Creates a new webhook, subscribing the provided endpoint to the specified event(
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\WebhooksApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\WebhooksApi();
 $webhook_definition_request = {"webhook":{"url":"http://myhost.com/for/transaction.paid_in","events":["transaction.paid_in"],"metadata":{"my":"data"}}}; // \BitPesa\Model\WebhookDefinitionRequest | 
 
 try {
     $result = $apiInstance->postWebhooks($webhook_definition_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WebhooksApi->postWebhooks: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling WebhooksApi#postWebhooks";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```

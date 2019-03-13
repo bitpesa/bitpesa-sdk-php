@@ -19,41 +19,30 @@ Returns a single API log based on the API log ID.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\APILogsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\APILogsApi();
 $api_log_id = 'api_log_id_example'; // string | ID of the API log to retrieve  Example: `/v1/api_logs/00485ce9-532b-45e7-8518-7e5582242407`
 
 try {
     $result = $apiInstance->getApiLog($api_log_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling APILogsApi->getApiLog: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling APILogsApi#getApiLog";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```
@@ -90,34 +79,16 @@ Returns a list of API logs. Also includes information relating to the original r
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\APILogsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\APILogsApi();
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 $created_at_from = 'created_at_from_example'; // string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
@@ -127,7 +98,14 @@ try {
     $result = $apiInstance->getApiLogs($page, $per, $created_at_from, $created_at_to);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling APILogsApi->getApiLogs: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling APILogsApi#getApiLogs";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```

@@ -20,41 +20,30 @@ Returns a single account debit by the account debit ID
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\AccountDebitsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\AccountDebitsApi();
 $account_debit_id = 'account_debit_id_example'; // string | ID of the account debit to get.  Example: `/v1/accounts/debits/9170c890-1a45-46bd-9b79-3deeb8b4ff3d`
 
 try {
     $result = $apiInstance->getAccountsDebit($account_debit_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountDebitsApi->getAccountsDebit: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling AccountDebitsApi#getAccountsDebit";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```
@@ -91,34 +80,16 @@ Get a list of accounts debits
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\AccountDebitsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\AccountDebitsApi();
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 
@@ -126,7 +97,14 @@ try {
     $result = $apiInstance->getAccountsDebits($page, $per);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountDebitsApi->getAccountsDebits: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling AccountDebitsApi#getAccountsDebits";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```
@@ -164,41 +142,30 @@ Creates a new account debit finding transaction through the internal balance  To
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+```
 
-// Configure API key authorization: AuthorizationKey
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Key', 'Bearer');
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+BitPesa\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
 
-// Configure API key authorization: AuthorizationNonce
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Nonce', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Nonce', 'Bearer');
-
-// Configure API key authorization: AuthorizationSecret
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Secret', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Secret', 'Bearer');
-
-// Configure API key authorization: AuthorizationSignature
-$config = BitPesa\Configuration::getDefaultConfiguration()->setApiKey('Authorization-Signature', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = BitPesa\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization-Signature', 'Bearer');
-
-
-$apiInstance = new BitPesa\Api\AccountDebitsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$apiInstance = new BitPesa\Api\AccountDebitsApi();
 $debit_request_wrapper = new \BitPesa\Model\DebitRequestWrapper(); // \BitPesa\Model\DebitRequestWrapper | 
 
 try {
     $result = $apiInstance->postAccountsDebits($debit_request_wrapper);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountDebitsApi->postAccountsDebits: ', $e->getMessage(), PHP_EOL;
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling AccountDebitsApi#postAccountsDebits";
+        echo $e->getMessage();
+    }
 }
 ?>
 ```

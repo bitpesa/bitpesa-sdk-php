@@ -64,6 +64,11 @@ class PaymentMethodsApi
      */
     protected $headerSelector;
 
+     /**
+     * @var string
+     */
+    const DIGEST = 'SHA512';
+
     /**
      * @param ClientInterface $client
      * @param Configuration   $config
@@ -75,7 +80,7 @@ class PaymentMethodsApi
         HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
-        $this->config = $config ?: new Configuration();
+        $this->config = $config ?: Configuration::getDefaultConfiguration();
         $this->headerSelector = $selector ?: new HeaderSelector();
     }
 
@@ -133,7 +138,19 @@ class PaymentMethodsApi
 
             $statusCode = $response->getStatusCode();
 
-            if ($statusCode < 200 || $statusCode > 299) {
+            if ($statusCode == 422) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody(),
+                    true
+                );
+            } elseif ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
                         '[%d] Error connecting to the API (%s)',
@@ -166,7 +183,7 @@ class PaymentMethodsApi
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
+                        $e->getResponseBody()->getContents(),
                         '\BitPesa\Model\PaymentMethodListResponse',
                         $e->getResponseHeaders()
                     );
@@ -309,26 +326,22 @@ class PaymentMethodsApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization-Key');
-        if ($apiKey !== null) {
-            $headers['Authorization-Key'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization-Nonce');
-        if ($apiKey !== null) {
-            $headers['Authorization-Nonce'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization-Secret');
-        if ($apiKey !== null) {
-            $headers['Authorization-Secret'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization-Signature');
-        if ($apiKey !== null) {
-            $headers['Authorization-Signature'] = $apiKey;
-        }
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+
+        $httpMethod = 'GET';
+        $urlWithParams = $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : '');
+
+        $requestNonce = $this->guidv4Nonce();
+        $requestSignature = $this->signRequest([
+            $requestNonce,
+            strtoupper($httpMethod),
+            $urlWithParams,
+            $this->digestHash($httpBody)
+        ]);
+
+        $headers['Authorization-Nonce'] = $requestNonce;
+        $headers['Authorization-Signature'] = $requestSignature;
+        $headers['Authorization-Key'] = $this->config->getApiKey();
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -341,10 +354,9 @@ class PaymentMethodsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $urlWithParams,
             $headers,
             $httpBody
         );
@@ -396,7 +408,19 @@ class PaymentMethodsApi
 
             $statusCode = $response->getStatusCode();
 
-            if ($statusCode < 200 || $statusCode > 299) {
+            if ($statusCode == 422) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody(),
+                    true
+                );
+            } elseif ($statusCode < 200 || $statusCode > 299) {
                 throw new ApiException(
                     sprintf(
                         '[%d] Error connecting to the API (%s)',
@@ -429,7 +453,7 @@ class PaymentMethodsApi
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
+                        $e->getResponseBody()->getContents(),
                         '\BitPesa\Model\PaymentMethodListResponse',
                         $e->getResponseHeaders()
                     );
@@ -572,26 +596,22 @@ class PaymentMethodsApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization-Key');
-        if ($apiKey !== null) {
-            $headers['Authorization-Key'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization-Nonce');
-        if ($apiKey !== null) {
-            $headers['Authorization-Nonce'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization-Secret');
-        if ($apiKey !== null) {
-            $headers['Authorization-Secret'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization-Signature');
-        if ($apiKey !== null) {
-            $headers['Authorization-Signature'] = $apiKey;
-        }
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+
+        $httpMethod = 'GET';
+        $urlWithParams = $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : '');
+
+        $requestNonce = $this->guidv4Nonce();
+        $requestSignature = $this->signRequest([
+            $requestNonce,
+            strtoupper($httpMethod),
+            $urlWithParams,
+            $this->digestHash($httpBody)
+        ]);
+
+        $headers['Authorization-Nonce'] = $requestNonce;
+        $headers['Authorization-Signature'] = $requestSignature;
+        $headers['Authorization-Key'] = $this->config->getApiKey();
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -604,10 +624,9 @@ class PaymentMethodsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $urlWithParams,
             $headers,
             $httpBody
         );
@@ -622,6 +641,7 @@ class PaymentMethodsApi
     protected function createHttpClientOption()
     {
         $options = [];
+        $options[RequestOptions::HTTP_ERRORS] = false;
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
             if (!$options[RequestOptions::DEBUG]) {
@@ -630,5 +650,78 @@ class PaymentMethodsApi
         }
 
         return $options;
+    }
+
+    /**
+     * Parses and deserializes a response in string format.
+     * Can be used to parse webhook responses that were already converted to strings
+     *
+     * @param object response the object we wish to parse
+     * @param boolean returnType The type of the PHP object (true for array, false for object)
+     * 
+     * @return object|array The deserialized PHP object
+     * @throws ApiException If it fails to deserialize response body
+     */
+    public function parseResponseString($response, $returnType = null) {
+        if (empty($response) || is_null($returnType )) {
+            return null;
+        }
+
+        try {
+            return ObjectSerializer::deserialize(
+                $response,
+                "\\BitPesa\\Model\\{$returnType}"
+            );
+        } catch (ApiException $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                $e->getCode(),
+                $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+            );
+        }
+    }
+
+    /**
+     * Sign request using HMAC-SHA512 algorithm
+     *
+     * @param array $params
+     * @return string
+     */
+    protected function signRequest($params)
+    {
+        $to_sign = implode('&', $params);
+        return hash_hmac(
+            self::DIGEST,
+            $to_sign,
+            $this->config->getApiSecret()
+        );
+    }
+
+    /**
+     * Create a hash of the body content
+     *
+     * @param string $body
+     * @return string
+     */
+    protected function digestHash($body)
+    {
+        return openssl_digest(trim($body), self::DIGEST);
+    }
+
+    /**
+     * Generate a random nonce for authorization
+     *
+     * @return string
+     */
+    protected function guidv4Nonce()
+    {
+        if (function_exists('com_create_guid') === true) {
+            return trim(com_create_guid(), '{}');
+        }
+        $data = openssl_random_pseudo_bytes(16);
+        $data[6] = chr(ord($data[6]) & 0x0f | 0x40); // set version to 0100
+        $data[8] = chr(ord($data[8]) & 0x3f | 0x80); // set bits 6-7 to 10
+        return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
 }

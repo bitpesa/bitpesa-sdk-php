@@ -1,21 +1,14 @@
 {
     "name": "bitpesa/bitpesa-php-sdk",
-    "version": "1.0.0",
-    "description": "Reference documentation for the BitPesa API V1",
-    "keywords": [
-        "openapitools",
-        "openapi-generator",
-        "php",
-        "sdk",
-        "rest",
-        "api"
-    ],
-    "homepage": "http://openapi-generator.tech",
-    "license": "proprietary",
+    "version": "0.1.0",
+    "description": "BitPesa Client Library for PHP",
+    "homepage": "http://api.bitpesa.co/documentation",
+    "license": "MIT",
     "authors": [
         {
-            "name": "OpenAPI-Generator contributors",
-            "homepage": "https://openapi-generator.tech"
+            "name": "BTC Africa S.A",
+            "homepage": "https://www.bitpesa.co",
+            "email": "info@bitpesa.co"
         }
     ],
     "require": {
