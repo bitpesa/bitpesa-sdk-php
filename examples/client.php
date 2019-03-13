@@ -5,7 +5,7 @@ require_once(dirname(__FILE__) . '/../vendor/autoload.php');
 use BitPesa\Configuration;
 use BitPesa\ApiException;
 use BitPesa\Api\{ CurrencyInfoApi, AccountValidationApi, TransactionsApi, AccountDebitsApi, WebhooksApi, SendersApi };
-use BitPesa\Model\{ AccountValidationRequest, Document, Transaction, TransactionRequest, TransactionResponse, Recipient, Sender };
+use BitPesa\Model\{ AccountValidationRequest, Transaction, TransactionRequest, TransactionResponse, Recipient, Sender };
 use BitPesa\Model\{ PayoutMethod, PayoutMethodDetails, PayoutMethodBankAccountTypeEnum, Debit, DebitRequestWrapper };
 
 class Application {
@@ -143,11 +143,6 @@ class Application {
     }
 
     public function createSenderExample() {
-        $docData = file_get_contents('./bitpesa-data-uri.txt');
-        $document = new Document();
-        $document->setUploadFileName('bitpesa.png');
-        $document->setUpload($docData);
-
         $sender = new Sender();
         $sender->setCountry('UG');
         $sender->setPhoneCountry('UG');
@@ -161,7 +156,7 @@ class Application {
         $sender->setAddressDescription('Office Address');
         $sender->setPostalCode('798983');
         $sender->setBirthDate('1970-12-31');
-        $sender->setDocuments([$document]);
+        $sender->setDocuments([]);
 
         $sendersApi = new SendersApi();
         $senderRequest = new SenderRequest();
