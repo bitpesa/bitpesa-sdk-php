@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../vendor/autoload.php');
+require_once(dirname(__FILE__) . '/vendor/autoload.php');
 
 use BitPesa\Configuration;
 use BitPesa\ApiException;
@@ -15,7 +15,7 @@ class Application {
             ->setHost('https://api-sandbox.bitpesa.co/v1')
             ->setApiKey('<key>')
             ->setApiSecret('<secret>');
-        
+
         $this->listCurrenciesExample();
         // $this->accountValidationExample();
         // $this->createAndFundTransactionExample();
@@ -23,7 +23,7 @@ class Application {
         // $this->updateSenderExample();
         // $this->getTransactionErrorMessageExample();
         // $this->webhookParseExample();
-    } 
+    }
 
     public function listCurrenciesExample() {
         try {
@@ -50,7 +50,7 @@ class Application {
         try {
             $avi = new AccountValidationApi();
             $accountValidation = $avi->postAccountValidations($request);
-            
+
             $accountName = $accountValidation->getObject()->getAccountName();
             echo "Account Name: {$accountName}" . PHP_EOL;
             return $accountName;
