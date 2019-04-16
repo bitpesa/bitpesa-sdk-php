@@ -71,6 +71,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'due_amount' => 'float',
         'created_at' => '\DateTime',
         'expires_at' => '\DateTime',
+        'external_id' => 'string',
         'id' => 'string',
         'errors' => 'map[string,\BitPesa\Model\ValidationErrorDescription[]]'
     ];
@@ -94,6 +95,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'due_amount' => null,
         'created_at' => 'date-time',
         'expires_at' => 'date-time',
+        'external_id' => null,
         'id' => 'uuid',
         'errors' => null
     ];
@@ -138,6 +140,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'due_amount' => 'due_amount',
         'created_at' => 'created_at',
         'expires_at' => 'expires_at',
+        'external_id' => 'external_id',
         'id' => 'id',
         'errors' => 'errors'
     ];
@@ -161,6 +164,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'due_amount' => 'setDueAmount',
         'created_at' => 'setCreatedAt',
         'expires_at' => 'setExpiresAt',
+        'external_id' => 'setExternalId',
         'id' => 'setId',
         'errors' => 'setErrors'
     ];
@@ -184,6 +188,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'due_amount' => 'getDueAmount',
         'created_at' => 'getCreatedAt',
         'expires_at' => 'getExpiresAt',
+        'external_id' => 'getExternalId',
         'id' => 'getId',
         'errors' => 'getErrors'
     ];
@@ -261,6 +266,7 @@ class Transaction implements ModelInterface, ArrayAccess
         $this->container['due_amount'] = isset($data['due_amount']) ? $data['due_amount'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['expires_at'] = isset($data['expires_at']) ? $data['expires_at'] : null;
+        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
@@ -606,6 +612,30 @@ class Transaction implements ModelInterface, ArrayAccess
     public function setExpiresAt($expires_at)
     {
         $this->container['expires_at'] = $expires_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_id
+     *
+     * @return string|null
+     */
+    public function getExternalId()
+    {
+        return $this->container['external_id'];
+    }
+
+    /**
+     * Sets external_id
+     *
+     * @param string|null $external_id Optional ID that is supplied by partner linking it to the partner's own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.
+     *
+     * @return $this
+     */
+    public function setExternalId($external_id)
+    {
+        $this->container['external_id'] = $external_id;
 
         return $this;
     }

@@ -36,7 +36,7 @@ use \BitPesa\ObjectSerializer;
  * Sender Class Doc Comment
  *
  * @category Class
- * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#sender)
+ * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#sender)
  * @package  BitPesa
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -82,6 +82,7 @@ class Sender implements ModelInterface, ArrayAccess
         'metadata' => 'object',
         'state' => '\BitPesa\Model\SenderState',
         'id' => 'string',
+        'external_id' => 'string',
         'errors' => 'map[string,\BitPesa\Model\ValidationErrorDescription[]]'
     ];
 
@@ -115,6 +116,7 @@ class Sender implements ModelInterface, ArrayAccess
         'metadata' => null,
         'state' => null,
         'id' => 'uuid',
+        'external_id' => null,
         'errors' => null
     ];
 
@@ -169,6 +171,7 @@ class Sender implements ModelInterface, ArrayAccess
         'metadata' => 'metadata',
         'state' => 'state',
         'id' => 'id',
+        'external_id' => 'external_id',
         'errors' => 'errors'
     ];
 
@@ -202,6 +205,7 @@ class Sender implements ModelInterface, ArrayAccess
         'metadata' => 'setMetadata',
         'state' => 'setState',
         'id' => 'setId',
+        'external_id' => 'setExternalId',
         'errors' => 'setErrors'
     ];
 
@@ -235,6 +239,7 @@ class Sender implements ModelInterface, ArrayAccess
         'metadata' => 'getMetadata',
         'state' => 'getState',
         'id' => 'getId',
+        'external_id' => 'getExternalId',
         'errors' => 'getErrors'
     ];
 
@@ -337,6 +342,7 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
@@ -977,6 +983,30 @@ class Sender implements ModelInterface, ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_id
+     *
+     * @return string|null
+     */
+    public function getExternalId()
+    {
+        return $this->container['external_id'];
+    }
+
+    /**
+     * Sets external_id
+     *
+     * @param string|null $external_id Optional ID that is supplied by partner linking it to the partner's own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.
+     *
+     * @return $this
+     */
+    public function setExternalId($external_id)
+    {
+        $this->container['external_id'] = $external_id;
 
         return $this;
     }

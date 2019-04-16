@@ -687,14 +687,15 @@ class SendersApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $created_at_from Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
+     * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \BitPesa\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \BitPesa\Model\SenderListResponse
      */
-    public function getSenders($page = null, $per = null, $created_at_from = null, $created_at_to = null)
+    public function getSenders($page = null, $per = null, $created_at_from = null, $created_at_to = null, $external_id = null)
     {
-        list($response) = $this->getSendersWithHttpInfo($page, $per, $created_at_from, $created_at_to);
+        list($response) = $this->getSendersWithHttpInfo($page, $per, $created_at_from, $created_at_to, $external_id);
         return $response;
     }
 
@@ -707,15 +708,16 @@ class SendersApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $created_at_from Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
+     * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \BitPesa\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \BitPesa\Model\SenderListResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSendersWithHttpInfo($page = null, $per = null, $created_at_from = null, $created_at_to = null)
+    public function getSendersWithHttpInfo($page = null, $per = null, $created_at_from = null, $created_at_to = null, $external_id = null)
     {
         $returnType = '\BitPesa\Model\SenderListResponse';
-        $request = $this->getSendersRequest($page, $per, $created_at_from, $created_at_to);
+        $request = $this->getSendersRequest($page, $per, $created_at_from, $created_at_to, $external_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -797,13 +799,14 @@ class SendersApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $created_at_from Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
+     * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSendersAsync($page = null, $per = null, $created_at_from = null, $created_at_to = null)
+    public function getSendersAsync($page = null, $per = null, $created_at_from = null, $created_at_to = null, $external_id = null)
     {
-        return $this->getSendersAsyncWithHttpInfo($page, $per, $created_at_from, $created_at_to)
+        return $this->getSendersAsyncWithHttpInfo($page, $per, $created_at_from, $created_at_to, $external_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -820,14 +823,15 @@ class SendersApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $created_at_from Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
+     * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSendersAsyncWithHttpInfo($page = null, $per = null, $created_at_from = null, $created_at_to = null)
+    public function getSendersAsyncWithHttpInfo($page = null, $per = null, $created_at_from = null, $created_at_to = null, $external_id = null)
     {
         $returnType = '\BitPesa\Model\SenderListResponse';
-        $request = $this->getSendersRequest($page, $per, $created_at_from, $created_at_to);
+        $request = $this->getSendersRequest($page, $per, $created_at_from, $created_at_to, $external_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -873,11 +877,12 @@ class SendersApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $created_at_from Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
+     * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getSendersRequest($page = null, $per = null, $created_at_from = null, $created_at_to = null)
+    protected function getSendersRequest($page = null, $per = null, $created_at_from = null, $created_at_to = null, $external_id = null)
     {
 
         $resourcePath = '/senders';
@@ -902,6 +907,10 @@ class SendersApi
         // query params
         if ($created_at_to !== null) {
             $queryParams['created_at_to'] = ObjectSerializer::toQueryValue($created_at_to);
+        }
+        // query params
+        if ($external_id !== null) {
+            $queryParams['external_id'] = ObjectSerializer::toQueryValue($external_id);
         }
 
 

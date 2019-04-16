@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSenders**
-> \BitPesa\Model\SenderListResponse getSenders($page, $per, $created_at_from, $created_at_to)
+> \BitPesa\Model\SenderListResponse getSenders($page, $per, $created_at_from, $created_at_to, $external_id)
 
 Listing senders
 
@@ -156,9 +156,10 @@ $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 $created_at_from = 'created_at_from_example'; // string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
 $created_at_to = 'created_at_to_example'; // string | End date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
+$external_id = 'external_id_example'; // string | Allows filtering results by `external_id`.  Example: `/v1/senders?external_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87`
 
 try {
-    $result = $apiInstance->getSenders($page, $per, $created_at_from, $created_at_to);
+    $result = $apiInstance->getSenders($page, $per, $created_at_from, $created_at_to, $external_id);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -181,6 +182,7 @@ Name | Type | Description  | Notes
  **per** | **int**| The number of results to load per page (defaults to 10) | [optional]
  **created_at_from** | **string**| Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; | [optional]
  **created_at_to** | **string**| End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; | [optional]
+ **external_id** | **string**| Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; | [optional]
 
 ### Return type
 
@@ -303,6 +305,7 @@ $sender_request = {
       }
     ],
     "ip": "127.0.0.1",
+    "external_id": "806ec63a-a5a7-43cc-9d75-1ee74fbcc026",
     "metadata": {
       "my": "data"
     }

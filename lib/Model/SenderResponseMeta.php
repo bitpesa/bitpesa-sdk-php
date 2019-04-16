@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionResponse
+ * SenderResponseMeta
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \BitPesa\ObjectSerializer;
 
 /**
- * TransactionResponse Class Doc Comment
+ * SenderResponseMeta Class Doc Comment
  *
  * @category Class
  * @package  BitPesa
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class TransactionResponse implements ModelInterface, ArrayAccess
+class SenderResponseMeta implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransactionResponse';
+    protected static $openAPIModelName = 'SenderResponseMeta';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'object' => '\BitPesa\Model\Transaction',
-        'meta' => '\BitPesa\Model\TransactionResponseMeta'
+        'existing' => '\BitPesa\Model\SenderResponseExisting'
     ];
 
     /**
@@ -67,8 +66,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'object' => null,
-        'meta' => null
+        'existing' => null
     ];
 
     /**
@@ -98,8 +96,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'object' => 'object',
-        'meta' => 'meta'
+        'existing' => 'existing'
     ];
 
     /**
@@ -108,8 +105,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'object' => 'setObject',
-        'meta' => 'setMeta'
+        'existing' => 'setExisting'
     ];
 
     /**
@@ -118,8 +114,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'object' => 'getObject',
-        'meta' => 'getMeta'
+        'existing' => 'getExisting'
     ];
 
     /**
@@ -182,8 +177,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
+        $this->container['existing'] = isset($data['existing']) ? $data['existing'] : null;
     }
 
     /**
@@ -211,49 +205,25 @@ class TransactionResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets object
+     * Gets existing
      *
-     * @return \BitPesa\Model\Transaction|null
+     * @return \BitPesa\Model\SenderResponseExisting|null
      */
-    public function getObject()
+    public function getExisting()
     {
-        return $this->container['object'];
+        return $this->container['existing'];
     }
 
     /**
-     * Sets object
+     * Sets existing
      *
-     * @param \BitPesa\Model\Transaction|null $object object
+     * @param \BitPesa\Model\SenderResponseExisting|null $existing existing
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setExisting($existing)
     {
-        $this->container['object'] = $object;
-
-        return $this;
-    }
-
-    /**
-     * Gets meta
-     *
-     * @return \BitPesa\Model\TransactionResponseMeta|null
-     */
-    public function getMeta()
-    {
-        return $this->container['meta'];
-    }
-
-    /**
-     * Sets meta
-     *
-     * @param \BitPesa\Model\TransactionResponseMeta|null $meta meta
-     *
-     * @return $this
-     */
-    public function setMeta($meta)
-    {
-        $this->container['meta'] = $meta;
+        $this->container['existing'] = $existing;
 
         return $this;
     }

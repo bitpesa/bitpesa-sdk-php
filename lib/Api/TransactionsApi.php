@@ -191,6 +191,14 @@ class TransactionsApi
                     );
                     $e->setResponseObject($data);
                     break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody()->getContents(),
+                        '\BitPesa\Model\TransactionResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -680,14 +688,15 @@ class TransactionsApi
      *
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
+     * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \BitPesa\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \BitPesa\Model\TransactionListResponse
      */
-    public function getTransactions($page = null, $per = null)
+    public function getTransactions($page = null, $per = null, $external_id = null)
     {
-        list($response) = $this->getTransactionsWithHttpInfo($page, $per);
+        list($response) = $this->getTransactionsWithHttpInfo($page, $per, $external_id);
         return $response;
     }
 
@@ -698,15 +707,16 @@ class TransactionsApi
      *
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
+     * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \BitPesa\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \BitPesa\Model\TransactionListResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransactionsWithHttpInfo($page = null, $per = null)
+    public function getTransactionsWithHttpInfo($page = null, $per = null, $external_id = null)
     {
         $returnType = '\BitPesa\Model\TransactionListResponse';
-        $request = $this->getTransactionsRequest($page, $per);
+        $request = $this->getTransactionsRequest($page, $per, $external_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -794,13 +804,14 @@ class TransactionsApi
      *
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
+     * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionsAsync($page = null, $per = null)
+    public function getTransactionsAsync($page = null, $per = null, $external_id = null)
     {
-        return $this->getTransactionsAsyncWithHttpInfo($page, $per)
+        return $this->getTransactionsAsyncWithHttpInfo($page, $per, $external_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -815,14 +826,15 @@ class TransactionsApi
      *
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
+     * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionsAsyncWithHttpInfo($page = null, $per = null)
+    public function getTransactionsAsyncWithHttpInfo($page = null, $per = null, $external_id = null)
     {
         $returnType = '\BitPesa\Model\TransactionListResponse';
-        $request = $this->getTransactionsRequest($page, $per);
+        $request = $this->getTransactionsRequest($page, $per, $external_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -866,11 +878,12 @@ class TransactionsApi
      *
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
+     * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTransactionsRequest($page = null, $per = null)
+    protected function getTransactionsRequest($page = null, $per = null, $external_id = null)
     {
 
         $resourcePath = '/transactions';
@@ -887,6 +900,10 @@ class TransactionsApi
         // query params
         if ($per !== null) {
             $queryParams['per'] = ObjectSerializer::toQueryValue($per);
+        }
+        // query params
+        if ($external_id !== null) {
+            $queryParams['external_id'] = ObjectSerializer::toQueryValue($external_id);
         }
 
 

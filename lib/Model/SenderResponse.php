@@ -57,7 +57,8 @@ class SenderResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'object' => '\BitPesa\Model\Sender'
+        'object' => '\BitPesa\Model\Sender',
+        'meta' => '\BitPesa\Model\SenderResponseMeta'
     ];
 
     /**
@@ -66,7 +67,8 @@ class SenderResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'object' => null
+        'object' => null,
+        'meta' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class SenderResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'object' => 'object'
+        'object' => 'object',
+        'meta' => 'meta'
     ];
 
     /**
@@ -105,7 +108,8 @@ class SenderResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'object' => 'setObject'
+        'object' => 'setObject',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -114,7 +118,8 @@ class SenderResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'object' => 'getObject'
+        'object' => 'getObject',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -178,6 +183,7 @@ class SenderResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['object'] = isset($data['object']) ? $data['object'] : null;
+        $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
     }
 
     /**
@@ -224,6 +230,30 @@ class SenderResponse implements ModelInterface, ArrayAccess
     public function setObject($object)
     {
         $this->container['object'] = $object;
+
+        return $this;
+    }
+
+    /**
+     * Gets meta
+     *
+     * @return \BitPesa\Model\SenderResponseMeta|null
+     */
+    public function getMeta()
+    {
+        return $this->container['meta'];
+    }
+
+    /**
+     * Sets meta
+     *
+     * @param \BitPesa\Model\SenderResponseMeta|null $meta meta
+     *
+     * @return $this
+     */
+    public function setMeta($meta)
+    {
+        $this->container['meta'] = $meta;
 
         return $this;
     }

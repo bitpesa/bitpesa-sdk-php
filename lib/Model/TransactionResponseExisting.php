@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionResponse
+ * TransactionResponseExisting
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \BitPesa\ObjectSerializer;
 
 /**
- * TransactionResponse Class Doc Comment
+ * TransactionResponseExisting Class Doc Comment
  *
  * @category Class
  * @package  BitPesa
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class TransactionResponse implements ModelInterface, ArrayAccess
+class TransactionResponseExisting implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransactionResponse';
+    protected static $openAPIModelName = 'TransactionResponseExisting';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class TransactionResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'object' => '\BitPesa\Model\Transaction',
-        'meta' => '\BitPesa\Model\TransactionResponseMeta'
+        'sender' => '\BitPesa\Model\Sender',
+        'transaction' => '\BitPesa\Model\Transaction'
     ];
 
     /**
@@ -67,8 +67,8 @@ class TransactionResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'object' => null,
-        'meta' => null
+        'sender' => null,
+        'transaction' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class TransactionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'object' => 'object',
-        'meta' => 'meta'
+        'sender' => 'sender',
+        'transaction' => 'transaction'
     ];
 
     /**
@@ -108,8 +108,8 @@ class TransactionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'object' => 'setObject',
-        'meta' => 'setMeta'
+        'sender' => 'setSender',
+        'transaction' => 'setTransaction'
     ];
 
     /**
@@ -118,8 +118,8 @@ class TransactionResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'object' => 'getObject',
-        'meta' => 'getMeta'
+        'sender' => 'getSender',
+        'transaction' => 'getTransaction'
     ];
 
     /**
@@ -182,8 +182,8 @@ class TransactionResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
+        $this->container['sender'] = isset($data['sender']) ? $data['sender'] : null;
+        $this->container['transaction'] = isset($data['transaction']) ? $data['transaction'] : null;
     }
 
     /**
@@ -211,49 +211,49 @@ class TransactionResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets object
+     * Gets sender
      *
-     * @return \BitPesa\Model\Transaction|null
+     * @return \BitPesa\Model\Sender|null
      */
-    public function getObject()
+    public function getSender()
     {
-        return $this->container['object'];
+        return $this->container['sender'];
     }
 
     /**
-     * Sets object
+     * Sets sender
      *
-     * @param \BitPesa\Model\Transaction|null $object object
+     * @param \BitPesa\Model\Sender|null $sender sender
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setSender($sender)
     {
-        $this->container['object'] = $object;
+        $this->container['sender'] = $sender;
 
         return $this;
     }
 
     /**
-     * Gets meta
+     * Gets transaction
      *
-     * @return \BitPesa\Model\TransactionResponseMeta|null
+     * @return \BitPesa\Model\Transaction|null
      */
-    public function getMeta()
+    public function getTransaction()
     {
-        return $this->container['meta'];
+        return $this->container['transaction'];
     }
 
     /**
-     * Sets meta
+     * Sets transaction
      *
-     * @param \BitPesa\Model\TransactionResponseMeta|null $meta meta
+     * @param \BitPesa\Model\Transaction|null $transaction transaction
      *
      * @return $this
      */
-    public function setMeta($meta)
+    public function setTransaction($transaction)
     {
-        $this->container['meta'] = $meta;
+        $this->container['transaction'] = $transaction;
 
         return $this;
     }
