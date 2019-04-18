@@ -170,6 +170,13 @@ class TransactionTest extends TestCase
     }
 
     /**
+     * Test attribute "external_id"
+     */
+    public function testPropertyExternalId()
+    {
+    }
+
+    /**
      * Test attribute "id"
      */
     public function testPropertyId()
