@@ -1,5 +1,5 @@
 {
     "require": {
-        "bitpesa/bitpesa-php-sdk": "^0.1.0"
+        "bitpesa/bitpesa-php-sdk": "^0.2.0"
     }
 }

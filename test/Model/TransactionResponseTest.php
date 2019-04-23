@@ -84,4 +84,11 @@ class TransactionResponseTest extends TestCase
     public function testPropertyObject()
     {
     }
+
+    /**
+     * Test attribute "meta"
+     */
+    public function testPropertyMeta()
+    {
+    }
 }

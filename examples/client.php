@@ -7,6 +7,7 @@ use BitPesa\ApiException;
 use BitPesa\Api\{ CurrencyInfoApi, AccountValidationApi, TransactionsApi, AccountDebitsApi, WebhooksApi, SendersApi };
 use BitPesa\Model\{ AccountValidationRequest, Transaction, TransactionRequest, TransactionResponse, Recipient, Sender };
 use BitPesa\Model\{ PayoutMethod, PayoutMethodDetails, PayoutMethodBankAccountTypeEnum, Debit, DebitRequestWrapper };
+use BitPesa\Model\{ SenderRequest };
 
 class Application {
 
@@ -16,10 +17,13 @@ class Application {
             ->setApiKey('<key>')
             ->setApiSecret('<secret>');
 
-        $this->listCurrenciesExample();
+        // $this->listCurrenciesExample();
         // $this->accountValidationExample();
+        // $this->createTransactionExample();
+        // $this->getTransactionByExternalIdExample();
         // $this->createAndFundTransactionExample();
         // $this->createSenderExample();
+        // $this->getSenderByExternalIdExample();
         // $this->updateSenderExample();
         // $this->getTransactionErrorMessageExample();
         // $this->webhookParseExample();
@@ -70,6 +74,8 @@ class Application {
         $transaction = new Transaction();
 
         $sender = new Sender();
+        // When adding a sender to transaction, please use either an id or external_id. Providing both will result in a validation error.
+        // Please see our documentation at https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#sender
         $sender->setId('6F15F581-889F-4AE1-9591-CB283ADD661F');
 
         $ngnBankDetails = new PayoutMethodDetails();
@@ -88,6 +94,7 @@ class Application {
         $recipient->setRequestedCurrency('NGN');
         $recipient->setPayoutMethod($payoutMethod);
 
+        $transaction->setExternalId('TRANSACTION-1f834adf'); // Optional field for customer's ID
         $transaction->setInputCurrency('GBP');
         $transaction->setSender($sender);
         $transaction->setRecipients([$recipient]);
@@ -104,6 +111,27 @@ class Application {
                 $response = $e->getResponseObject();
                 $validation_errors = $response->getObject()->getErrors();
                 print_r($validation_errors);
+            } else {
+                throw $e;
+            }
+            return null;
+        }
+    }
+
+    public function getTransactionByExternalIdExample() {
+        $transactionsApi = new TransactionsApi();
+        $externalId = 'TRANSACTION-1f834adf';
+        try {
+            $transactionResponse = $transactionsApi->getTransactions(null, null, $externalId);
+            $transaction = reset($transactionResponse->getObject());
+            echo "Transaction found! External ID: {$transaction->getExternalID()}", PHP_EOL;
+            return $transaction;
+        } catch (ApiException $e) {
+            if ($e->isValidationError()) {
+                $response = $e->getResponseObject();
+                $validation_errors = $response->getObject()->getErrors();
+                print_r($validation_errors);
+                echo "There was an error retrieving the sender" . PHP_EOL;
             } else {
                 throw $e;
             }
@@ -157,6 +185,7 @@ class Application {
         $sender->setPostalCode('798983');
         $sender->setBirthDate('1970-12-31');
         $sender->setDocuments([]);
+        $sender->setExternalId('SENDER-2b59deff'); // Optional field for customer's ID
 
         $sendersApi = new SendersApi();
         $senderRequest = new SenderRequest();
@@ -172,6 +201,27 @@ class Application {
                 $validation_errors = $response->getObject()->getErrors();
                 print_r($validation_errors);
                 echo "Sender could not be created!" . PHP_EOL;
+            } else {
+                throw $e;
+            }
+            return null;
+        }
+    }
+
+    public function getSenderByExternalIdExample() {
+        $sendersApi = new SendersApi();
+        $externalId = 'SENDER-2b59deff';
+        try {
+            $senderResponse = $sendersApi->getSenders(null, null, null, null, $externalId);
+            $sender = reset($senderResponse->getObject());
+            echo "Sender found! External ID: {$sender->getExternalID()}", PHP_EOL;
+            return $sender;
+        } catch (ApiException $e) {
+            if ($e->isValidationError()) {
+                $response = $e->getResponseObject();
+                $validation_errors = $response->getObject()->getErrors();
+                print_r($validation_errors);
+                echo "There was an error retrieving the sender" . PHP_EOL;
             } else {
                 throw $e;
             }
