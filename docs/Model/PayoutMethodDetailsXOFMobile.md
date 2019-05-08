@@ -1,6 +1,7 @@
-# PayoutMethodDetailsXOFMobile
+# # PayoutMethodDetailsXOFMobile
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **first_name** | **string** |  | 
@@ -8,6 +9,6 @@ Name | Type | Description | Notes
 **phone_number** | **string** |  | 
 **mobile_provider** | [**\BitPesa\Model\PayoutMethodMobileProviderEnum**](PayoutMethodMobileProviderEnum.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

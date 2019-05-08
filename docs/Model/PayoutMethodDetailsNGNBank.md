@@ -1,6 +1,7 @@
-# PayoutMethodDetailsNGNBank
+# # PayoutMethodDetailsNGNBank
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **first_name** | **string** |  | 
@@ -9,6 +10,6 @@ Name | Type | Description | Notes
 **bank_account** | **string** |  | 
 **bank_account_type** | [**\BitPesa\Model\PayoutMethodBankAccountTypeEnum**](PayoutMethodBankAccountTypeEnum.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

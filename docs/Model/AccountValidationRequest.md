@@ -1,6 +1,7 @@
-# AccountValidationRequest
+# # AccountValidationRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bank_account** | **string** | Account Number to query | 
@@ -9,6 +10,6 @@ Name | Type | Description | Notes
 **currency** | **string** | The currency the bank account is in | 
 **method** | **string** | The method of the payment. Currently only bank is supported | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -1,6 +1,7 @@
-# CurrencyOpposite
+# # CurrencyOpposite
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **string** | The currency code in 3-character alpha ISO 4217 currency format | [optional] 
@@ -15,6 +16,6 @@ Name | Type | Description | Notes
 **usd_equivalent** | **string** | The equivalent of the currency to 1 USD | [optional] 
 **rate** | **float** | The rate of this particular currency with the base one | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -1,6 +1,7 @@
-# ApiLog
+# # ApiLog
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | ID of the API log | [optional] 
@@ -13,6 +14,6 @@ Name | Type | Description | Notes
 **response_headers** | **map[string,string]** | Headers returned with response | [optional] 
 **created_at** | **string** | Date and time of response | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 
