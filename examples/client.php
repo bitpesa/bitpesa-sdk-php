@@ -267,6 +267,11 @@ class Application {
     }
 
     public function webhookParseExample() {
+        $webhook_headers = [
+            "Authorization-Nonce" => "<authorization-nonce>",
+            "Authorization-Key" => "<authorization-key>",
+            "Authorization-Signature" => "<authorization-signature>"
+        ];
         $webhook_content = <<<'JSON'
         {
             "webhook": "85d11cf4-d4d6-46e4-ab7d-91355e80392a",
@@ -451,6 +456,13 @@ class Application {
         }
 JSON;
         $webhooksApi = new WebhooksApi();
+        $webhook_url = "<url>";
+
+        if (!$webhooksApi->validateWebhookRequest($webhook_url, $webhook_content, $webhook_headers)) {
+            echo "Webhook request validation failed";
+            return false;
+        }
+
         $webhook = $webhooksApi->parseResponseString($webhook_content, 'Webhook');
 
         if (strpos($webhook->getEvent(), 'transaction') === 0) {
