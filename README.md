@@ -92,8 +92,19 @@ To parse webhooks you can use the following snippet:
 
 ```php
 $webhook_content = "{ (...) }"; // The string received through the webhook callback url
+$webhook_headers = [
+    "Authorization-Nonce" => "<authorization-nonce>",
+    "Authorization-Key" => "<authorization-key>",
+    "Authorization-Signature" => "<authorization-signature>"
+];
+$webhook_url = "<url>";
 
 $webhooksApi = new BitPesa\Api\WebhooksApi();
+if (!$webhooksApi->validateWebhookRequest($webhook_url, $webhook_content, $webhook_headers)) {
+    echo "Webhook request validation failed";
+    return false;
+}
+
 $webhook = $webhooksApi->parseResponseString($webhook_content, 'Webhook');
 
 if (strpos($webhook->getEvent(), 'transaction') === 0) {
