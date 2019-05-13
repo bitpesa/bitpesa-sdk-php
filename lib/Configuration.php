@@ -67,7 +67,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'BitPesa PHP Client';
+    protected $userAgent = 'Transferzero-SDK/PHP/0.3.0';
 
     /**
      * Debug switch (default set to false)
