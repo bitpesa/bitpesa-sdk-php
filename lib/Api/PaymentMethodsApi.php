@@ -93,6 +93,34 @@ class PaymentMethodsApi
     }
 
     /**
+     * Use the Authorization Signature in the request headers to validate the payload
+     *
+     * @param $url The full url including any query strings
+     * @param $body The string received through the webhook callback url
+     * @param $headers The request headers received by the webhook endpoint
+     *
+     * @return boolean
+     */
+    public function validateWebhookRequest($url, $body, $headers) {
+        $requestNonce = $headers["Authorization-Nonce"];
+        $requestSignature = $headers["Authorization-Signature"];
+        $requestkey = $headers["Authorization-Key"];
+
+        if (empty($requestNonce) || empty($requestSignature) || ($requestkey != $this->config->getApiKey())) {
+            return false;
+        }
+
+        $headerSignature = $this->signRequest([
+            $requestNonce,
+            'POST',
+            $url,
+            $this->digestHash($body)
+        ]);
+
+        return ($headerSignature == $requestSignature);
+    }
+
+    /**
      * Operation paymentMethodsIn
      *
      * This method returns possible payin methods.
