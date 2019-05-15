@@ -104,7 +104,7 @@ class Application {
         $payoutMethod = new PayoutMethod();
         $payoutMethod->setType('NGN::Bank');
         $payoutMethod->setDetails($ngnBankDetails);
-        
+
         /*
         Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#requested-amount-and-currency
         on what the request amount and currencies do
@@ -311,7 +311,7 @@ class Application {
     public function webhookParseExample() {
         /*
         Please see https://github.com/transferzero/api-documentation#webhooks
-        on more details about how webhooks / callbacks from from our system
+        for more details about how webhooks / callbacks work from our system
         */
         $webhook_headers = [
             "Authorization-Nonce" => "<authorization-nonce>",
