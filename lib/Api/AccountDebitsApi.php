@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Api;
+namespace TransferZero\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use BitPesa\ApiException;
-use BitPesa\Configuration;
-use BitPesa\HeaderSelector;
-use BitPesa\ObjectSerializer;
+use TransferZero\ApiException;
+use TransferZero\Configuration;
+use TransferZero\HeaderSelector;
+use TransferZero\ObjectSerializer;
 
 /**
  * AccountDebitsApi Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -127,9 +127,9 @@ class AccountDebitsApi
      *
      * @param  string $account_debit_id ID of the account debit to get.  Example: &#x60;/v1/accounts/debits/9170c890-1a45-46bd-9b79-3deeb8b4ff3d&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\DebitResponse
+     * @return \TransferZero\Model\DebitResponse
      */
     public function getAccountsDebit($account_debit_id)
     {
@@ -144,13 +144,13 @@ class AccountDebitsApi
      *
      * @param  string $account_debit_id ID of the account debit to get.  Example: &#x60;/v1/accounts/debits/9170c890-1a45-46bd-9b79-3deeb8b4ff3d&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\DebitResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\DebitResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountsDebitWithHttpInfo($account_debit_id)
     {
-        $returnType = '\BitPesa\Model\DebitResponse';
+        $returnType = '\TransferZero\Model\DebitResponse';
         $request = $this->getAccountsDebitRequest($account_debit_id);
 
         try {
@@ -214,7 +214,7 @@ class AccountDebitsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\DebitResponse',
+                        '\TransferZero\Model\DebitResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -256,7 +256,7 @@ class AccountDebitsApi
      */
     public function getAccountsDebitAsyncWithHttpInfo($account_debit_id)
     {
-        $returnType = '\BitPesa\Model\DebitResponse';
+        $returnType = '\TransferZero\Model\DebitResponse';
         $request = $this->getAccountsDebitRequest($account_debit_id);
 
         return $this->client
@@ -417,9 +417,9 @@ class AccountDebitsApi
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\DebitListResponse
+     * @return \TransferZero\Model\DebitListResponse
      */
     public function getAccountsDebits($page = null, $per = null)
     {
@@ -435,13 +435,13 @@ class AccountDebitsApi
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\DebitListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\DebitListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountsDebitsWithHttpInfo($page = null, $per = null)
     {
-        $returnType = '\BitPesa\Model\DebitListResponse';
+        $returnType = '\TransferZero\Model\DebitListResponse';
         $request = $this->getAccountsDebitsRequest($page, $per);
 
         try {
@@ -505,7 +505,7 @@ class AccountDebitsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\DebitListResponse',
+                        '\TransferZero\Model\DebitListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -549,7 +549,7 @@ class AccountDebitsApi
      */
     public function getAccountsDebitsAsyncWithHttpInfo($page = null, $per = null)
     {
-        $returnType = '\BitPesa\Model\DebitListResponse';
+        $returnType = '\TransferZero\Model\DebitListResponse';
         $request = $this->getAccountsDebitsRequest($page, $per);
 
         return $this->client
@@ -702,11 +702,11 @@ class AccountDebitsApi
      *
      * Creating an account debit
      *
-     * @param  \BitPesa\Model\DebitRequestWrapper $debit_request_wrapper debit_request_wrapper (required)
+     * @param  \TransferZero\Model\DebitRequestWrapper $debit_request_wrapper debit_request_wrapper (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\DebitListResponse
+     * @return \TransferZero\Model\DebitListResponse
      */
     public function postAccountsDebits($debit_request_wrapper)
     {
@@ -719,15 +719,15 @@ class AccountDebitsApi
      *
      * Creating an account debit
      *
-     * @param  \BitPesa\Model\DebitRequestWrapper $debit_request_wrapper (required)
+     * @param  \TransferZero\Model\DebitRequestWrapper $debit_request_wrapper (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\DebitListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\DebitListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function postAccountsDebitsWithHttpInfo($debit_request_wrapper)
     {
-        $returnType = '\BitPesa\Model\DebitListResponse';
+        $returnType = '\TransferZero\Model\DebitListResponse';
         $request = $this->postAccountsDebitsRequest($debit_request_wrapper);
 
         try {
@@ -791,7 +791,7 @@ class AccountDebitsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\DebitListResponse',
+                        '\TransferZero\Model\DebitListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -799,7 +799,7 @@ class AccountDebitsApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\DebitListResponse',
+                        '\TransferZero\Model\DebitListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -814,7 +814,7 @@ class AccountDebitsApi
      *
      * Creating an account debit
      *
-     * @param  \BitPesa\Model\DebitRequestWrapper $debit_request_wrapper (required)
+     * @param  \TransferZero\Model\DebitRequestWrapper $debit_request_wrapper (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -834,14 +834,14 @@ class AccountDebitsApi
      *
      * Creating an account debit
      *
-     * @param  \BitPesa\Model\DebitRequestWrapper $debit_request_wrapper (required)
+     * @param  \TransferZero\Model\DebitRequestWrapper $debit_request_wrapper (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postAccountsDebitsAsyncWithHttpInfo($debit_request_wrapper)
     {
-        $returnType = '\BitPesa\Model\DebitListResponse';
+        $returnType = '\TransferZero\Model\DebitListResponse';
         $request = $this->postAccountsDebitsRequest($debit_request_wrapper);
 
         return $this->client
@@ -884,7 +884,7 @@ class AccountDebitsApi
     /**
      * Create request for operation 'postAccountsDebits'
      *
-     * @param  \BitPesa\Model\DebitRequestWrapper $debit_request_wrapper (required)
+     * @param  \TransferZero\Model\DebitRequestWrapper $debit_request_wrapper (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1015,7 +1015,7 @@ class AccountDebitsApi
      *
      * @param object response the object we wish to parse
      * @param boolean returnType The type of the PHP object (true for array, false for object)
-     * 
+     *
      * @return object|array The deserialized PHP object
      * @throws ApiException If it fails to deserialize response body
      */
@@ -1027,7 +1027,7 @@ class AccountDebitsApi
         try {
             return ObjectSerializer::deserialize(
                 $response,
-                "\\BitPesa\\Model\\{$returnType}"
+                "\\TransferZero\\Model\\{$returnType}"
             );
         } catch (ApiException $e) {
             throw new ApiException(

@@ -1,6 +1,6 @@
-# BitPesa\LogsApi
+# TransferZero\LogsApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getWebhookLog**
-> \BitPesa\Model\WebhookLogResponse getWebhookLog($webhook_log_id)
+> \TransferZero\Model\WebhookLogResponse getWebhookLog($webhook_log_id)
 
 Fetch an individual webhook log
 
@@ -23,12 +23,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\LogsApi();
+$apiInstance = new TransferZero\Api\LogsApi();
 $webhook_log_id = 'webhook_log_id_example'; // string | ID of the webhook log to retrieve  Example: `/v1/logs/9d1ad631-f34a-4cff-9a7e-2c83e3a556df`
 
 try {
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\WebhookLogResponse**](../Model/WebhookLogResponse.md)
+[**\TransferZero\Model\WebhookLogResponse**](../Model/WebhookLogResponse.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookLogs**
-> \BitPesa\Model\WebhookLogListResponse getWebhookLogs($page, $per, $created_at_from, $created_at_to)
+> \TransferZero\Model\WebhookLogListResponse getWebhookLogs($page, $per, $created_at_from, $created_at_to)
 
 Fetch a list of webhook logs
 
@@ -83,12 +83,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\LogsApi();
+$apiInstance = new TransferZero\Api\LogsApi();
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 $created_at_from = 'created_at_from_example'; // string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\WebhookLogListResponse**](../Model/WebhookLogListResponse.md)
+[**\TransferZero\Model\WebhookLogListResponse**](../Model/WebhookLogListResponse.md)
 
 ### Authorization
 

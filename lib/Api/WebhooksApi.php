@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Api;
+namespace TransferZero\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use BitPesa\ApiException;
-use BitPesa\Configuration;
-use BitPesa\HeaderSelector;
-use BitPesa\ObjectSerializer;
+use TransferZero\ApiException;
+use TransferZero\Configuration;
+use TransferZero\HeaderSelector;
+use TransferZero\ObjectSerializer;
 
 /**
  * WebhooksApi Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -127,9 +127,9 @@ class WebhooksApi
      *
      * @param  string $webhook_id The ID of webhook to cancel.  Example: &#x60;/v1/webhooks/9d4d7b73-a94c-4979-ab57-09074fd55d33&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\WebhookDefinitionResponse
+     * @return \TransferZero\Model\WebhookDefinitionResponse
      */
     public function deleteWebhook($webhook_id)
     {
@@ -144,13 +144,13 @@ class WebhooksApi
      *
      * @param  string $webhook_id The ID of webhook to cancel.  Example: &#x60;/v1/webhooks/9d4d7b73-a94c-4979-ab57-09074fd55d33&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\WebhookDefinitionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\WebhookDefinitionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteWebhookWithHttpInfo($webhook_id)
     {
-        $returnType = '\BitPesa\Model\WebhookDefinitionResponse';
+        $returnType = '\TransferZero\Model\WebhookDefinitionResponse';
         $request = $this->deleteWebhookRequest($webhook_id);
 
         try {
@@ -214,7 +214,7 @@ class WebhooksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\WebhookDefinitionResponse',
+                        '\TransferZero\Model\WebhookDefinitionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class WebhooksApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\WebhookDefinitionResponse',
+                        '\TransferZero\Model\WebhookDefinitionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -264,7 +264,7 @@ class WebhooksApi
      */
     public function deleteWebhookAsyncWithHttpInfo($webhook_id)
     {
-        $returnType = '\BitPesa\Model\WebhookDefinitionResponse';
+        $returnType = '\TransferZero\Model\WebhookDefinitionResponse';
         $request = $this->deleteWebhookRequest($webhook_id);
 
         return $this->client
@@ -424,9 +424,9 @@ class WebhooksApi
      *
      * @param  string $webhook_id The ID of the Webhook to look up  Example: &#x60;/v1/webhooks/9d4d7b73-a94c-4979-ab57-09074fd55d33&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\WebhookDefinitionResponse
+     * @return \TransferZero\Model\WebhookDefinitionResponse
      */
     public function getWebhook($webhook_id)
     {
@@ -441,13 +441,13 @@ class WebhooksApi
      *
      * @param  string $webhook_id The ID of the Webhook to look up  Example: &#x60;/v1/webhooks/9d4d7b73-a94c-4979-ab57-09074fd55d33&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\WebhookDefinitionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\WebhookDefinitionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookWithHttpInfo($webhook_id)
     {
-        $returnType = '\BitPesa\Model\WebhookDefinitionResponse';
+        $returnType = '\TransferZero\Model\WebhookDefinitionResponse';
         $request = $this->getWebhookRequest($webhook_id);
 
         try {
@@ -511,7 +511,7 @@ class WebhooksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\WebhookDefinitionResponse',
+                        '\TransferZero\Model\WebhookDefinitionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -553,7 +553,7 @@ class WebhooksApi
      */
     public function getWebhookAsyncWithHttpInfo($webhook_id)
     {
-        $returnType = '\BitPesa\Model\WebhookDefinitionResponse';
+        $returnType = '\TransferZero\Model\WebhookDefinitionResponse';
         $request = $this->getWebhookRequest($webhook_id);
 
         return $this->client
@@ -712,9 +712,9 @@ class WebhooksApi
      * Find possible webhook events
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\WebhookDefinitionEventListResponse
+     * @return \TransferZero\Model\WebhookDefinitionEventListResponse
      */
     public function getWebhookEvents()
     {
@@ -728,13 +728,13 @@ class WebhooksApi
      * Find possible webhook events
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\WebhookDefinitionEventListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\WebhookDefinitionEventListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookEventsWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\WebhookDefinitionEventListResponse';
+        $returnType = '\TransferZero\Model\WebhookDefinitionEventListResponse';
         $request = $this->getWebhookEventsRequest();
 
         try {
@@ -798,7 +798,7 @@ class WebhooksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\WebhookDefinitionEventListResponse',
+                        '\TransferZero\Model\WebhookDefinitionEventListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -838,7 +838,7 @@ class WebhooksApi
      */
     public function getWebhookEventsAsyncWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\WebhookDefinitionEventListResponse';
+        $returnType = '\TransferZero\Model\WebhookDefinitionEventListResponse';
         $request = $this->getWebhookEventsRequest();
 
         return $this->client
@@ -984,9 +984,9 @@ class WebhooksApi
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\WebhookDefinitionListResponse
+     * @return \TransferZero\Model\WebhookDefinitionListResponse
      */
     public function getWebhooks($page = null, $per = null)
     {
@@ -1002,13 +1002,13 @@ class WebhooksApi
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\WebhookDefinitionListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\WebhookDefinitionListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhooksWithHttpInfo($page = null, $per = null)
     {
-        $returnType = '\BitPesa\Model\WebhookDefinitionListResponse';
+        $returnType = '\TransferZero\Model\WebhookDefinitionListResponse';
         $request = $this->getWebhooksRequest($page, $per);
 
         try {
@@ -1072,7 +1072,7 @@ class WebhooksApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\WebhookDefinitionListResponse',
+                        '\TransferZero\Model\WebhookDefinitionListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1116,7 +1116,7 @@ class WebhooksApi
      */
     public function getWebhooksAsyncWithHttpInfo($page = null, $per = null)
     {
-        $returnType = '\BitPesa\Model\WebhookDefinitionListResponse';
+        $returnType = '\TransferZero\Model\WebhookDefinitionListResponse';
         $request = $this->getWebhooksRequest($page, $per);
 
         return $this->client
@@ -1269,11 +1269,11 @@ class WebhooksApi
      *
      * Creating a webhook
      *
-     * @param  \BitPesa\Model\WebhookDefinitionRequest $webhook_definition_request webhook_definition_request (required)
+     * @param  \TransferZero\Model\WebhookDefinitionRequest $webhook_definition_request webhook_definition_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\WebhookDefinitionResponse
+     * @return \TransferZero\Model\WebhookDefinitionResponse
      */
     public function postWebhooks($webhook_definition_request)
     {
@@ -1286,15 +1286,15 @@ class WebhooksApi
      *
      * Creating a webhook
      *
-     * @param  \BitPesa\Model\WebhookDefinitionRequest $webhook_definition_request (required)
+     * @param  \TransferZero\Model\WebhookDefinitionRequest $webhook_definition_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\WebhookDefinitionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\WebhookDefinitionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function postWebhooksWithHttpInfo($webhook_definition_request)
     {
-        $returnType = '\BitPesa\Model\WebhookDefinitionResponse';
+        $returnType = '\TransferZero\Model\WebhookDefinitionResponse';
         $request = $this->postWebhooksRequest($webhook_definition_request);
 
         try {
@@ -1358,7 +1358,7 @@ class WebhooksApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\WebhookDefinitionResponse',
+                        '\TransferZero\Model\WebhookDefinitionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1366,7 +1366,7 @@ class WebhooksApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\WebhookDefinitionResponse',
+                        '\TransferZero\Model\WebhookDefinitionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1381,7 +1381,7 @@ class WebhooksApi
      *
      * Creating a webhook
      *
-     * @param  \BitPesa\Model\WebhookDefinitionRequest $webhook_definition_request (required)
+     * @param  \TransferZero\Model\WebhookDefinitionRequest $webhook_definition_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1401,14 +1401,14 @@ class WebhooksApi
      *
      * Creating a webhook
      *
-     * @param  \BitPesa\Model\WebhookDefinitionRequest $webhook_definition_request (required)
+     * @param  \TransferZero\Model\WebhookDefinitionRequest $webhook_definition_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postWebhooksAsyncWithHttpInfo($webhook_definition_request)
     {
-        $returnType = '\BitPesa\Model\WebhookDefinitionResponse';
+        $returnType = '\TransferZero\Model\WebhookDefinitionResponse';
         $request = $this->postWebhooksRequest($webhook_definition_request);
 
         return $this->client
@@ -1451,7 +1451,7 @@ class WebhooksApi
     /**
      * Create request for operation 'postWebhooks'
      *
-     * @param  \BitPesa\Model\WebhookDefinitionRequest $webhook_definition_request (required)
+     * @param  \TransferZero\Model\WebhookDefinitionRequest $webhook_definition_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1582,7 +1582,7 @@ class WebhooksApi
      *
      * @param object response the object we wish to parse
      * @param boolean returnType The type of the PHP object (true for array, false for object)
-     * 
+     *
      * @return object|array The deserialized PHP object
      * @throws ApiException If it fails to deserialize response body
      */
@@ -1594,7 +1594,7 @@ class WebhooksApi
         try {
             return ObjectSerializer::deserialize(
                 $response,
-                "\\BitPesa\\Model\\{$returnType}"
+                "\\TransferZero\\Model\\{$returnType}"
             );
         } catch (ApiException $e) {
             throw new ApiException(

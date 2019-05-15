@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payout_method** | [**\BitPesa\Model\PayoutMethod**](PayoutMethod.md) |  | [optional] 
+**payout_method** | [**\TransferZero\Model\PayoutMethod**](PayoutMethod.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

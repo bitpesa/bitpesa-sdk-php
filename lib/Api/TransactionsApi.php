@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Api;
+namespace TransferZero\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use BitPesa\ApiException;
-use BitPesa\Configuration;
-use BitPesa\HeaderSelector;
-use BitPesa\ObjectSerializer;
+use TransferZero\ApiException;
+use TransferZero\Configuration;
+use TransferZero\HeaderSelector;
+use TransferZero\ObjectSerializer;
 
 /**
  * TransactionsApi Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -125,11 +125,11 @@ class TransactionsApi
      *
      * Calculates transaction amounts for a transaction payload
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request transaction_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\TransactionResponse
+     * @return \TransferZero\Model\TransactionResponse
      */
     public function calculateTransactions($transaction_request)
     {
@@ -142,15 +142,15 @@ class TransactionsApi
      *
      * Calculates transaction amounts for a transaction payload
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function calculateTransactionsWithHttpInfo($transaction_request)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->calculateTransactionsRequest($transaction_request);
 
         try {
@@ -214,7 +214,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\TransactionResponse',
+                        '\TransferZero\Model\TransactionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class TransactionsApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\TransactionResponse',
+                        '\TransferZero\Model\TransactionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -237,7 +237,7 @@ class TransactionsApi
      *
      * Calculates transaction amounts for a transaction payload
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -257,14 +257,14 @@ class TransactionsApi
      *
      * Calculates transaction amounts for a transaction payload
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function calculateTransactionsAsyncWithHttpInfo($transaction_request)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->calculateTransactionsRequest($transaction_request);
 
         return $this->client
@@ -307,7 +307,7 @@ class TransactionsApi
     /**
      * Create request for operation 'calculateTransactions'
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -419,9 +419,9 @@ class TransactionsApi
      *
      * @param  string $transaction_id ID of the transaction.  Example: &#x60;/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\TransactionResponse
+     * @return \TransferZero\Model\TransactionResponse
      */
     public function getTransaction($transaction_id)
     {
@@ -436,13 +436,13 @@ class TransactionsApi
      *
      * @param  string $transaction_id ID of the transaction.  Example: &#x60;/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransactionWithHttpInfo($transaction_id)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->getTransactionRequest($transaction_id);
 
         try {
@@ -506,7 +506,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\TransactionResponse',
+                        '\TransferZero\Model\TransactionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -514,7 +514,7 @@ class TransactionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\ErrorStatus',
+                        '\TransferZero\Model\ErrorStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -556,7 +556,7 @@ class TransactionsApi
      */
     public function getTransactionAsyncWithHttpInfo($transaction_id)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->getTransactionRequest($transaction_id);
 
         return $this->client
@@ -718,9 +718,9 @@ class TransactionsApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\TransactionListResponse
+     * @return \TransferZero\Model\TransactionListResponse
      */
     public function getTransactions($page = null, $per = null, $external_id = null)
     {
@@ -737,13 +737,13 @@ class TransactionsApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\TransactionListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\TransactionListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTransactionsWithHttpInfo($page = null, $per = null, $external_id = null)
     {
-        $returnType = '\BitPesa\Model\TransactionListResponse';
+        $returnType = '\TransferZero\Model\TransactionListResponse';
         $request = $this->getTransactionsRequest($page, $per, $external_id);
 
         try {
@@ -807,7 +807,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\TransactionListResponse',
+                        '\TransferZero\Model\TransactionListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -815,7 +815,7 @@ class TransactionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\ErrorStatus',
+                        '\TransferZero\Model\ErrorStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -861,7 +861,7 @@ class TransactionsApi
      */
     public function getTransactionsAsyncWithHttpInfo($page = null, $per = null, $external_id = null)
     {
-        $returnType = '\BitPesa\Model\TransactionListResponse';
+        $returnType = '\TransferZero\Model\TransactionListResponse';
         $request = $this->getTransactionsRequest($page, $per, $external_id);
 
         return $this->client
@@ -1020,11 +1020,11 @@ class TransactionsApi
      * Creates a fake payin for transaction
      *
      * @param  string $transaction_id ID of the transaction to payin.  Example: &#x60;/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payin&#x60; (required)
-     * @param  \BitPesa\Model\PayinMethodRequest $payin_method_request payin_method_request (required)
+     * @param  \TransferZero\Model\PayinMethodRequest $payin_method_request payin_method_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\TransactionResponse
+     * @return \TransferZero\Model\TransactionResponse
      */
     public function payinTransaction($transaction_id, $payin_method_request)
     {
@@ -1038,15 +1038,15 @@ class TransactionsApi
      * Creates a fake payin for transaction
      *
      * @param  string $transaction_id ID of the transaction to payin.  Example: &#x60;/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payin&#x60; (required)
-     * @param  \BitPesa\Model\PayinMethodRequest $payin_method_request (required)
+     * @param  \TransferZero\Model\PayinMethodRequest $payin_method_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function payinTransactionWithHttpInfo($transaction_id, $payin_method_request)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->payinTransactionRequest($transaction_id, $payin_method_request);
 
         try {
@@ -1110,7 +1110,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\TransactionResponse',
+                        '\TransferZero\Model\TransactionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1118,7 +1118,7 @@ class TransactionsApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\TransactionResponse',
+                        '\TransferZero\Model\TransactionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1134,7 +1134,7 @@ class TransactionsApi
      * Creates a fake payin for transaction
      *
      * @param  string $transaction_id ID of the transaction to payin.  Example: &#x60;/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payin&#x60; (required)
-     * @param  \BitPesa\Model\PayinMethodRequest $payin_method_request (required)
+     * @param  \TransferZero\Model\PayinMethodRequest $payin_method_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1155,14 +1155,14 @@ class TransactionsApi
      * Creates a fake payin for transaction
      *
      * @param  string $transaction_id ID of the transaction to payin.  Example: &#x60;/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payin&#x60; (required)
-     * @param  \BitPesa\Model\PayinMethodRequest $payin_method_request (required)
+     * @param  \TransferZero\Model\PayinMethodRequest $payin_method_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function payinTransactionAsyncWithHttpInfo($transaction_id, $payin_method_request)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->payinTransactionRequest($transaction_id, $payin_method_request);
 
         return $this->client
@@ -1206,7 +1206,7 @@ class TransactionsApi
      * Create request for operation 'payinTransaction'
      *
      * @param  string $transaction_id ID of the transaction to payin.  Example: &#x60;/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payin&#x60; (required)
-     * @param  \BitPesa\Model\PayinMethodRequest $payin_method_request (required)
+     * @param  \TransferZero\Model\PayinMethodRequest $payin_method_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1332,9 +1332,9 @@ class TransactionsApi
      *
      * @param  string $transaction_id ID of the transaction to payout.  Example: &#x60;/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payout&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\TransactionResponse
+     * @return \TransferZero\Model\TransactionResponse
      */
     public function payoutTransaction($transaction_id)
     {
@@ -1349,13 +1349,13 @@ class TransactionsApi
      *
      * @param  string $transaction_id ID of the transaction to payout.  Example: &#x60;/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payout&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function payoutTransactionWithHttpInfo($transaction_id)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->payoutTransactionRequest($transaction_id);
 
         try {
@@ -1419,7 +1419,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\TransactionResponse',
+                        '\TransferZero\Model\TransactionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1461,7 +1461,7 @@ class TransactionsApi
      */
     public function payoutTransactionAsyncWithHttpInfo($transaction_id)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->payoutTransactionRequest($transaction_id);
 
         return $this->client
@@ -1619,11 +1619,11 @@ class TransactionsApi
      *
      * Creates a new transaction
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request transaction_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\TransactionResponse
+     * @return \TransferZero\Model\TransactionResponse
      */
     public function postTransactions($transaction_request)
     {
@@ -1636,15 +1636,15 @@ class TransactionsApi
      *
      * Creates a new transaction
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function postTransactionsWithHttpInfo($transaction_request)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->postTransactionsRequest($transaction_request);
 
         try {
@@ -1708,7 +1708,7 @@ class TransactionsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\TransactionResponse',
+                        '\TransferZero\Model\TransactionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1716,7 +1716,7 @@ class TransactionsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\ErrorStatus',
+                        '\TransferZero\Model\ErrorStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1724,7 +1724,7 @@ class TransactionsApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\TransactionResponse',
+                        '\TransferZero\Model\TransactionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1739,7 +1739,7 @@ class TransactionsApi
      *
      * Creates a new transaction
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1759,14 +1759,14 @@ class TransactionsApi
      *
      * Creates a new transaction
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postTransactionsAsyncWithHttpInfo($transaction_request)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->postTransactionsRequest($transaction_request);
 
         return $this->client
@@ -1809,7 +1809,7 @@ class TransactionsApi
     /**
      * Create request for operation 'postTransactions'
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1919,11 +1919,11 @@ class TransactionsApi
      *
      * Validates a transaction payload
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request transaction_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\TransactionResponse
+     * @return \TransferZero\Model\TransactionResponse
      */
     public function validateTransactions($transaction_request)
     {
@@ -1936,15 +1936,15 @@ class TransactionsApi
      *
      * Validates a transaction payload
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\TransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function validateTransactionsWithHttpInfo($transaction_request)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->validateTransactionsRequest($transaction_request);
 
         try {
@@ -2008,7 +2008,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\TransactionResponse',
+                        '\TransferZero\Model\TransactionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2016,7 +2016,7 @@ class TransactionsApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\TransactionResponse',
+                        '\TransferZero\Model\TransactionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2031,7 +2031,7 @@ class TransactionsApi
      *
      * Validates a transaction payload
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2051,14 +2051,14 @@ class TransactionsApi
      *
      * Validates a transaction payload
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function validateTransactionsAsyncWithHttpInfo($transaction_request)
     {
-        $returnType = '\BitPesa\Model\TransactionResponse';
+        $returnType = '\TransferZero\Model\TransactionResponse';
         $request = $this->validateTransactionsRequest($transaction_request);
 
         return $this->client
@@ -2101,7 +2101,7 @@ class TransactionsApi
     /**
      * Create request for operation 'validateTransactions'
      *
-     * @param  \BitPesa\Model\TransactionRequest $transaction_request (required)
+     * @param  \TransferZero\Model\TransactionRequest $transaction_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2232,7 +2232,7 @@ class TransactionsApi
      *
      * @param object response the object we wish to parse
      * @param boolean returnType The type of the PHP object (true for array, false for object)
-     * 
+     *
      * @return object|array The deserialized PHP object
      * @throws ApiException If it fails to deserialize response body
      */
@@ -2244,7 +2244,7 @@ class TransactionsApi
         try {
             return ObjectSerializer::deserialize(
                 $response,
-                "\\BitPesa\\Model\\{$returnType}"
+                "\\TransferZero\\Model\\{$returnType}"
             );
         } catch (ApiException $e) {
             throw new ApiException(

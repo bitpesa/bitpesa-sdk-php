@@ -1,6 +1,6 @@
-# BitPesa\TransactionsApi
+# TransferZero\TransactionsApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **calculateTransactions**
-> \BitPesa\Model\TransactionResponse calculateTransactions($transaction_request)
+> \TransferZero\Model\TransactionResponse calculateTransactions($transaction_request)
 
 Calculates transaction amounts for a transaction payload
 
@@ -28,13 +28,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\TransactionsApi();
-$transaction_request = new \BitPesa\Model\TransactionRequest(); // \BitPesa\Model\TransactionRequest | 
+$apiInstance = new TransferZero\Api\TransactionsApi();
+$transaction_request = new \TransferZero\Model\TransactionRequest(); // \TransferZero\Model\TransactionRequest | 
 
 try {
     $result = $apiInstance->calculateTransactions($transaction_request);
@@ -56,11 +56,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transaction_request** | [**\BitPesa\Model\TransactionRequest**](../Model/TransactionRequest.md)|  |
+ **transaction_request** | [**\TransferZero\Model\TransactionRequest**](../Model/TransactionRequest.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\TransactionResponse**](../Model/TransactionResponse.md)
+[**\TransferZero\Model\TransactionResponse**](../Model/TransactionResponse.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransaction**
-> \BitPesa\Model\TransactionResponse getTransaction($transaction_id)
+> \TransferZero\Model\TransactionResponse getTransaction($transaction_id)
 
 Fetch a single transaction
 
@@ -88,12 +88,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\TransactionsApi();
+$apiInstance = new TransferZero\Api\TransactionsApi();
 $transaction_id = 'transaction_id_example'; // string | ID of the transaction.  Example: `/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\TransactionResponse**](../Model/TransactionResponse.md)
+[**\TransferZero\Model\TransactionResponse**](../Model/TransactionResponse.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransactions**
-> \BitPesa\Model\TransactionListResponse getTransactions($page, $per, $external_id)
+> \TransferZero\Model\TransactionListResponse getTransactions($page, $per, $external_id)
 
 Get a list of transactions
 
@@ -148,12 +148,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\TransactionsApi();
+$apiInstance = new TransferZero\Api\TransactionsApi();
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 $external_id = 'external_id_example'; // string | Allows filtering results by `external_id`.  Example: `/v1/senders?external_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87`
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\TransactionListResponse**](../Model/TransactionListResponse.md)
+[**\TransferZero\Model\TransactionListResponse**](../Model/TransactionListResponse.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **payinTransaction**
-> \BitPesa\Model\TransactionResponse payinTransaction($transaction_id, $payin_method_request)
+> \TransferZero\Model\TransactionResponse payinTransaction($transaction_id, $payin_method_request)
 
 Creates a fake payin for transaction
 
@@ -212,14 +212,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\TransactionsApi();
+$apiInstance = new TransferZero\Api\TransactionsApi();
 $transaction_id = 'transaction_id_example'; // string | ID of the transaction to payin.  Example: `/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payin`
-$payin_method_request = new \BitPesa\Model\PayinMethodRequest(); // \BitPesa\Model\PayinMethodRequest | 
+$payin_method_request = new \TransferZero\Model\PayinMethodRequest(); // \TransferZero\Model\PayinMethodRequest | 
 
 try {
     $result = $apiInstance->payinTransaction($transaction_id, $payin_method_request);
@@ -242,11 +242,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transaction_id** | [**string**](../Model/.md)| ID of the transaction to payin.  Example: &#x60;/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payin&#x60; |
- **payin_method_request** | [**\BitPesa\Model\PayinMethodRequest**](../Model/PayinMethodRequest.md)|  |
+ **payin_method_request** | [**\TransferZero\Model\PayinMethodRequest**](../Model/PayinMethodRequest.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\TransactionResponse**](../Model/TransactionResponse.md)
+[**\TransferZero\Model\TransactionResponse**](../Model/TransactionResponse.md)
 
 ### Authorization
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **payoutTransaction**
-> \BitPesa\Model\TransactionResponse payoutTransaction($transaction_id)
+> \TransferZero\Model\TransactionResponse payoutTransaction($transaction_id)
 
 Creates a fake payout for transaction
 
@@ -274,12 +274,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\TransactionsApi();
+$apiInstance = new TransferZero\Api\TransactionsApi();
 $transaction_id = 'transaction_id_example'; // string | ID of the transaction to payout.  Example: `/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payout`
 
 try {
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\TransactionResponse**](../Model/TransactionResponse.md)
+[**\TransferZero\Model\TransactionResponse**](../Model/TransactionResponse.md)
 
 ### Authorization
 
@@ -320,11 +320,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postTransactions**
-> \BitPesa\Model\TransactionResponse postTransactions($transaction_request)
+> \TransferZero\Model\TransactionResponse postTransactions($transaction_request)
 
 Creates a new transaction
 
-Transactions are the main objects in the BitPesa API, so it's important to understand how to create and manage them. Transactions facilitate money movement from one Sender in a specific currency to one or multiple Recipients in another currency.  The main flow of a successful transaction flow is the following - - Transaction is created linking the Sender to the Recipient(s) with the requested amounts. - Once the sender is KYC'd and approved the transaction can be funded. - Once the transaction is funded, we will initiate the payout to the recipient(s). - After the recipient (or all recipients) has received the money, the transaction is finished.
+Transactions are the main objects in the TransferZero API, so it's important to understand how to create and manage them. Transactions facilitate money movement from one Sender in a specific currency to one or multiple Recipients in another currency.  The main flow of a successful transaction flow is the following - - Transaction is created linking the Sender to the Recipient(s) with the requested amounts. - Once the sender is KYC'd and approved the transaction can be funded. - Once the transaction is funded, we will initiate the payout to the recipient(s). - After the recipient (or all recipients) has received the money, the transaction is finished.
 
 ### Example
 ```php
@@ -334,13 +334,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\TransactionsApi();
-$transaction_request = new \BitPesa\Model\TransactionRequest(); // \BitPesa\Model\TransactionRequest | 
+$apiInstance = new TransferZero\Api\TransactionsApi();
+$transaction_request = new \TransferZero\Model\TransactionRequest(); // \TransferZero\Model\TransactionRequest | 
 
 try {
     $result = $apiInstance->postTransactions($transaction_request);
@@ -362,11 +362,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transaction_request** | [**\BitPesa\Model\TransactionRequest**](../Model/TransactionRequest.md)|  |
+ **transaction_request** | [**\TransferZero\Model\TransactionRequest**](../Model/TransactionRequest.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\TransactionResponse**](../Model/TransactionResponse.md)
+[**\TransferZero\Model\TransactionResponse**](../Model/TransactionResponse.md)
 
 ### Authorization
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **validateTransactions**
-> \BitPesa\Model\TransactionResponse validateTransactions($transaction_request)
+> \TransferZero\Model\TransactionResponse validateTransactions($transaction_request)
 
 Validates a transaction payload
 
@@ -394,13 +394,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\TransactionsApi();
-$transaction_request = new \BitPesa\Model\TransactionRequest(); // \BitPesa\Model\TransactionRequest | 
+$apiInstance = new TransferZero\Api\TransactionsApi();
+$transaction_request = new \TransferZero\Model\TransactionRequest(); // \TransferZero\Model\TransactionRequest | 
 
 try {
     $result = $apiInstance->validateTransactions($transaction_request);
@@ -422,11 +422,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transaction_request** | [**\BitPesa\Model\TransactionRequest**](../Model/TransactionRequest.md)|  |
+ **transaction_request** | [**\TransferZero\Model\TransactionRequest**](../Model/TransactionRequest.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\TransactionResponse**](../Model/TransactionResponse.md)
+[**\TransferZero\Model\TransactionResponse**](../Model/TransactionResponse.md)
 
 ### Authorization
 

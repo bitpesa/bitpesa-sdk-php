@@ -1,6 +1,6 @@
-# BitPesa\AccountsApi
+# TransferZero\AccountsApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getAccount**
-> \BitPesa\Model\AccountResponse getAccount($currency)
+> \TransferZero\Model\AccountResponse getAccount($currency)
 
 Fetches account balance for specified currrency
 
@@ -23,12 +23,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\AccountsApi();
+$apiInstance = new TransferZero\Api\AccountsApi();
 $currency = 'currency_example'; // string | Currency code of account balance to fetch  Example: `/v1/accounts/USD`
 
 try {
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\AccountResponse**](../Model/AccountResponse.md)
+[**\TransferZero\Model\AccountResponse**](../Model/AccountResponse.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAccounts**
-> \BitPesa\Model\AccountListResponse getAccounts()
+> \TransferZero\Model\AccountListResponse getAccounts()
 
 Fetches account balances for all currencies
 
@@ -83,12 +83,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\AccountsApi();
+$apiInstance = new TransferZero\Api\AccountsApi();
 
 try {
     $result = $apiInstance->getAccounts();
@@ -111,7 +111,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\BitPesa\Model\AccountListResponse**](../Model/AccountListResponse.md)
+[**\TransferZero\Model\AccountListResponse**](../Model/AccountListResponse.md)
 
 ### Authorization
 

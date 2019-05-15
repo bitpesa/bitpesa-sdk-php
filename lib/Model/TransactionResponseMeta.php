@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * TransactionResponseMeta Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,7 +57,7 @@ class TransactionResponseMeta implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'existing' => '\BitPesa\Model\TransactionResponseExisting'
+        'existing' => '\TransferZero\Model\TransactionResponseExisting'
     ];
 
     /**
@@ -207,7 +207,7 @@ class TransactionResponseMeta implements ModelInterface, ArrayAccess
     /**
      * Gets existing
      *
-     * @return \BitPesa\Model\TransactionResponseExisting|null
+     * @return \TransferZero\Model\TransactionResponseExisting|null
      */
     public function getExisting()
     {
@@ -217,7 +217,7 @@ class TransactionResponseMeta implements ModelInterface, ArrayAccess
     /**
      * Sets existing
      *
-     * @param \BitPesa\Model\TransactionResponseExisting|null $existing existing
+     * @param \TransferZero\Model\TransactionResponseExisting|null $existing existing
      *
      * @return $this
      */

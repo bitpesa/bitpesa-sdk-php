@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PayinMethod Class Doc Comment
  *
  * @category Class
  * @description This describes the specific details on how the funds should be collected from the sender.
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -59,7 +59,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'type' => 'string',
-        'in_details' => '\BitPesa\Model\PayinMethodDetails',
+        'in_details' => '\TransferZero\Model\PayinMethodDetails',
         'out_details' => 'object',
         'instructions' => 'object',
         'provider' => 'string'
@@ -256,7 +256,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Gets in_details
      *
-     * @return \BitPesa\Model\PayinMethodDetails|null
+     * @return \TransferZero\Model\PayinMethodDetails|null
      */
     public function getInDetails()
     {
@@ -266,7 +266,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Sets in_details
      *
-     * @param \BitPesa\Model\PayinMethodDetails|null $in_details in_details
+     * @param \TransferZero\Model\PayinMethodDetails|null $in_details in_details
      *
      * @return $this
      */
@@ -290,7 +290,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Sets out_details
      *
-     * @param object|null $out_details This will contain the description on where to pay the funds. Please see the [Collections from Senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on what to expect here.
+     * @param object|null $out_details This will contain the description on where to pay the funds. Please see the [Collections from Senders](https://github.com/transferzero/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on what to expect here.
      *
      * @return $this
      */
@@ -314,7 +314,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Sets instructions
      *
-     * @param object|null $instructions This will contain the instructions on how to pay the funds. Please see the [Collections from Senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on what to expect here.
+     * @param object|null $instructions This will contain the instructions on how to pay the funds. Please see the [Collections from Senders](https://github.com/transferzero/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on what to expect here.
      *
      * @return $this
      */
@@ -338,7 +338,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Sets provider
      *
-     * @param string|null $provider Describes which provider to use for collection. Please see the [Collections from Senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on the valid values
+     * @param string|null $provider Describes which provider to use for collection. Please see the [Collections from Senders](https://github.com/transferzero/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on the valid values
      *
      * @return $this
      */

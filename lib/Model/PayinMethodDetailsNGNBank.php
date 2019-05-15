@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PayinMethodDetailsNGNBank Class Doc Comment
  *
  * @category Class
  * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;redirect_url\&quot;: \&quot;http://redirect.back.to\&quot;   } &#x60;&#x60;&#x60;
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

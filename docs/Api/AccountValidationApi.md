@@ -1,6 +1,6 @@
-# BitPesa\AccountValidationApi
+# TransferZero\AccountValidationApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **postAccountValidations**
-> \BitPesa\Model\AccountValidationResponse postAccountValidations($account_validation_request)
+> \TransferZero\Model\AccountValidationResponse postAccountValidations($account_validation_request)
 
 Validates the existence of a bank account
 
@@ -22,13 +22,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\AccountValidationApi();
-$account_validation_request = new \BitPesa\Model\AccountValidationRequest(); // \BitPesa\Model\AccountValidationRequest | 
+$apiInstance = new TransferZero\Api\AccountValidationApi();
+$account_validation_request = new \TransferZero\Model\AccountValidationRequest(); // \TransferZero\Model\AccountValidationRequest | 
 
 try {
     $result = $apiInstance->postAccountValidations($account_validation_request);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_validation_request** | [**\BitPesa\Model\AccountValidationRequest**](../Model/AccountValidationRequest.md)|  |
+ **account_validation_request** | [**\TransferZero\Model\AccountValidationRequest**](../Model/AccountValidationRequest.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\AccountValidationResponse**](../Model/AccountValidationResponse.md)
+[**\TransferZero\Model\AccountValidationResponse**](../Model/AccountValidationResponse.md)
 
 ### Authorization
 

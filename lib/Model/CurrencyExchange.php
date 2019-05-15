@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * CurrencyExchange Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -67,7 +67,7 @@ class CurrencyExchange implements ModelInterface, ArrayAccess
         'max' => 'string',
         'margin' => 'string',
         'usd_equivalent' => 'string',
-        'opposites' => '\BitPesa\Model\CurrencyOpposite[]'
+        'opposites' => '\TransferZero\Model\CurrencyOpposite[]'
     ];
 
     /**
@@ -507,7 +507,7 @@ class CurrencyExchange implements ModelInterface, ArrayAccess
     /**
      * Gets opposites
      *
-     * @return \BitPesa\Model\CurrencyOpposite[]|null
+     * @return \TransferZero\Model\CurrencyOpposite[]|null
      */
     public function getOpposites()
     {
@@ -517,7 +517,7 @@ class CurrencyExchange implements ModelInterface, ArrayAccess
     /**
      * Sets opposites
      *
-     * @param \BitPesa\Model\CurrencyOpposite[]|null $opposites Lists the currencies where you can exchange from this one
+     * @param \TransferZero\Model\CurrencyOpposite[]|null $opposites Lists the currencies where you can exchange from this one
      *
      * @return $this
      */

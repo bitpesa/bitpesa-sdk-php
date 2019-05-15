@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PayinMethodRequest Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,7 +57,7 @@ class PayinMethodRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payin_method' => '\BitPesa\Model\PayinMethod'
+        'payin_method' => '\TransferZero\Model\PayinMethod'
     ];
 
     /**
@@ -207,7 +207,7 @@ class PayinMethodRequest implements ModelInterface, ArrayAccess
     /**
      * Gets payin_method
      *
-     * @return \BitPesa\Model\PayinMethod|null
+     * @return \TransferZero\Model\PayinMethod|null
      */
     public function getPayinMethod()
     {
@@ -217,7 +217,7 @@ class PayinMethodRequest implements ModelInterface, ArrayAccess
     /**
      * Sets payin_method
      *
-     * @param \BitPesa\Model\PayinMethod|null $payin_method payin_method
+     * @param \TransferZero\Model\PayinMethod|null $payin_method payin_method
      *
      * @return $this
      */

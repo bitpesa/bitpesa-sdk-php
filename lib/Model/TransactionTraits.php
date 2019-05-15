@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * TransactionTraits Class Doc Comment
  *
  * @category Class
- * @description Additional features that are enabled on the transaction. For more details please see [Additional features](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md) in our API documentation
- * @package  BitPesa
+ * @description Additional features that are enabled on the transaction. For more details please see [Additional features](https://github.com/transferzero/api-documentation/blob/master/additional-features.md) in our API documentation
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -224,7 +224,7 @@ class TransactionTraits implements ModelInterface, ArrayAccess
     /**
      * Sets auto_refund
      *
-     * @param bool|null $auto_refund Enables or disables the auto refund functionality. Please see [Auto cancellation and refund of transactions](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#auto-cancellation-and-refund-of-transactions) for more details
+     * @param bool|null $auto_refund Enables or disables the auto refund functionality. Please see [Auto cancellation and refund of transactions](https://github.com/transferzero/api-documentation/blob/master/additional-features.md#auto-cancellation-and-refund-of-transactions) for more details
      *
      * @return $this
      */
@@ -248,7 +248,7 @@ class TransactionTraits implements ModelInterface, ArrayAccess
     /**
      * Sets account_validation
      *
-     * @param bool|null $account_validation Enabled or disables the name validation functionality. Please see [Name validation in transactions](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#name-validation-in-transactions) for more details
+     * @param bool|null $account_validation Enabled or disables the name validation functionality. Please see [Name validation in transactions](https://github.com/transferzero/api-documentation/blob/master/additional-features.md#name-validation-in-transactions) for more details
      *
      * @return $this
      */

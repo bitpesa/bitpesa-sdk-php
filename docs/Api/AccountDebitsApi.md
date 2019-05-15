@@ -1,6 +1,6 @@
-# BitPesa\AccountDebitsApi
+# TransferZero\AccountDebitsApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getAccountsDebit**
-> \BitPesa\Model\DebitResponse getAccountsDebit($account_debit_id)
+> \TransferZero\Model\DebitResponse getAccountsDebit($account_debit_id)
 
 Fetching an account debit
 
@@ -24,12 +24,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\AccountDebitsApi();
+$apiInstance = new TransferZero\Api\AccountDebitsApi();
 $account_debit_id = 'account_debit_id_example'; // string | ID of the account debit to get.  Example: `/v1/accounts/debits/9170c890-1a45-46bd-9b79-3deeb8b4ff3d`
 
 try {
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\DebitResponse**](../Model/DebitResponse.md)
+[**\TransferZero\Model\DebitResponse**](../Model/DebitResponse.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAccountsDebits**
-> \BitPesa\Model\DebitListResponse getAccountsDebits($page, $per)
+> \TransferZero\Model\DebitListResponse getAccountsDebits($page, $per)
 
 Listing Accounts debits
 
@@ -84,12 +84,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\AccountDebitsApi();
+$apiInstance = new TransferZero\Api\AccountDebitsApi();
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\DebitListResponse**](../Model/DebitListResponse.md)
+[**\TransferZero\Model\DebitListResponse**](../Model/DebitListResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postAccountsDebits**
-> \BitPesa\Model\DebitListResponse postAccountsDebits($debit_request_wrapper)
+> \TransferZero\Model\DebitListResponse postAccountsDebits($debit_request_wrapper)
 
 Creating an account debit
 
@@ -146,13 +146,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\AccountDebitsApi();
-$debit_request_wrapper = new \BitPesa\Model\DebitRequestWrapper(); // \BitPesa\Model\DebitRequestWrapper | 
+$apiInstance = new TransferZero\Api\AccountDebitsApi();
+$debit_request_wrapper = new \TransferZero\Model\DebitRequestWrapper(); // \TransferZero\Model\DebitRequestWrapper | 
 
 try {
     $result = $apiInstance->postAccountsDebits($debit_request_wrapper);
@@ -174,11 +174,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **debit_request_wrapper** | [**\BitPesa\Model\DebitRequestWrapper**](../Model/DebitRequestWrapper.md)|  |
+ **debit_request_wrapper** | [**\TransferZero\Model\DebitRequestWrapper**](../Model/DebitRequestWrapper.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\DebitListResponse**](../Model/DebitListResponse.md)
+[**\TransferZero\Model\DebitListResponse**](../Model/DebitListResponse.md)
 
 ### Authorization
 

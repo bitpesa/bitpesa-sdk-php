@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **created_at** | [**\DateTime**](\DateTime.md) | Date and time that the debit was created | [optional] 
 **usd_amount** | **double** | The amount to be debited from your account converted to USD | [optional] 
 **running_balance** | **double** | The total amount remaining in your account after the debit call | [optional] 
-**errors** | [**map[string,\BitPesa\Model\ValidationErrorDescription[]]**](array.md) | The fields that have some problems and don&#39;t pass validation | [optional] 
+**errors** | [**map[string,\TransferZero\Model\ValidationErrorDescription[]]**](array.md) | The fields that have some problems and don&#39;t pass validation | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

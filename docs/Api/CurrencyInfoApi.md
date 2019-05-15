@@ -1,6 +1,6 @@
-# BitPesa\CurrencyInfoApi
+# TransferZero\CurrencyInfoApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **infoCurrencies**
-> \BitPesa\Model\CurrencyListResponse infoCurrencies()
+> \TransferZero\Model\CurrencyListResponse infoCurrencies()
 
 Getting a list of possible requested currencies
 
@@ -24,12 +24,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\CurrencyInfoApi();
+$apiInstance = new TransferZero\Api\CurrencyInfoApi();
 
 try {
     $result = $apiInstance->infoCurrencies();
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\BitPesa\Model\CurrencyListResponse**](../Model/CurrencyListResponse.md)
+[**\TransferZero\Model\CurrencyListResponse**](../Model/CurrencyListResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **infoCurrenciesIn**
-> \BitPesa\Model\CurrencyExchangeListResponse infoCurrenciesIn()
+> \TransferZero\Model\CurrencyExchangeListResponse infoCurrenciesIn()
 
 Getting a list of possible input currencies
 
@@ -80,12 +80,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\CurrencyInfoApi();
+$apiInstance = new TransferZero\Api\CurrencyInfoApi();
 
 try {
     $result = $apiInstance->infoCurrenciesIn();
@@ -108,7 +108,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\BitPesa\Model\CurrencyExchangeListResponse**](../Model/CurrencyExchangeListResponse.md)
+[**\TransferZero\Model\CurrencyExchangeListResponse**](../Model/CurrencyExchangeListResponse.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **infoCurrenciesOut**
-> \BitPesa\Model\CurrencyExchangeListResponse infoCurrenciesOut()
+> \TransferZero\Model\CurrencyExchangeListResponse infoCurrenciesOut()
 
 Getting a list of possible output currencies
 
@@ -136,12 +136,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\CurrencyInfoApi();
+$apiInstance = new TransferZero\Api\CurrencyInfoApi();
 
 try {
     $result = $apiInstance->infoCurrenciesOut();
@@ -164,7 +164,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\BitPesa\Model\CurrencyExchangeListResponse**](../Model/CurrencyExchangeListResponse.md)
+[**\TransferZero\Model\CurrencyExchangeListResponse**](../Model/CurrencyExchangeListResponse.md)
 
 ### Authorization
 

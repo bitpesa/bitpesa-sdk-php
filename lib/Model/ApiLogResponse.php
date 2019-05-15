@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * ApiLogResponse Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,7 +57,7 @@ class ApiLogResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'object' => '\BitPesa\Model\ApiLog'
+        'object' => '\TransferZero\Model\ApiLog'
     ];
 
     /**
@@ -207,7 +207,7 @@ class ApiLogResponse implements ModelInterface, ArrayAccess
     /**
      * Gets object
      *
-     * @return \BitPesa\Model\ApiLog|null
+     * @return \TransferZero\Model\ApiLog|null
      */
     public function getObject()
     {
@@ -217,7 +217,7 @@ class ApiLogResponse implements ModelInterface, ArrayAccess
     /**
      * Sets object
      *
-     * @param \BitPesa\Model\ApiLog|null $object object
+     * @param \TransferZero\Model\ApiLog|null $object object
      *
      * @return $this
      */

@@ -1,6 +1,6 @@
-# BitPesa\PayoutMethodsApi
+# TransferZero\PayoutMethodsApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **deletePayoutMethod**
-> \BitPesa\Model\PayoutMethodResponse deletePayoutMethod($payout_method_id)
+> \TransferZero\Model\PayoutMethodResponse deletePayoutMethod($payout_method_id)
 
 Deleting a payout method
 
@@ -26,12 +26,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\PayoutMethodsApi();
+$apiInstance = new TransferZero\Api\PayoutMethodsApi();
 $payout_method_id = 'payout_method_id_example'; // string | ID of the payout method to delete.  Example: `/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\PayoutMethodResponse**](../Model/PayoutMethodResponse.md)
+[**\TransferZero\Model\PayoutMethodResponse**](../Model/PayoutMethodResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPayoutMethod**
-> \BitPesa\Model\PayoutMethodResponse getPayoutMethod($payout_method_id)
+> \TransferZero\Model\PayoutMethodResponse getPayoutMethod($payout_method_id)
 
 Fetching a payout method
 
@@ -86,12 +86,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\PayoutMethodsApi();
+$apiInstance = new TransferZero\Api\PayoutMethodsApi();
 $payout_method_id = 'payout_method_id_example'; // string | ID of the payout method to get.  Example: `/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\PayoutMethodResponse**](../Model/PayoutMethodResponse.md)
+[**\TransferZero\Model\PayoutMethodResponse**](../Model/PayoutMethodResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPayoutMethods**
-> \BitPesa\Model\PayoutMethodListResponse getPayoutMethods($state, $type, $sender_id, $page, $per, $created_at_from, $created_at_to)
+> \TransferZero\Model\PayoutMethodListResponse getPayoutMethods($state, $type, $sender_id, $page, $per, $created_at_from, $created_at_to)
 
 Listing payout methods
 
@@ -146,12 +146,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\PayoutMethodsApi();
+$apiInstance = new TransferZero\Api\PayoutMethodsApi();
 $state = array('state_example'); // string[] | Allows filtering results by `state` of the payout method.  Example: `/v1/payout_methods?state[]=enabled`
 $type = array('type_example'); // string[] | Allows filtering results by the specified type.  Example: `/v1/payout_methods?type[]=NGN::Bank`
 $sender_id = 'sender_id_example'; // string | Allows filtering results by the specified sender id.  Example: `/v1/payout_methods?sender_id=bf9ff782-e182-45ac-abea-5bce83ad6670`
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\PayoutMethodListResponse**](../Model/PayoutMethodListResponse.md)
+[**\TransferZero\Model\PayoutMethodListResponse**](../Model/PayoutMethodListResponse.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **patchPayoutMethod**
-> \BitPesa\Model\PayoutMethodResponse patchPayoutMethod($payout_method_id, $payout_method)
+> \TransferZero\Model\PayoutMethodResponse patchPayoutMethod($payout_method_id, $payout_method)
 
 Updating a payout method
 
@@ -218,14 +218,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\PayoutMethodsApi();
+$apiInstance = new TransferZero\Api\PayoutMethodsApi();
 $payout_method_id = 'payout_method_id_example'; // string | ID of the payout method to get.  Example: `/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670`
-$payout_method = new \BitPesa\Model\PayoutMethod(); // \BitPesa\Model\PayoutMethod | 
+$payout_method = new \TransferZero\Model\PayoutMethod(); // \TransferZero\Model\PayoutMethod | 
 
 try {
     $result = $apiInstance->patchPayoutMethod($payout_method_id, $payout_method);
@@ -248,11 +248,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payout_method_id** | [**string**](../Model/.md)| ID of the payout method to get.  Example: &#x60;/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; |
- **payout_method** | [**\BitPesa\Model\PayoutMethod**](../Model/PayoutMethod.md)|  |
+ **payout_method** | [**\TransferZero\Model\PayoutMethod**](../Model/PayoutMethod.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\PayoutMethodResponse**](../Model/PayoutMethodResponse.md)
+[**\TransferZero\Model\PayoutMethodResponse**](../Model/PayoutMethodResponse.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postPayoutMethods**
-> \BitPesa\Model\PayoutMethodResponse postPayoutMethods($payout_method_request)
+> \TransferZero\Model\PayoutMethodResponse postPayoutMethods($payout_method_request)
 
 Creating a payout method
 
@@ -280,13 +280,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\PayoutMethodsApi();
-$payout_method_request = new \BitPesa\Model\PayoutMethodRequest(); // \BitPesa\Model\PayoutMethodRequest | 
+$apiInstance = new TransferZero\Api\PayoutMethodsApi();
+$payout_method_request = new \TransferZero\Model\PayoutMethodRequest(); // \TransferZero\Model\PayoutMethodRequest | 
 
 try {
     $result = $apiInstance->postPayoutMethods($payout_method_request);
@@ -308,11 +308,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payout_method_request** | [**\BitPesa\Model\PayoutMethodRequest**](../Model/PayoutMethodRequest.md)|  |
+ **payout_method_request** | [**\TransferZero\Model\PayoutMethodRequest**](../Model/PayoutMethodRequest.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\PayoutMethodResponse**](../Model/PayoutMethodResponse.md)
+[**\TransferZero\Model\PayoutMethodResponse**](../Model/PayoutMethodResponse.md)
 
 ### Authorization
 

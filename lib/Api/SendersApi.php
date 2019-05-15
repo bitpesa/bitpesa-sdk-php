@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Api;
+namespace TransferZero\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use BitPesa\ApiException;
-use BitPesa\Configuration;
-use BitPesa\HeaderSelector;
-use BitPesa\ObjectSerializer;
+use TransferZero\ApiException;
+use TransferZero\Configuration;
+use TransferZero\HeaderSelector;
+use TransferZero\ObjectSerializer;
 
 /**
  * SendersApi Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -127,9 +127,9 @@ class SendersApi
      *
      * @param  string $sender_id ID of the sender to delete.  Example: &#x60;/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\SenderResponse
+     * @return \TransferZero\Model\SenderResponse
      */
     public function deleteSender($sender_id)
     {
@@ -144,13 +144,13 @@ class SendersApi
      *
      * @param  string $sender_id ID of the sender to delete.  Example: &#x60;/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\SenderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\SenderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSenderWithHttpInfo($sender_id)
     {
-        $returnType = '\BitPesa\Model\SenderResponse';
+        $returnType = '\TransferZero\Model\SenderResponse';
         $request = $this->deleteSenderRequest($sender_id);
 
         try {
@@ -214,7 +214,7 @@ class SendersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\SenderResponse',
+                        '\TransferZero\Model\SenderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class SendersApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\SenderResponse',
+                        '\TransferZero\Model\SenderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -264,7 +264,7 @@ class SendersApi
      */
     public function deleteSenderAsyncWithHttpInfo($sender_id)
     {
-        $returnType = '\BitPesa\Model\SenderResponse';
+        $returnType = '\TransferZero\Model\SenderResponse';
         $request = $this->deleteSenderRequest($sender_id);
 
         return $this->client
@@ -424,9 +424,9 @@ class SendersApi
      *
      * @param  string $sender_id ID of the sender to get.  Example: &#x60;/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\SenderResponse
+     * @return \TransferZero\Model\SenderResponse
      */
     public function getSender($sender_id)
     {
@@ -441,13 +441,13 @@ class SendersApi
      *
      * @param  string $sender_id ID of the sender to get.  Example: &#x60;/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\SenderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\SenderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSenderWithHttpInfo($sender_id)
     {
-        $returnType = '\BitPesa\Model\SenderResponse';
+        $returnType = '\TransferZero\Model\SenderResponse';
         $request = $this->getSenderRequest($sender_id);
 
         try {
@@ -511,7 +511,7 @@ class SendersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\SenderResponse',
+                        '\TransferZero\Model\SenderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -553,7 +553,7 @@ class SendersApi
      */
     public function getSenderAsyncWithHttpInfo($sender_id)
     {
-        $returnType = '\BitPesa\Model\SenderResponse';
+        $returnType = '\TransferZero\Model\SenderResponse';
         $request = $this->getSenderRequest($sender_id);
 
         return $this->client
@@ -717,9 +717,9 @@ class SendersApi
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\SenderListResponse
+     * @return \TransferZero\Model\SenderListResponse
      */
     public function getSenders($page = null, $per = null, $created_at_from = null, $created_at_to = null, $external_id = null)
     {
@@ -738,13 +738,13 @@ class SendersApi
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\SenderListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\SenderListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSendersWithHttpInfo($page = null, $per = null, $created_at_from = null, $created_at_to = null, $external_id = null)
     {
-        $returnType = '\BitPesa\Model\SenderListResponse';
+        $returnType = '\TransferZero\Model\SenderListResponse';
         $request = $this->getSendersRequest($page, $per, $created_at_from, $created_at_to, $external_id);
 
         try {
@@ -808,7 +808,7 @@ class SendersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\SenderListResponse',
+                        '\TransferZero\Model\SenderListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -858,7 +858,7 @@ class SendersApi
      */
     public function getSendersAsyncWithHttpInfo($page = null, $per = null, $created_at_from = null, $created_at_to = null, $external_id = null)
     {
-        $returnType = '\BitPesa\Model\SenderListResponse';
+        $returnType = '\TransferZero\Model\SenderListResponse';
         $request = $this->getSendersRequest($page, $per, $created_at_from, $created_at_to, $external_id);
 
         return $this->client
@@ -1027,11 +1027,11 @@ class SendersApi
      * Updating a sender
      *
      * @param  string $sender_id ID of the sender to get.  Example: &#x60;/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
-     * @param  \BitPesa\Model\SenderRequest $sender_request sender_request (required)
+     * @param  \TransferZero\Model\SenderRequest $sender_request sender_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\SenderResponse
+     * @return \TransferZero\Model\SenderResponse
      */
     public function patchSender($sender_id, $sender_request)
     {
@@ -1045,15 +1045,15 @@ class SendersApi
      * Updating a sender
      *
      * @param  string $sender_id ID of the sender to get.  Example: &#x60;/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
-     * @param  \BitPesa\Model\SenderRequest $sender_request (required)
+     * @param  \TransferZero\Model\SenderRequest $sender_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\SenderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\SenderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchSenderWithHttpInfo($sender_id, $sender_request)
     {
-        $returnType = '\BitPesa\Model\SenderResponse';
+        $returnType = '\TransferZero\Model\SenderResponse';
         $request = $this->patchSenderRequest($sender_id, $sender_request);
 
         try {
@@ -1117,7 +1117,7 @@ class SendersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\SenderResponse',
+                        '\TransferZero\Model\SenderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1125,7 +1125,7 @@ class SendersApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\SenderResponse',
+                        '\TransferZero\Model\SenderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1141,7 +1141,7 @@ class SendersApi
      * Updating a sender
      *
      * @param  string $sender_id ID of the sender to get.  Example: &#x60;/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
-     * @param  \BitPesa\Model\SenderRequest $sender_request (required)
+     * @param  \TransferZero\Model\SenderRequest $sender_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1162,14 +1162,14 @@ class SendersApi
      * Updating a sender
      *
      * @param  string $sender_id ID of the sender to get.  Example: &#x60;/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
-     * @param  \BitPesa\Model\SenderRequest $sender_request (required)
+     * @param  \TransferZero\Model\SenderRequest $sender_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function patchSenderAsyncWithHttpInfo($sender_id, $sender_request)
     {
-        $returnType = '\BitPesa\Model\SenderResponse';
+        $returnType = '\TransferZero\Model\SenderResponse';
         $request = $this->patchSenderRequest($sender_id, $sender_request);
 
         return $this->client
@@ -1213,7 +1213,7 @@ class SendersApi
      * Create request for operation 'patchSender'
      *
      * @param  string $sender_id ID of the sender to get.  Example: &#x60;/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
-     * @param  \BitPesa\Model\SenderRequest $sender_request (required)
+     * @param  \TransferZero\Model\SenderRequest $sender_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1337,11 +1337,11 @@ class SendersApi
      *
      * Creating a sender
      *
-     * @param  \BitPesa\Model\SenderRequest $sender_request sender_request (required)
+     * @param  \TransferZero\Model\SenderRequest $sender_request sender_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\SenderResponse
+     * @return \TransferZero\Model\SenderResponse
      */
     public function postSenders($sender_request)
     {
@@ -1354,15 +1354,15 @@ class SendersApi
      *
      * Creating a sender
      *
-     * @param  \BitPesa\Model\SenderRequest $sender_request (required)
+     * @param  \TransferZero\Model\SenderRequest $sender_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\SenderResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\SenderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function postSendersWithHttpInfo($sender_request)
     {
-        $returnType = '\BitPesa\Model\SenderResponse';
+        $returnType = '\TransferZero\Model\SenderResponse';
         $request = $this->postSendersRequest($sender_request);
 
         try {
@@ -1426,7 +1426,7 @@ class SendersApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\SenderResponse',
+                        '\TransferZero\Model\SenderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1434,7 +1434,7 @@ class SendersApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\SenderResponse',
+                        '\TransferZero\Model\SenderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1449,7 +1449,7 @@ class SendersApi
      *
      * Creating a sender
      *
-     * @param  \BitPesa\Model\SenderRequest $sender_request (required)
+     * @param  \TransferZero\Model\SenderRequest $sender_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1469,14 +1469,14 @@ class SendersApi
      *
      * Creating a sender
      *
-     * @param  \BitPesa\Model\SenderRequest $sender_request (required)
+     * @param  \TransferZero\Model\SenderRequest $sender_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postSendersAsyncWithHttpInfo($sender_request)
     {
-        $returnType = '\BitPesa\Model\SenderResponse';
+        $returnType = '\TransferZero\Model\SenderResponse';
         $request = $this->postSendersRequest($sender_request);
 
         return $this->client
@@ -1519,7 +1519,7 @@ class SendersApi
     /**
      * Create request for operation 'postSenders'
      *
-     * @param  \BitPesa\Model\SenderRequest $sender_request (required)
+     * @param  \TransferZero\Model\SenderRequest $sender_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1650,7 +1650,7 @@ class SendersApi
      *
      * @param object response the object we wish to parse
      * @param boolean returnType The type of the PHP object (true for array, false for object)
-     * 
+     *
      * @return object|array The deserialized PHP object
      * @throws ApiException If it fails to deserialize response body
      */
@@ -1662,7 +1662,7 @@ class SendersApi
         try {
             return ObjectSerializer::deserialize(
                 $response,
-                "\\BitPesa\\Model\\{$returnType}"
+                "\\TransferZero\\Model\\{$returnType}"
             );
         } catch (ApiException $e) {
             throw new ApiException(

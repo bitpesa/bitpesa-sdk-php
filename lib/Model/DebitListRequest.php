@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * DebitListRequest Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,7 +57,7 @@ class DebitListRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'debit' => '\BitPesa\Model\Debit[]'
+        'debit' => '\TransferZero\Model\Debit[]'
     ];
 
     /**
@@ -207,7 +207,7 @@ class DebitListRequest implements ModelInterface, ArrayAccess
     /**
      * Gets debit
      *
-     * @return \BitPesa\Model\Debit[]|null
+     * @return \TransferZero\Model\Debit[]|null
      */
     public function getDebit()
     {
@@ -217,7 +217,7 @@ class DebitListRequest implements ModelInterface, ArrayAccess
     /**
      * Sets debit
      *
-     * @param \BitPesa\Model\Debit[]|null $debit debit
+     * @param \TransferZero\Model\Debit[]|null $debit debit
      *
      * @return $this
      */

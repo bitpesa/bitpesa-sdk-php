@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,15 +27,15 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
-use \BitPesa\ObjectSerializer;
+namespace TransferZero\Model;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PayoutMethodIdentityCardTypeEnum Class Doc Comment
  *
  * @category Class
  * @description The type of the identity card used by the sender or recipient:  - &#x60;PP&#x60;: Passport - &#x60;NI&#x60;: National Identity Card - &#x60;O&#x60;: Other type of identity card
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * FieldDescription Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -58,7 +58,7 @@ class FieldDescription implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'type' => 'string',
-        'validations' => '\BitPesa\Model\FieldValidation'
+        'validations' => '\TransferZero\Model\FieldValidation'
     ];
 
     /**
@@ -269,7 +269,7 @@ class FieldDescription implements ModelInterface, ArrayAccess
     /**
      * Gets validations
      *
-     * @return \BitPesa\Model\FieldValidation|null
+     * @return \TransferZero\Model\FieldValidation|null
      */
     public function getValidations()
     {
@@ -279,7 +279,7 @@ class FieldDescription implements ModelInterface, ArrayAccess
     /**
      * Sets validations
      *
-     * @param \BitPesa\Model\FieldValidation|null $validations validations
+     * @param \TransferZero\Model\FieldValidation|null $validations validations
      *
      * @return $this
      */

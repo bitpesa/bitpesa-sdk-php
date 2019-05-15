@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Api;
+namespace TransferZero\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use BitPesa\ApiException;
-use BitPesa\Configuration;
-use BitPesa\HeaderSelector;
-use BitPesa\ObjectSerializer;
+use TransferZero\ApiException;
+use TransferZero\Configuration;
+use TransferZero\HeaderSelector;
+use TransferZero\ObjectSerializer;
 
 /**
  * PaymentMethodsApi Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -126,9 +126,9 @@ class PaymentMethodsApi
      * This method returns possible payin methods.
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\PaymentMethodListResponse
+     * @return \TransferZero\Model\PaymentMethodListResponse
      */
     public function paymentMethodsIn()
     {
@@ -142,13 +142,13 @@ class PaymentMethodsApi
      * This method returns possible payin methods.
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\PaymentMethodListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\PaymentMethodListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function paymentMethodsInWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\PaymentMethodListResponse';
+        $returnType = '\TransferZero\Model\PaymentMethodListResponse';
         $request = $this->paymentMethodsInRequest();
 
         try {
@@ -212,7 +212,7 @@ class PaymentMethodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\PaymentMethodListResponse',
+                        '\TransferZero\Model\PaymentMethodListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -252,7 +252,7 @@ class PaymentMethodsApi
      */
     public function paymentMethodsInAsyncWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\PaymentMethodListResponse';
+        $returnType = '\TransferZero\Model\PaymentMethodListResponse';
         $request = $this->paymentMethodsInRequest();
 
         return $this->client
@@ -396,9 +396,9 @@ class PaymentMethodsApi
      * This method returns possible payout methods.
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\PaymentMethodListResponse
+     * @return \TransferZero\Model\PaymentMethodListResponse
      */
     public function paymentMethodsOut()
     {
@@ -412,13 +412,13 @@ class PaymentMethodsApi
      * This method returns possible payout methods.
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\PaymentMethodListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\PaymentMethodListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function paymentMethodsOutWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\PaymentMethodListResponse';
+        $returnType = '\TransferZero\Model\PaymentMethodListResponse';
         $request = $this->paymentMethodsOutRequest();
 
         try {
@@ -482,7 +482,7 @@ class PaymentMethodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\PaymentMethodListResponse',
+                        '\TransferZero\Model\PaymentMethodListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -522,7 +522,7 @@ class PaymentMethodsApi
      */
     public function paymentMethodsOutAsyncWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\PaymentMethodListResponse';
+        $returnType = '\TransferZero\Model\PaymentMethodListResponse';
         $request = $this->paymentMethodsOutRequest();
 
         return $this->client
@@ -686,7 +686,7 @@ class PaymentMethodsApi
      *
      * @param object response the object we wish to parse
      * @param boolean returnType The type of the PHP object (true for array, false for object)
-     * 
+     *
      * @return object|array The deserialized PHP object
      * @throws ApiException If it fails to deserialize response body
      */
@@ -698,7 +698,7 @@ class PaymentMethodsApi
         try {
             return ObjectSerializer::deserialize(
                 $response,
-                "\\BitPesa\\Model\\{$returnType}"
+                "\\TransferZero\\Model\\{$returnType}"
             );
         } catch (ApiException $e) {
             throw new ApiException(

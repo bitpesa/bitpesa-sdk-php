@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * TransactionResponseExisting Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,8 +57,8 @@ class TransactionResponseExisting implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sender' => '\BitPesa\Model\Sender',
-        'transaction' => '\BitPesa\Model\Transaction'
+        'sender' => '\TransferZero\Model\Sender',
+        'transaction' => '\TransferZero\Model\Transaction'
     ];
 
     /**
@@ -213,7 +213,7 @@ class TransactionResponseExisting implements ModelInterface, ArrayAccess
     /**
      * Gets sender
      *
-     * @return \BitPesa\Model\Sender|null
+     * @return \TransferZero\Model\Sender|null
      */
     public function getSender()
     {
@@ -223,7 +223,7 @@ class TransactionResponseExisting implements ModelInterface, ArrayAccess
     /**
      * Sets sender
      *
-     * @param \BitPesa\Model\Sender|null $sender sender
+     * @param \TransferZero\Model\Sender|null $sender sender
      *
      * @return $this
      */
@@ -237,7 +237,7 @@ class TransactionResponseExisting implements ModelInterface, ArrayAccess
     /**
      * Gets transaction
      *
-     * @return \BitPesa\Model\Transaction|null
+     * @return \TransferZero\Model\Transaction|null
      */
     public function getTransaction()
     {
@@ -247,7 +247,7 @@ class TransactionResponseExisting implements ModelInterface, ArrayAccess
     /**
      * Sets transaction
      *
-     * @param \BitPesa\Model\Transaction|null $transaction transaction
+     * @param \TransferZero\Model\Transaction|null $transaction transaction
      *
      * @return $this
      */

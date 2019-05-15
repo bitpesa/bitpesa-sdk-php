@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Api;
+namespace TransferZero\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use BitPesa\ApiException;
-use BitPesa\Configuration;
-use BitPesa\HeaderSelector;
-use BitPesa\ObjectSerializer;
+use TransferZero\ApiException;
+use TransferZero\Configuration;
+use TransferZero\HeaderSelector;
+use TransferZero\ObjectSerializer;
 
 /**
  * PayoutMethodsApi Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -127,9 +127,9 @@ class PayoutMethodsApi
      *
      * @param  string $payout_method_id ID of the payout method to delete.  Example: &#x60;/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\PayoutMethodResponse
+     * @return \TransferZero\Model\PayoutMethodResponse
      */
     public function deletePayoutMethod($payout_method_id)
     {
@@ -144,13 +144,13 @@ class PayoutMethodsApi
      *
      * @param  string $payout_method_id ID of the payout method to delete.  Example: &#x60;/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\PayoutMethodResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\PayoutMethodResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deletePayoutMethodWithHttpInfo($payout_method_id)
     {
-        $returnType = '\BitPesa\Model\PayoutMethodResponse';
+        $returnType = '\TransferZero\Model\PayoutMethodResponse';
         $request = $this->deletePayoutMethodRequest($payout_method_id);
 
         try {
@@ -214,7 +214,7 @@ class PayoutMethodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\PayoutMethodResponse',
+                        '\TransferZero\Model\PayoutMethodResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class PayoutMethodsApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\PayoutMethodResponse',
+                        '\TransferZero\Model\PayoutMethodResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -264,7 +264,7 @@ class PayoutMethodsApi
      */
     public function deletePayoutMethodAsyncWithHttpInfo($payout_method_id)
     {
-        $returnType = '\BitPesa\Model\PayoutMethodResponse';
+        $returnType = '\TransferZero\Model\PayoutMethodResponse';
         $request = $this->deletePayoutMethodRequest($payout_method_id);
 
         return $this->client
@@ -424,9 +424,9 @@ class PayoutMethodsApi
      *
      * @param  string $payout_method_id ID of the payout method to get.  Example: &#x60;/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\PayoutMethodResponse
+     * @return \TransferZero\Model\PayoutMethodResponse
      */
     public function getPayoutMethod($payout_method_id)
     {
@@ -441,13 +441,13 @@ class PayoutMethodsApi
      *
      * @param  string $payout_method_id ID of the payout method to get.  Example: &#x60;/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\PayoutMethodResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\PayoutMethodResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPayoutMethodWithHttpInfo($payout_method_id)
     {
-        $returnType = '\BitPesa\Model\PayoutMethodResponse';
+        $returnType = '\TransferZero\Model\PayoutMethodResponse';
         $request = $this->getPayoutMethodRequest($payout_method_id);
 
         try {
@@ -511,7 +511,7 @@ class PayoutMethodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\PayoutMethodResponse',
+                        '\TransferZero\Model\PayoutMethodResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -553,7 +553,7 @@ class PayoutMethodsApi
      */
     public function getPayoutMethodAsyncWithHttpInfo($payout_method_id)
     {
-        $returnType = '\BitPesa\Model\PayoutMethodResponse';
+        $returnType = '\TransferZero\Model\PayoutMethodResponse';
         $request = $this->getPayoutMethodRequest($payout_method_id);
 
         return $this->client
@@ -719,9 +719,9 @@ class PayoutMethodsApi
      * @param  string $created_at_from Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\PayoutMethodListResponse
+     * @return \TransferZero\Model\PayoutMethodListResponse
      */
     public function getPayoutMethods($state = null, $type = null, $sender_id = null, $page = null, $per = null, $created_at_from = null, $created_at_to = null)
     {
@@ -742,13 +742,13 @@ class PayoutMethodsApi
      * @param  string $created_at_from Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\PayoutMethodListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\PayoutMethodListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPayoutMethodsWithHttpInfo($state = null, $type = null, $sender_id = null, $page = null, $per = null, $created_at_from = null, $created_at_to = null)
     {
-        $returnType = '\BitPesa\Model\PayoutMethodListResponse';
+        $returnType = '\TransferZero\Model\PayoutMethodListResponse';
         $request = $this->getPayoutMethodsRequest($state, $type, $sender_id, $page, $per, $created_at_from, $created_at_to);
 
         try {
@@ -812,7 +812,7 @@ class PayoutMethodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\PayoutMethodListResponse',
+                        '\TransferZero\Model\PayoutMethodListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -866,7 +866,7 @@ class PayoutMethodsApi
      */
     public function getPayoutMethodsAsyncWithHttpInfo($state = null, $type = null, $sender_id = null, $page = null, $per = null, $created_at_from = null, $created_at_to = null)
     {
-        $returnType = '\BitPesa\Model\PayoutMethodListResponse';
+        $returnType = '\TransferZero\Model\PayoutMethodListResponse';
         $request = $this->getPayoutMethodsRequest($state, $type, $sender_id, $page, $per, $created_at_from, $created_at_to);
 
         return $this->client
@@ -1051,11 +1051,11 @@ class PayoutMethodsApi
      * Updating a payout method
      *
      * @param  string $payout_method_id ID of the payout method to get.  Example: &#x60;/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
-     * @param  \BitPesa\Model\PayoutMethod $payout_method payout_method (required)
+     * @param  \TransferZero\Model\PayoutMethod $payout_method payout_method (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\PayoutMethodResponse
+     * @return \TransferZero\Model\PayoutMethodResponse
      */
     public function patchPayoutMethod($payout_method_id, $payout_method)
     {
@@ -1069,15 +1069,15 @@ class PayoutMethodsApi
      * Updating a payout method
      *
      * @param  string $payout_method_id ID of the payout method to get.  Example: &#x60;/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
-     * @param  \BitPesa\Model\PayoutMethod $payout_method (required)
+     * @param  \TransferZero\Model\PayoutMethod $payout_method (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\PayoutMethodResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\PayoutMethodResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchPayoutMethodWithHttpInfo($payout_method_id, $payout_method)
     {
-        $returnType = '\BitPesa\Model\PayoutMethodResponse';
+        $returnType = '\TransferZero\Model\PayoutMethodResponse';
         $request = $this->patchPayoutMethodRequest($payout_method_id, $payout_method);
 
         try {
@@ -1141,7 +1141,7 @@ class PayoutMethodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\PayoutMethodResponse',
+                        '\TransferZero\Model\PayoutMethodResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1149,7 +1149,7 @@ class PayoutMethodsApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\PayoutMethodResponse',
+                        '\TransferZero\Model\PayoutMethodResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1165,7 +1165,7 @@ class PayoutMethodsApi
      * Updating a payout method
      *
      * @param  string $payout_method_id ID of the payout method to get.  Example: &#x60;/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
-     * @param  \BitPesa\Model\PayoutMethod $payout_method (required)
+     * @param  \TransferZero\Model\PayoutMethod $payout_method (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1186,14 +1186,14 @@ class PayoutMethodsApi
      * Updating a payout method
      *
      * @param  string $payout_method_id ID of the payout method to get.  Example: &#x60;/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
-     * @param  \BitPesa\Model\PayoutMethod $payout_method (required)
+     * @param  \TransferZero\Model\PayoutMethod $payout_method (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function patchPayoutMethodAsyncWithHttpInfo($payout_method_id, $payout_method)
     {
-        $returnType = '\BitPesa\Model\PayoutMethodResponse';
+        $returnType = '\TransferZero\Model\PayoutMethodResponse';
         $request = $this->patchPayoutMethodRequest($payout_method_id, $payout_method);
 
         return $this->client
@@ -1237,7 +1237,7 @@ class PayoutMethodsApi
      * Create request for operation 'patchPayoutMethod'
      *
      * @param  string $payout_method_id ID of the payout method to get.  Example: &#x60;/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
-     * @param  \BitPesa\Model\PayoutMethod $payout_method (required)
+     * @param  \TransferZero\Model\PayoutMethod $payout_method (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1361,11 +1361,11 @@ class PayoutMethodsApi
      *
      * Creating a payout method
      *
-     * @param  \BitPesa\Model\PayoutMethodRequest $payout_method_request payout_method_request (required)
+     * @param  \TransferZero\Model\PayoutMethodRequest $payout_method_request payout_method_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\PayoutMethodResponse
+     * @return \TransferZero\Model\PayoutMethodResponse
      */
     public function postPayoutMethods($payout_method_request)
     {
@@ -1378,15 +1378,15 @@ class PayoutMethodsApi
      *
      * Creating a payout method
      *
-     * @param  \BitPesa\Model\PayoutMethodRequest $payout_method_request (required)
+     * @param  \TransferZero\Model\PayoutMethodRequest $payout_method_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\PayoutMethodResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\PayoutMethodResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function postPayoutMethodsWithHttpInfo($payout_method_request)
     {
-        $returnType = '\BitPesa\Model\PayoutMethodResponse';
+        $returnType = '\TransferZero\Model\PayoutMethodResponse';
         $request = $this->postPayoutMethodsRequest($payout_method_request);
 
         try {
@@ -1450,7 +1450,7 @@ class PayoutMethodsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\PayoutMethodResponse',
+                        '\TransferZero\Model\PayoutMethodResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1458,7 +1458,7 @@ class PayoutMethodsApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\PayoutMethodResponse',
+                        '\TransferZero\Model\PayoutMethodResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1473,7 +1473,7 @@ class PayoutMethodsApi
      *
      * Creating a payout method
      *
-     * @param  \BitPesa\Model\PayoutMethodRequest $payout_method_request (required)
+     * @param  \TransferZero\Model\PayoutMethodRequest $payout_method_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1493,14 +1493,14 @@ class PayoutMethodsApi
      *
      * Creating a payout method
      *
-     * @param  \BitPesa\Model\PayoutMethodRequest $payout_method_request (required)
+     * @param  \TransferZero\Model\PayoutMethodRequest $payout_method_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postPayoutMethodsAsyncWithHttpInfo($payout_method_request)
     {
-        $returnType = '\BitPesa\Model\PayoutMethodResponse';
+        $returnType = '\TransferZero\Model\PayoutMethodResponse';
         $request = $this->postPayoutMethodsRequest($payout_method_request);
 
         return $this->client
@@ -1543,7 +1543,7 @@ class PayoutMethodsApi
     /**
      * Create request for operation 'postPayoutMethods'
      *
-     * @param  \BitPesa\Model\PayoutMethodRequest $payout_method_request (required)
+     * @param  \TransferZero\Model\PayoutMethodRequest $payout_method_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1674,7 +1674,7 @@ class PayoutMethodsApi
      *
      * @param object response the object we wish to parse
      * @param boolean returnType The type of the PHP object (true for array, false for object)
-     * 
+     *
      * @return object|array The deserialized PHP object
      * @throws ApiException If it fails to deserialize response body
      */
@@ -1686,7 +1686,7 @@ class PayoutMethodsApi
         try {
             return ObjectSerializer::deserialize(
                 $response,
-                "\\BitPesa\\Model\\{$returnType}"
+                "\\TransferZero\\Model\\{$returnType}"
             );
         } catch (ApiException $e) {
             throw new ApiException(

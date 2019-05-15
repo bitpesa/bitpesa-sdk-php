@@ -2,12 +2,12 @@
 
 require_once(dirname(__FILE__) . '/vendor/autoload.php');
 
-use BitPesa\Configuration;
-use BitPesa\ApiException;
-use BitPesa\Api\{ CurrencyInfoApi, AccountValidationApi, TransactionsApi, AccountDebitsApi, WebhooksApi, SendersApi };
-use BitPesa\Model\{ AccountValidationRequest, Transaction, TransactionRequest, TransactionResponse, Recipient, Sender };
-use BitPesa\Model\{ PayoutMethod, PayoutMethodDetails, PayoutMethodBankAccountTypeEnum, Debit, DebitRequestWrapper };
-use BitPesa\Model\{ SenderRequest };
+use TransferZero\Configuration;
+use TransferZero\ApiException;
+use TransferZero\Api\{ CurrencyInfoApi, AccountValidationApi, TransactionsApi, AccountDebitsApi, WebhooksApi, SendersApi };
+use TransferZero\Model\{ AccountValidationRequest, Transaction, TransactionRequest, TransactionResponse, Recipient, Sender };
+use TransferZero\Model\{ PayoutMethod, PayoutMethodDetails, PayoutMethodBankAccountTypeEnum, Debit, DebitRequestWrapper };
+use TransferZero\Model\{ SenderRequest };
 
 class Application {
 
@@ -339,7 +339,7 @@ class Application {
                 "city": "London",
                 "phone_country": "GB",
                 "phone_number": "07123456789",
-                "email": "me@bitpesa.co",
+                "email": "me@transferzero.com",
                 "ip": "127.0.0.1",
                 "address_description": null,
                 "first_name": "Test",
@@ -349,12 +349,6 @@ class Application {
                 "occupation": "Tester",
                 "nationality": null,
                 "metadata": {
-                  "bitpesa": {
-                    "referer": {}
-                  }
-                },
-                "providers": {
-                  "NGN::Bank": "bitpesa_auto"
                 },
                 "onboarding_status": "completed_first_transaction"
               },
@@ -400,7 +394,6 @@ class Application {
                       "bank_account_type": "20"
                     },
                     "metadata": {},
-                    "provider": "bitpesa_auto",
                     "fields": {
                       "email": {
                         "type": "input",

@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * WebhookDefinition Class Doc Comment
  *
  * @category Class
  * @description Object that holds where to send webhooks, and what events should it be triggered with
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -62,7 +62,7 @@ class WebhookDefinition implements ModelInterface, ArrayAccess
         'events' => 'string[]',
         'metadata' => 'object',
         'id' => 'string',
-        'errors' => 'map[string,\BitPesa\Model\ValidationErrorDescription[]]'
+        'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
     ];
 
     /**
@@ -334,7 +334,7 @@ class WebhookDefinition implements ModelInterface, ArrayAccess
     /**
      * Gets errors
      *
-     * @return map[string,\BitPesa\Model\ValidationErrorDescription[]]|null
+     * @return map[string,\TransferZero\Model\ValidationErrorDescription[]]|null
      */
     public function getErrors()
     {
@@ -344,7 +344,7 @@ class WebhookDefinition implements ModelInterface, ArrayAccess
     /**
      * Sets errors
      *
-     * @param map[string,\BitPesa\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
+     * @param map[string,\TransferZero\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
      *
      * @return $this
      */

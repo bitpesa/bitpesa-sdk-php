@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PayoutMethod Class Doc Comment
  *
  * @category Class
  * @description This describes the specific details on how the payment has to be routed to the recipient.
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -59,11 +59,11 @@ class PayoutMethod implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'type' => 'string',
-        'details' => '\BitPesa\Model\PayoutMethodDetails',
+        'details' => '\TransferZero\Model\PayoutMethodDetails',
         'metadata' => 'object',
         'id' => 'string',
-        'errors' => 'map[string,\BitPesa\Model\ValidationErrorDescription[]]',
-        'fields' => 'map[string,\BitPesa\Model\FieldDescription]'
+        'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]',
+        'fields' => 'map[string,\TransferZero\Model\FieldDescription]'
     ];
 
     /**
@@ -248,7 +248,7 @@ class PayoutMethod implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string|null $type Contains the currency to send the money to, and the type of the money movement  Commonly used payout types are:  - `NGN::Bank` - for Nigerian bank account payments. - `NGN::Mobile` - for Nigerian mobile money payments. - `GHS::Bank` - for Ghanaian bank account payments. - `GHS::Mobile` - for Ghanaian mobile money payments. - `UGX::Mobile` - for Ugandan mobile money payments. - `TZS::Mobile` - for Tanzanian mobile money payments. - `XOF::Mobile` - for Senegalese mobile money payments. - `MAD::Cash` - for Moroccan cash remittance payments. - `EUR::Bank` - for IBAN bank transfers in EUR. - `GBP::Bank` - for IBAN bank transfers in GBP.  You can also send funds to the internal balance using `CCY::Balance`, where `CCY` is the appropriate currency. See [Collection from senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) for more info on how to collect money into internal balance
+     * @param string|null $type Contains the currency to send the money to, and the type of the money movement  Commonly used payout types are:  - `NGN::Bank` - for Nigerian bank account payments. - `NGN::Mobile` - for Nigerian mobile money payments. - `GHS::Bank` - for Ghanaian bank account payments. - `GHS::Mobile` - for Ghanaian mobile money payments. - `UGX::Mobile` - for Ugandan mobile money payments. - `TZS::Mobile` - for Tanzanian mobile money payments. - `XOF::Mobile` - for Senegalese mobile money payments. - `MAD::Cash` - for Moroccan cash remittance payments. - `EUR::Bank` - for IBAN bank transfers in EUR. - `GBP::Bank` - for IBAN bank transfers in GBP.  You can also send funds to the internal balance using `CCY::Balance`, where `CCY` is the appropriate currency. See [Collection from senders](https://github.com/transferzero/api-documentation/blob/master/additional-features.md#collections-from-senders) for more info on how to collect money into internal balance
      *
      * @return $this
      */
@@ -262,7 +262,7 @@ class PayoutMethod implements ModelInterface, ArrayAccess
     /**
      * Gets details
      *
-     * @return \BitPesa\Model\PayoutMethodDetails|null
+     * @return \TransferZero\Model\PayoutMethodDetails|null
      */
     public function getDetails()
     {
@@ -272,7 +272,7 @@ class PayoutMethod implements ModelInterface, ArrayAccess
     /**
      * Sets details
      *
-     * @param \BitPesa\Model\PayoutMethodDetails|null $details details
+     * @param \TransferZero\Model\PayoutMethodDetails|null $details details
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class PayoutMethod implements ModelInterface, ArrayAccess
     /**
      * Gets errors
      *
-     * @return map[string,\BitPesa\Model\ValidationErrorDescription[]]|null
+     * @return map[string,\TransferZero\Model\ValidationErrorDescription[]]|null
      */
     public function getErrors()
     {
@@ -344,7 +344,7 @@ class PayoutMethod implements ModelInterface, ArrayAccess
     /**
      * Sets errors
      *
-     * @param map[string,\BitPesa\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
+     * @param map[string,\TransferZero\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
      *
      * @return $this
      */
@@ -358,7 +358,7 @@ class PayoutMethod implements ModelInterface, ArrayAccess
     /**
      * Gets fields
      *
-     * @return map[string,\BitPesa\Model\FieldDescription]|null
+     * @return map[string,\TransferZero\Model\FieldDescription]|null
      */
     public function getFields()
     {
@@ -368,7 +368,7 @@ class PayoutMethod implements ModelInterface, ArrayAccess
     /**
      * Sets fields
      *
-     * @param map[string,\BitPesa\Model\FieldDescription]|null $fields The fields needed for payments with this payment method with details on validation requirements
+     * @param map[string,\TransferZero\Model\FieldDescription]|null $fields The fields needed for payments with this payment method with details on validation requirements
      *
      * @return $this
      */

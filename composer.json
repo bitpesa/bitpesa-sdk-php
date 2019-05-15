@@ -1,14 +1,14 @@
 {
-    "name": "bitpesa/bitpesa-php-sdk",
-    "version": "0.3.0",
-    "description": "BitPesa Client Library for PHP",
-    "homepage": "http://api.bitpesa.co/documentation",
+    "name": "transferzero/transferzero-php-sdk",
+    "version": "1.0.0",
+    "description": "TransferZero Client Library for PHP",
+    "homepage": "http://api.transferzero.com/documentation",
     "license": "MIT",
     "authors": [
         {
-            "name": "BTC Africa S.A",
-            "homepage": "https://www.bitpesa.co",
-            "email": "engineers@bitpesa.co"
+            "name": "TransferZero",
+            "homepage": "https://www.transferzero.com",
+            "email": "engineers@transferzero.com"
         }
     ],
     "require": {
@@ -24,9 +24,9 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "BitPesa\\" : "lib/" }
+        "psr-4": { "TransferZero\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "BitPesa\\" : "test/" }
+        "psr-4": { "TransferZero\\" : "test/" }
     }
 }

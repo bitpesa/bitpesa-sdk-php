@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Api;
+namespace TransferZero\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use BitPesa\ApiException;
-use BitPesa\Configuration;
-use BitPesa\HeaderSelector;
-use BitPesa\ObjectSerializer;
+use TransferZero\ApiException;
+use TransferZero\Configuration;
+use TransferZero\HeaderSelector;
+use TransferZero\ObjectSerializer;
 
 /**
  * RecipientsApi Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -127,9 +127,9 @@ class RecipientsApi
      *
      * @param  string $recipient_id ID of recipient to cancel.  Example: &#x60;/v1/recipients/9d4d7b73-a94c-4979-ab57-09074fd55d33&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\RecipientResponse
+     * @return \TransferZero\Model\RecipientResponse
      */
     public function deleteRecipient($recipient_id)
     {
@@ -144,13 +144,13 @@ class RecipientsApi
      *
      * @param  string $recipient_id ID of recipient to cancel.  Example: &#x60;/v1/recipients/9d4d7b73-a94c-4979-ab57-09074fd55d33&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\RecipientResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\RecipientResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteRecipientWithHttpInfo($recipient_id)
     {
-        $returnType = '\BitPesa\Model\RecipientResponse';
+        $returnType = '\TransferZero\Model\RecipientResponse';
         $request = $this->deleteRecipientRequest($recipient_id);
 
         try {
@@ -214,7 +214,7 @@ class RecipientsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\RecipientResponse',
+                        '\TransferZero\Model\RecipientResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class RecipientsApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\RecipientResponse',
+                        '\TransferZero\Model\RecipientResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -264,7 +264,7 @@ class RecipientsApi
      */
     public function deleteRecipientAsyncWithHttpInfo($recipient_id)
     {
-        $returnType = '\BitPesa\Model\RecipientResponse';
+        $returnType = '\TransferZero\Model\RecipientResponse';
         $request = $this->deleteRecipientRequest($recipient_id);
 
         return $this->client
@@ -428,12 +428,12 @@ class RecipientsApi
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $amount_from Minimum amount to filter recipients by amount range.  Allows filtering results by the specified &#x60;amount&#x60; range. When using this filter, the &#x60;currency&#x60; should also be specified.  Example: &#x60;/v1/recipients?currency&#x3D;NGN&amp;amount_from&#x3D;83.76672339&amp;amount_to&#x3D;83.76672339&#x60; (optional)
      * @param  string $amount_to Max amount to filter recipients by amount range.  Allows filtering results by the specified &#x60;amount&#x60; range. When using this filter, the &#x60;currency&#x60; should also be specified.  Example: &#x60;/v1/recipients?currency&#x3D;NGN&amp;amount_from&#x3D;83.76672339&amp;amount_to&#x3D;83.76672339&#x60; (optional)
-     * @param  string[] $state Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)
+     * @param  string[] $state Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)
      * @param  string[] $currency Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\RecipientListResponse
+     * @return \TransferZero\Model\RecipientListResponse
      */
     public function getRecipients($page = null, $per = null, $created_at_from = null, $created_at_to = null, $amount_from = null, $amount_to = null, $state = null, $currency = null)
     {
@@ -452,16 +452,16 @@ class RecipientsApi
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $amount_from Minimum amount to filter recipients by amount range.  Allows filtering results by the specified &#x60;amount&#x60; range. When using this filter, the &#x60;currency&#x60; should also be specified.  Example: &#x60;/v1/recipients?currency&#x3D;NGN&amp;amount_from&#x3D;83.76672339&amp;amount_to&#x3D;83.76672339&#x60; (optional)
      * @param  string $amount_to Max amount to filter recipients by amount range.  Allows filtering results by the specified &#x60;amount&#x60; range. When using this filter, the &#x60;currency&#x60; should also be specified.  Example: &#x60;/v1/recipients?currency&#x3D;NGN&amp;amount_from&#x3D;83.76672339&amp;amount_to&#x3D;83.76672339&#x60; (optional)
-     * @param  string[] $state Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)
+     * @param  string[] $state Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)
      * @param  string[] $currency Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\RecipientListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\RecipientListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRecipientsWithHttpInfo($page = null, $per = null, $created_at_from = null, $created_at_to = null, $amount_from = null, $amount_to = null, $state = null, $currency = null)
     {
-        $returnType = '\BitPesa\Model\RecipientListResponse';
+        $returnType = '\TransferZero\Model\RecipientListResponse';
         $request = $this->getRecipientsRequest($page, $per, $created_at_from, $created_at_to, $amount_from, $amount_to, $state, $currency);
 
         try {
@@ -525,7 +525,7 @@ class RecipientsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\RecipientListResponse',
+                        '\TransferZero\Model\RecipientListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -546,7 +546,7 @@ class RecipientsApi
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $amount_from Minimum amount to filter recipients by amount range.  Allows filtering results by the specified &#x60;amount&#x60; range. When using this filter, the &#x60;currency&#x60; should also be specified.  Example: &#x60;/v1/recipients?currency&#x3D;NGN&amp;amount_from&#x3D;83.76672339&amp;amount_to&#x3D;83.76672339&#x60; (optional)
      * @param  string $amount_to Max amount to filter recipients by amount range.  Allows filtering results by the specified &#x60;amount&#x60; range. When using this filter, the &#x60;currency&#x60; should also be specified.  Example: &#x60;/v1/recipients?currency&#x3D;NGN&amp;amount_from&#x3D;83.76672339&amp;amount_to&#x3D;83.76672339&#x60; (optional)
-     * @param  string[] $state Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)
+     * @param  string[] $state Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)
      * @param  string[] $currency Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)
      *
      * @throws \InvalidArgumentException
@@ -573,7 +573,7 @@ class RecipientsApi
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $amount_from Minimum amount to filter recipients by amount range.  Allows filtering results by the specified &#x60;amount&#x60; range. When using this filter, the &#x60;currency&#x60; should also be specified.  Example: &#x60;/v1/recipients?currency&#x3D;NGN&amp;amount_from&#x3D;83.76672339&amp;amount_to&#x3D;83.76672339&#x60; (optional)
      * @param  string $amount_to Max amount to filter recipients by amount range.  Allows filtering results by the specified &#x60;amount&#x60; range. When using this filter, the &#x60;currency&#x60; should also be specified.  Example: &#x60;/v1/recipients?currency&#x3D;NGN&amp;amount_from&#x3D;83.76672339&amp;amount_to&#x3D;83.76672339&#x60; (optional)
-     * @param  string[] $state Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)
+     * @param  string[] $state Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)
      * @param  string[] $currency Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)
      *
      * @throws \InvalidArgumentException
@@ -581,7 +581,7 @@ class RecipientsApi
      */
     public function getRecipientsAsyncWithHttpInfo($page = null, $per = null, $created_at_from = null, $created_at_to = null, $amount_from = null, $amount_to = null, $state = null, $currency = null)
     {
-        $returnType = '\BitPesa\Model\RecipientListResponse';
+        $returnType = '\TransferZero\Model\RecipientListResponse';
         $request = $this->getRecipientsRequest($page, $per, $created_at_from, $created_at_to, $amount_from, $amount_to, $state, $currency);
 
         return $this->client
@@ -630,7 +630,7 @@ class RecipientsApi
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $amount_from Minimum amount to filter recipients by amount range.  Allows filtering results by the specified &#x60;amount&#x60; range. When using this filter, the &#x60;currency&#x60; should also be specified.  Example: &#x60;/v1/recipients?currency&#x3D;NGN&amp;amount_from&#x3D;83.76672339&amp;amount_to&#x3D;83.76672339&#x60; (optional)
      * @param  string $amount_to Max amount to filter recipients by amount range.  Allows filtering results by the specified &#x60;amount&#x60; range. When using this filter, the &#x60;currency&#x60; should also be specified.  Example: &#x60;/v1/recipients?currency&#x3D;NGN&amp;amount_from&#x3D;83.76672339&amp;amount_to&#x3D;83.76672339&#x60; (optional)
-     * @param  string[] $state Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)
+     * @param  string[] $state Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)
      * @param  string[] $currency Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)
      *
      * @throws \InvalidArgumentException
@@ -771,11 +771,11 @@ class RecipientsApi
      * Updating a recipient
      *
      * @param  string $recipient_id ID of recipient to update.  Example: &#x60;/v1/recipients/9d4d7b73-a94c-4979-ab57-09074fd55d33&#x60; (required)
-     * @param  \BitPesa\Model\RecipientRequest $recipient_request recipient_request (required)
+     * @param  \TransferZero\Model\RecipientRequest $recipient_request recipient_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\RecipientResponse
+     * @return \TransferZero\Model\RecipientResponse
      */
     public function patchRecipient($recipient_id, $recipient_request)
     {
@@ -789,15 +789,15 @@ class RecipientsApi
      * Updating a recipient
      *
      * @param  string $recipient_id ID of recipient to update.  Example: &#x60;/v1/recipients/9d4d7b73-a94c-4979-ab57-09074fd55d33&#x60; (required)
-     * @param  \BitPesa\Model\RecipientRequest $recipient_request (required)
+     * @param  \TransferZero\Model\RecipientRequest $recipient_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\RecipientResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\RecipientResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function patchRecipientWithHttpInfo($recipient_id, $recipient_request)
     {
-        $returnType = '\BitPesa\Model\RecipientResponse';
+        $returnType = '\TransferZero\Model\RecipientResponse';
         $request = $this->patchRecipientRequest($recipient_id, $recipient_request);
 
         try {
@@ -861,7 +861,7 @@ class RecipientsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\RecipientResponse',
+                        '\TransferZero\Model\RecipientResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -869,7 +869,7 @@ class RecipientsApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\RecipientResponse',
+                        '\TransferZero\Model\RecipientResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -885,7 +885,7 @@ class RecipientsApi
      * Updating a recipient
      *
      * @param  string $recipient_id ID of recipient to update.  Example: &#x60;/v1/recipients/9d4d7b73-a94c-4979-ab57-09074fd55d33&#x60; (required)
-     * @param  \BitPesa\Model\RecipientRequest $recipient_request (required)
+     * @param  \TransferZero\Model\RecipientRequest $recipient_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -906,14 +906,14 @@ class RecipientsApi
      * Updating a recipient
      *
      * @param  string $recipient_id ID of recipient to update.  Example: &#x60;/v1/recipients/9d4d7b73-a94c-4979-ab57-09074fd55d33&#x60; (required)
-     * @param  \BitPesa\Model\RecipientRequest $recipient_request (required)
+     * @param  \TransferZero\Model\RecipientRequest $recipient_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function patchRecipientAsyncWithHttpInfo($recipient_id, $recipient_request)
     {
-        $returnType = '\BitPesa\Model\RecipientResponse';
+        $returnType = '\TransferZero\Model\RecipientResponse';
         $request = $this->patchRecipientRequest($recipient_id, $recipient_request);
 
         return $this->client
@@ -957,7 +957,7 @@ class RecipientsApi
      * Create request for operation 'patchRecipient'
      *
      * @param  string $recipient_id ID of recipient to update.  Example: &#x60;/v1/recipients/9d4d7b73-a94c-4979-ab57-09074fd55d33&#x60; (required)
-     * @param  \BitPesa\Model\RecipientRequest $recipient_request (required)
+     * @param  \TransferZero\Model\RecipientRequest $recipient_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1102,7 +1102,7 @@ class RecipientsApi
      *
      * @param object response the object we wish to parse
      * @param boolean returnType The type of the PHP object (true for array, false for object)
-     * 
+     *
      * @return object|array The deserialized PHP object
      * @throws ApiException If it fails to deserialize response body
      */
@@ -1114,7 +1114,7 @@ class RecipientsApi
         try {
             return ObjectSerializer::deserialize(
                 $response,
-                "\\BitPesa\\Model\\{$returnType}"
+                "\\TransferZero\\Model\\{$returnType}"
             );
         } catch (ApiException $e) {
             throw new ApiException(

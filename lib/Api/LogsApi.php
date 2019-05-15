@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Api;
+namespace TransferZero\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use BitPesa\ApiException;
-use BitPesa\Configuration;
-use BitPesa\HeaderSelector;
-use BitPesa\ObjectSerializer;
+use TransferZero\ApiException;
+use TransferZero\Configuration;
+use TransferZero\HeaderSelector;
+use TransferZero\ObjectSerializer;
 
 /**
  * LogsApi Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -127,9 +127,9 @@ class LogsApi
      *
      * @param  string $webhook_log_id ID of the webhook log to retrieve  Example: &#x60;/v1/logs/9d1ad631-f34a-4cff-9a7e-2c83e3a556df&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\WebhookLogResponse
+     * @return \TransferZero\Model\WebhookLogResponse
      */
     public function getWebhookLog($webhook_log_id)
     {
@@ -144,13 +144,13 @@ class LogsApi
      *
      * @param  string $webhook_log_id ID of the webhook log to retrieve  Example: &#x60;/v1/logs/9d1ad631-f34a-4cff-9a7e-2c83e3a556df&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\WebhookLogResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\WebhookLogResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookLogWithHttpInfo($webhook_log_id)
     {
-        $returnType = '\BitPesa\Model\WebhookLogResponse';
+        $returnType = '\TransferZero\Model\WebhookLogResponse';
         $request = $this->getWebhookLogRequest($webhook_log_id);
 
         try {
@@ -214,7 +214,7 @@ class LogsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\WebhookLogResponse',
+                        '\TransferZero\Model\WebhookLogResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -256,7 +256,7 @@ class LogsApi
      */
     public function getWebhookLogAsyncWithHttpInfo($webhook_log_id)
     {
-        $returnType = '\BitPesa\Model\WebhookLogResponse';
+        $returnType = '\TransferZero\Model\WebhookLogResponse';
         $request = $this->getWebhookLogRequest($webhook_log_id);
 
         return $this->client
@@ -419,9 +419,9 @@ class LogsApi
      * @param  string $created_at_from Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\WebhookLogListResponse
+     * @return \TransferZero\Model\WebhookLogListResponse
      */
     public function getWebhookLogs($page = null, $per = null, $created_at_from = null, $created_at_to = null)
     {
@@ -439,13 +439,13 @@ class LogsApi
      * @param  string $created_at_from Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      * @param  string $created_at_to End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\WebhookLogListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\WebhookLogListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookLogsWithHttpInfo($page = null, $per = null, $created_at_from = null, $created_at_to = null)
     {
-        $returnType = '\BitPesa\Model\WebhookLogListResponse';
+        $returnType = '\TransferZero\Model\WebhookLogListResponse';
         $request = $this->getWebhookLogsRequest($page, $per, $created_at_from, $created_at_to);
 
         try {
@@ -509,7 +509,7 @@ class LogsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\WebhookLogListResponse',
+                        '\TransferZero\Model\WebhookLogListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -557,7 +557,7 @@ class LogsApi
      */
     public function getWebhookLogsAsyncWithHttpInfo($page = null, $per = null, $created_at_from = null, $created_at_to = null)
     {
-        $returnType = '\BitPesa\Model\WebhookLogListResponse';
+        $returnType = '\TransferZero\Model\WebhookLogListResponse';
         $request = $this->getWebhookLogsRequest($page, $per, $created_at_from, $created_at_to);
 
         return $this->client
@@ -741,7 +741,7 @@ class LogsApi
      *
      * @param object response the object we wish to parse
      * @param boolean returnType The type of the PHP object (true for array, false for object)
-     * 
+     *
      * @return object|array The deserialized PHP object
      * @throws ApiException If it fails to deserialize response body
      */
@@ -753,7 +753,7 @@ class LogsApi
         try {
             return ObjectSerializer::deserialize(
                 $response,
-                "\\BitPesa\\Model\\{$returnType}"
+                "\\TransferZero\\Model\\{$returnType}"
             );
         } catch (ApiException $e) {
             throw new ApiException(

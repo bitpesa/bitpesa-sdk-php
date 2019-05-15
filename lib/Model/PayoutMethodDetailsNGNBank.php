@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PayoutMethodDetailsNGNBank Class Doc Comment
  *
  * @category Class
  * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;bank_code\&quot;: \&quot;058\&quot;,     \&quot;bank_account\&quot;: \&quot;123456789\&quot;,     \&quot;bank_account_type\&quot;: \&quot;10\&quot;       # 10 for saving       # 20 for current accounts   } &#x60;&#x60;&#x60;  The valid bank_code values are:  - Access Bank: 044 - Diamond Bank: 063 - EcoBank: 050 - FCMB Bank: 214 - Fidelity Bank: 070 - First Bank of Nigeria: 011 - Guaranty Trust Bank : 058 - Heritage Bank: 030 - Jaiz Bank: 301 - Keystone: 082 - Mainstreet: 014 - Polaris Bank: 076 - Stanbic IBTC Bank: 039 - Sterling bank: 232 - Union Bank: 032 - United Bank for Africa: 033 - Unity Bank: 215 - Wema Bank: 035 - Zenith International: 057
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -62,7 +62,7 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'bank_code' => 'string',
         'bank_account' => 'string',
-        'bank_account_type' => '\BitPesa\Model\PayoutMethodBankAccountTypeEnum'
+        'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum'
     ];
 
     /**
@@ -343,7 +343,7 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
     /**
      * Gets bank_account_type
      *
-     * @return \BitPesa\Model\PayoutMethodBankAccountTypeEnum
+     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum
      */
     public function getBankAccountType()
     {
@@ -353,7 +353,7 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
     /**
      * Sets bank_account_type
      *
-     * @param \BitPesa\Model\PayoutMethodBankAccountTypeEnum $bank_account_type bank_account_type
+     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum $bank_account_type bank_account_type
      *
      * @return $this
      */

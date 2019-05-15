@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **last_name** | **string** |  | 
 **bank_code** | **string** |  | 
 **bank_account** | **string** |  | 
-**bank_account_type** | [**\BitPesa\Model\PayoutMethodBankAccountTypeEnum**](PayoutMethodBankAccountTypeEnum.md) |  | 
+**bank_account_type** | [**\TransferZero\Model\PayoutMethodBankAccountTypeEnum**](PayoutMethodBankAccountTypeEnum.md) |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

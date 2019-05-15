@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PayoutMethodDetails Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -61,19 +61,19 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'bank_code' => 'string',
         'bank_account' => 'string',
-        'bank_account_type' => '\BitPesa\Model\PayoutMethodBankAccountTypeEnum',
+        'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum',
         'phone_number' => 'string',
-        'mobile_provider' => '\BitPesa\Model\PayoutMethodMobileProviderEnum',
+        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'bank_name' => 'string',
         'iban' => 'string',
         'bic' => 'string',
-        'sender_identity_card_type' => '\BitPesa\Model\PayoutMethodIdentityCardTypeEnum',
+        'sender_identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'sender_identity_card_id' => 'string',
         'sender_city_of_birth' => 'string',
         'sender_country_of_birth' => 'string',
-        'sender_gender' => '\BitPesa\Model\PayoutMethodGenderEnum',
+        'sender_gender' => '\TransferZero\Model\PayoutMethodGenderEnum',
         'reason' => 'string',
-        'identity_card_type' => '\BitPesa\Model\PayoutMethodIdentityCardTypeEnum',
+        'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'identity_card_id' => 'string',
         'reference' => 'string'
     ];
@@ -453,7 +453,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets bank_account_type
      *
-     * @return \BitPesa\Model\PayoutMethodBankAccountTypeEnum
+     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum
      */
     public function getBankAccountType()
     {
@@ -463,7 +463,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets bank_account_type
      *
-     * @param \BitPesa\Model\PayoutMethodBankAccountTypeEnum $bank_account_type bank_account_type
+     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum $bank_account_type bank_account_type
      *
      * @return $this
      */
@@ -501,7 +501,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets mobile_provider
      *
-     * @return \BitPesa\Model\PayoutMethodMobileProviderEnum
+     * @return \TransferZero\Model\PayoutMethodMobileProviderEnum
      */
     public function getMobileProvider()
     {
@@ -511,7 +511,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets mobile_provider
      *
-     * @param \BitPesa\Model\PayoutMethodMobileProviderEnum $mobile_provider mobile_provider
+     * @param \TransferZero\Model\PayoutMethodMobileProviderEnum $mobile_provider mobile_provider
      *
      * @return $this
      */
@@ -597,7 +597,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets sender_identity_card_type
      *
-     * @return \BitPesa\Model\PayoutMethodIdentityCardTypeEnum
+     * @return \TransferZero\Model\PayoutMethodIdentityCardTypeEnum
      */
     public function getSenderIdentityCardType()
     {
@@ -607,7 +607,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets sender_identity_card_type
      *
-     * @param \BitPesa\Model\PayoutMethodIdentityCardTypeEnum $sender_identity_card_type sender_identity_card_type
+     * @param \TransferZero\Model\PayoutMethodIdentityCardTypeEnum $sender_identity_card_type sender_identity_card_type
      *
      * @return $this
      */
@@ -693,7 +693,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets sender_gender
      *
-     * @return \BitPesa\Model\PayoutMethodGenderEnum
+     * @return \TransferZero\Model\PayoutMethodGenderEnum
      */
     public function getSenderGender()
     {
@@ -703,7 +703,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets sender_gender
      *
-     * @param \BitPesa\Model\PayoutMethodGenderEnum $sender_gender sender_gender
+     * @param \TransferZero\Model\PayoutMethodGenderEnum $sender_gender sender_gender
      *
      * @return $this
      */
@@ -741,7 +741,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets identity_card_type
      *
-     * @return \BitPesa\Model\PayoutMethodIdentityCardTypeEnum|null
+     * @return \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null
      */
     public function getIdentityCardType()
     {
@@ -751,7 +751,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets identity_card_type
      *
-     * @param \BitPesa\Model\PayoutMethodIdentityCardTypeEnum|null $identity_card_type identity_card_type
+     * @param \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null $identity_card_type identity_card_type
      *
      * @return $this
      */

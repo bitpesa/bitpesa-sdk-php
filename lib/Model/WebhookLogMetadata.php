@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * WebhookLogMetadata Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,14 +57,14 @@ class WebhookLogMetadata implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'params' => '\BitPesa\Model\WebhookDefinition',
+        'params' => '\TransferZero\Model\WebhookDefinition',
         'event' => 'string',
         'instance_id' => 'string',
         'instance_type' => 'string',
         'attempt_id' => 'string',
         'tries' => 'int',
-        'request' => '\BitPesa\Model\WebhookLogMetadataRequest',
-        'response' => '\BitPesa\Model\WebhookLogMetadataResponse',
+        'request' => '\TransferZero\Model\WebhookLogMetadataRequest',
+        'response' => '\TransferZero\Model\WebhookLogMetadataResponse',
         'app_id' => 'string',
         'api_key_id' => 'string'
     ];
@@ -80,7 +80,7 @@ class WebhookLogMetadata implements ModelInterface, ArrayAccess
         'instance_id' => null,
         'instance_type' => null,
         'attempt_id' => null,
-        'tries' => null,
+        'tries' => 'int32',
         'request' => null,
         'response' => null,
         'app_id' => null,
@@ -261,7 +261,7 @@ class WebhookLogMetadata implements ModelInterface, ArrayAccess
     /**
      * Gets params
      *
-     * @return \BitPesa\Model\WebhookDefinition|null
+     * @return \TransferZero\Model\WebhookDefinition|null
      */
     public function getParams()
     {
@@ -271,7 +271,7 @@ class WebhookLogMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets params
      *
-     * @param \BitPesa\Model\WebhookDefinition|null $params params
+     * @param \TransferZero\Model\WebhookDefinition|null $params params
      *
      * @return $this
      */
@@ -405,7 +405,7 @@ class WebhookLogMetadata implements ModelInterface, ArrayAccess
     /**
      * Gets request
      *
-     * @return \BitPesa\Model\WebhookLogMetadataRequest|null
+     * @return \TransferZero\Model\WebhookLogMetadataRequest|null
      */
     public function getRequest()
     {
@@ -415,7 +415,7 @@ class WebhookLogMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets request
      *
-     * @param \BitPesa\Model\WebhookLogMetadataRequest|null $request request
+     * @param \TransferZero\Model\WebhookLogMetadataRequest|null $request request
      *
      * @return $this
      */
@@ -429,7 +429,7 @@ class WebhookLogMetadata implements ModelInterface, ArrayAccess
     /**
      * Gets response
      *
-     * @return \BitPesa\Model\WebhookLogMetadataResponse|null
+     * @return \TransferZero\Model\WebhookLogMetadataResponse|null
      */
     public function getResponse()
     {
@@ -439,7 +439,7 @@ class WebhookLogMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets response
      *
-     * @param \BitPesa\Model\WebhookLogMetadataResponse|null $response response
+     * @param \TransferZero\Model\WebhookLogMetadataResponse|null $response response
      *
      * @return $this
      */

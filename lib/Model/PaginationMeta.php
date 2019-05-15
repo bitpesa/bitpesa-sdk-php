@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PaginationMeta Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,7 +57,7 @@ class PaginationMeta implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\BitPesa\Model\Pagination'
+        'pagination' => '\TransferZero\Model\Pagination'
     ];
 
     /**
@@ -207,7 +207,7 @@ class PaginationMeta implements ModelInterface, ArrayAccess
     /**
      * Gets pagination
      *
-     * @return \BitPesa\Model\Pagination|null
+     * @return \TransferZero\Model\Pagination|null
      */
     public function getPagination()
     {
@@ -217,7 +217,7 @@ class PaginationMeta implements ModelInterface, ArrayAccess
     /**
      * Sets pagination
      *
-     * @param \BitPesa\Model\Pagination|null $pagination pagination
+     * @param \TransferZero\Model\Pagination|null $pagination pagination
      *
      * @return $this
      */

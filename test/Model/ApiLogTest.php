@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace BitPesa;
+namespace TransferZero;
 
 use PHPUnit\Framework\TestCase;
 
@@ -36,7 +36,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description The response object returned with requests to access individual API logs
- * @package     BitPesa
+ * @package     TransferZero
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */

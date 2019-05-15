@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,15 +27,15 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
-use \BitPesa\ObjectSerializer;
+namespace TransferZero\Model;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PayoutMethodBankAccountTypeEnum Class Doc Comment
  *
  * @category Class
  * @description The type of the bank account:  - &#x60;10&#x60;: Savings account - &#x60;20&#x60;: Current account
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

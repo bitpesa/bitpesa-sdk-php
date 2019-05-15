@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PayoutMethodDetailsMADCash Class Doc Comment
  *
  * @category Class
  * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;212537718685\&quot;     # Mandatory; International format preferred   \&quot;sender_identity_card_type\&quot; &#x3D;&gt; \&quot;O\&quot;,     # Mandatory; Values: \&quot;O\&quot;: Other, \&quot;PP\&quot;: Passport, \&quot;NI\&quot;: National ID   \&quot;sender_identity_card_id\&quot; &#x3D;&gt; &#39;AB12345678&#39;,     # Mandatory   \&quot;sender_city_of_birth\&quot; &#x3D;&gt; \&quot;London\&quot;,     # Mandatory   \&quot;sender_country_of_birth\&quot; &#x3D;&gt; \&quot;GB\&quot;,     # Mandatory; ISO 2-letter format   \&quot;sender_gender\&quot; &#x3D;&gt; \&quot;M\&quot;,     # Mandatory; Values: \&quot;M\&quot;: Male, \&quot;F\&quot;: Female   \&quot;reason\&quot; &#x3D;&gt; \&quot;Remittance payment\&quot;,     # Optional; Default value is &#39;Remittance payment&#39;   \&quot;identity_card_type\&quot; &#x3D;&gt; \&quot;NI\&quot;,     # Optional; Values: \&quot;PP\&quot;: Passport, \&quot;NI\&quot;: National ID   \&quot;identity_card_id\&quot; &#x3D;&gt; &#39;AB12345678&#39;     # Optional } &#x60;&#x60;&#x60;  Please note when sending MAD::Cash payments you should subscribe to the recipient.pending webhook, as that will broadcast the payment reference ID the customer need to use to obtain the funds. Example webhook response excerpt -  &#x60;&#x60;&#x60;JSON {   (...)   \&quot;state\&quot;:\&quot;pending\&quot;,   \&quot;metadata\&quot;: {     \&quot;payment_reference\&quot;:\&quot;9M5GJRJUBCY\&quot;   },   (...) } &#x60;&#x60;&#x60;  The reference can also be provided optionally for MAD::Cash, but if you want to use this functionality please contact us for more details.
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -61,13 +61,13 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'phone_number' => 'string',
-        'sender_identity_card_type' => '\BitPesa\Model\PayoutMethodIdentityCardTypeEnum',
+        'sender_identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'sender_identity_card_id' => 'string',
         'sender_city_of_birth' => 'string',
         'sender_country_of_birth' => 'string',
-        'sender_gender' => '\BitPesa\Model\PayoutMethodGenderEnum',
+        'sender_gender' => '\TransferZero\Model\PayoutMethodGenderEnum',
         'reason' => 'string',
-        'identity_card_type' => '\BitPesa\Model\PayoutMethodIdentityCardTypeEnum',
+        'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'identity_card_id' => 'string'
     ];
 
@@ -364,7 +364,7 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
     /**
      * Gets sender_identity_card_type
      *
-     * @return \BitPesa\Model\PayoutMethodIdentityCardTypeEnum
+     * @return \TransferZero\Model\PayoutMethodIdentityCardTypeEnum
      */
     public function getSenderIdentityCardType()
     {
@@ -374,7 +374,7 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
     /**
      * Sets sender_identity_card_type
      *
-     * @param \BitPesa\Model\PayoutMethodIdentityCardTypeEnum $sender_identity_card_type sender_identity_card_type
+     * @param \TransferZero\Model\PayoutMethodIdentityCardTypeEnum $sender_identity_card_type sender_identity_card_type
      *
      * @return $this
      */
@@ -460,7 +460,7 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
     /**
      * Gets sender_gender
      *
-     * @return \BitPesa\Model\PayoutMethodGenderEnum
+     * @return \TransferZero\Model\PayoutMethodGenderEnum
      */
     public function getSenderGender()
     {
@@ -470,7 +470,7 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
     /**
      * Sets sender_gender
      *
-     * @param \BitPesa\Model\PayoutMethodGenderEnum $sender_gender sender_gender
+     * @param \TransferZero\Model\PayoutMethodGenderEnum $sender_gender sender_gender
      *
      * @return $this
      */
@@ -508,7 +508,7 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
     /**
      * Gets identity_card_type
      *
-     * @return \BitPesa\Model\PayoutMethodIdentityCardTypeEnum|null
+     * @return \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null
      */
     public function getIdentityCardType()
     {
@@ -518,7 +518,7 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
     /**
      * Sets identity_card_type
      *
-     * @param \BitPesa\Model\PayoutMethodIdentityCardTypeEnum|null $identity_card_type identity_card_type
+     * @param \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null $identity_card_type identity_card_type
      *
      * @return $this
      */

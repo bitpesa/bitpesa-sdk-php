@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace BitPesa;
+namespace TransferZero;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,8 +35,8 @@ use PHPUnit\Framework\TestCase;
  * WebhookTest Class Doc Comment
  *
  * @category    Class
- * @description Whenever objects in the BitPesa API change state, we can optionally send the changed details to a pre-registered webhook address. Webhooks can be created either using the [developer portal](https://developers.bitpesa.co), or using the [BitPesa API](#operations-tag-Webhooks).  Whenever possible we prefer using webhooks to listen on events (for example when a transaction has been paid out) instead of polling the status, and we expect implementations fully utilising webhooks.  Webhooks will always generate a &#x60;POST&#x60; request to the specified endpoint, and will also include the same authentication headers as described in the [authentication documentation](https://github.com/bitpesa/api-documentation/blob/master/authentication.md), so their validity can be verified on the receiver end.
- * @package     BitPesa
+ * @description Whenever objects in the TransferZero API change state, we can optionally send the changed details to a pre-registered webhook address. Webhooks can be created either using the [developer portal](https://developers.transferzero.com), or using the [TransferZero API](#operations-tag-Webhooks).  Whenever possible we prefer using webhooks to listen on events (for example when a transaction has been paid out) instead of polling the status, and we expect implementations fully utilising webhooks.  Webhooks will always generate a &#x60;POST&#x60; request to the specified endpoint, and will also include the same authentication headers as described in the [authentication documentation](https://github.com/transferzero/api-documentation/blob/master/authentication.md), so their validity can be verified on the receiver end.
+ * @package     TransferZero
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
