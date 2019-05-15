@@ -18,7 +18,7 @@ class Application {
         for more information.
         */
         Configuration::getDefaultConfiguration()
-            ->setHost('https://api-sandbox.bitpesa.co/v1')
+            ->setHost('https://api-sandbox.transferzero.com/v1')
             ->setApiKey('<key>')
             ->setApiSecret('<secret>');
 
@@ -55,7 +55,6 @@ class Application {
         $request = new AccountValidationRequest();
         $request->setBankAccount('9040009999999');
         $request->setBankCode('190100');
-        // $request->setBankCode('020100');
         $request->setCountry(AccountValidationRequest::COUNTRY_GH);
         $request->setCurrency(AccountValidationRequest::CURRENCY_GHS);
         $request->setMethod(AccountValidationRequest::METHOD_BANK);
