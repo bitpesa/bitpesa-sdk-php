@@ -12,8 +12,13 @@ use BitPesa\Model\{ SenderRequest };
 class Application {
 
     public function run() {
+        /*
+        Please see our documentation at https://github.com/transferzero/api-documentation
+        and the API specification at http://api.transferzero.com/documentation/
+        for more information.
+        */
         Configuration::getDefaultConfiguration()
-            ->setHost('https://api-sandbox.bitpesa.co/v1')
+            ->setHost('https://api-sandbox.transferzero.com/v1')
             ->setApiKey('<key>')
             ->setApiSecret('<secret>');
 
@@ -43,10 +48,13 @@ class Application {
     }
 
     public function accountValidationExample() {
+        /*
+        See https://github.com/transferzero/api-documentation/blob/master/additional-features.md#bank-account-name-enquiry
+        for more information on how this feature can be used
+        */
         $request = new AccountValidationRequest();
         $request->setBankAccount('9040009999999');
         $request->setBankCode('190100');
-        // $request->setBankCode('020100');
         $request->setCountry(AccountValidationRequest::COUNTRY_GH);
         $request->setCurrency(AccountValidationRequest::CURRENCY_GHS);
         $request->setMethod(AccountValidationRequest::METHOD_BANK);
@@ -73,11 +81,18 @@ class Application {
         $api = new TransactionsApi();
         $transaction = new Transaction();
 
+        /*
+        Please check our documentation at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md
+        for details on how transactions work.
+        */
         $sender = new Sender();
-        // When adding a sender to transaction, please use either an id or external_id. Providing both will result in a validation error.
-        // Please see our documentation at https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#sender
+        /*
+        When adding a sender to transaction, please use either an id or external_id. Providing both will result in a validation error.
+        Please see our documentation at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
+        */
         $sender->setId('6F15F581-889F-4AE1-9591-CB283ADD661F');
 
+        // You can find the various payout options at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#payout-details
         $ngnBankDetails = new PayoutMethodDetails();
         $ngnBankDetails->setBankAccount('123456789');
         $ngnBankDetails->setBankAccountType(PayoutMethodBankAccountTypeEnum::_20);
@@ -89,11 +104,21 @@ class Application {
         $payoutMethod->setType('NGN::Bank');
         $payoutMethod->setDetails($ngnBankDetails);
 
+        /*
+        Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#requested-amount-and-currency
+        on what the request amount and currencies do
+        */
         $recipient = new Recipient();
         $recipient->setRequestedAmount(10000);
         $recipient->setRequestedCurrency('NGN');
         $recipient->setPayoutMethod($payoutMethod);
 
+        /*
+        Similarly you can check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#requested-amount-and-currency
+        on details about the input currency parameter
+
+        Find more details on external IDs at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#external-id
+        */
         $transaction->setExternalId('TRANSACTION-1f834adf'); // Optional field for customer's ID
         $transaction->setInputCurrency('GBP');
         $transaction->setSender($sender);
@@ -119,6 +144,10 @@ class Application {
     }
 
     public function getTransactionByExternalIdExample() {
+        /*
+        Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#external-id
+        for more details on external IDs
+        */
         $transactionsApi = new TransactionsApi();
         $externalId = 'TRANSACTION-1f834adf';
         try {
@@ -143,6 +172,10 @@ class Application {
         $transactionId = $this->createTransactionExample();
 
         if (!empty($transactionId)) {
+            /*
+            Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#funding-transactions
+            on details about funding transactions
+            */
             $debit = new Debit();
             $debit->setCurrency('GBP');
             $debit->setToId($transactionId);
@@ -171,6 +204,7 @@ class Application {
     }
 
     public function createSenderExample() {
+        // For more details on senders please check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
         $sender = new Sender();
         $sender->setCountry('UG');
         $sender->setPhoneCountry('UG');
@@ -209,6 +243,7 @@ class Application {
     }
 
     public function getSenderByExternalIdExample() {
+        // Find more details on external IDs at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#external-id
         $sendersApi = new SendersApi();
         $externalId = 'SENDER-2b59deff';
         try {
@@ -230,6 +265,8 @@ class Application {
     }
 
     public function updateSenderExample() {
+        // For more details on senders please check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
+
         $senderId = $this->createSenderExample();
 
         if (!empty($senderId)) {
@@ -259,6 +296,10 @@ class Application {
     }
 
     public function getTransactionErrorMessageExample() {
+        /*
+        Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#receiving-error-messages
+        on details about error messages
+        */
         $transactionId = 'D110B4B3-BC4A-4BAD-9F3B-2F5564949359';
         $transactionsApi = new TransactionsApi();
 
@@ -267,6 +308,10 @@ class Application {
     }
 
     public function webhookParseExample() {
+        /*
+        Please see https://github.com/transferzero/api-documentation#webhooks
+        for more details about how webhooks / callbacks work from our system
+        */
         $webhook_headers = [
             "Authorization-Nonce" => "<authorization-nonce>",
             "Authorization-Key" => "<authorization-key>",
@@ -457,6 +502,16 @@ class Application {
 JSON;
         $webhooksApi = new WebhooksApi();
         $webhook_url = "<url>";
+
+        /*
+        Once you've set up an endpoint where you'll be receiving callbacks you can use the following code snippet
+        to both verify that the webhook we sent out is legitimate, and then parse it's contents regardless of type.
+
+        The details you need to provide are:
+          - the body of the webhook/callback you received as a string
+          - the url of your webhook, where you are awaiting the callbacks - this has to be the full URL
+          - the authentication headers you have received on your webhook endpoint - as an associative array
+        */
 
         if (!$webhooksApi->validateWebhookRequest($webhook_url, $webhook_content, $webhook_headers)) {
             echo "Webhook request validation failed";
