@@ -1,6 +1,6 @@
-# BitPesa\WebhooksApi
+# TransferZero\WebhooksApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **deleteWebhook**
-> \BitPesa\Model\WebhookDefinitionResponse deleteWebhook($webhook_id)
+> \TransferZero\Model\WebhookDefinitionResponse deleteWebhook($webhook_id)
 
 Unsubscribing from a webhook
 
@@ -26,12 +26,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\WebhooksApi();
+$apiInstance = new TransferZero\Api\WebhooksApi();
 $webhook_id = 'webhook_id_example'; // string | The ID of webhook to cancel.  Example: `/v1/webhooks/9d4d7b73-a94c-4979-ab57-09074fd55d33`
 
 try {
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\WebhookDefinitionResponse**](../Model/WebhookDefinitionResponse.md)
+[**\TransferZero\Model\WebhookDefinitionResponse**](../Model/WebhookDefinitionResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhook**
-> \BitPesa\Model\WebhookDefinitionResponse getWebhook($webhook_id)
+> \TransferZero\Model\WebhookDefinitionResponse getWebhook($webhook_id)
 
 Find a webhook's details
 
@@ -86,12 +86,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\WebhooksApi();
+$apiInstance = new TransferZero\Api\WebhooksApi();
 $webhook_id = 'webhook_id_example'; // string | The ID of the Webhook to look up  Example: `/v1/webhooks/9d4d7b73-a94c-4979-ab57-09074fd55d33`
 
 try {
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\WebhookDefinitionResponse**](../Model/WebhookDefinitionResponse.md)
+[**\TransferZero\Model\WebhookDefinitionResponse**](../Model/WebhookDefinitionResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookEvents**
-> \BitPesa\Model\WebhookDefinitionEventListResponse getWebhookEvents()
+> \TransferZero\Model\WebhookDefinitionEventListResponse getWebhookEvents()
 
 Find possible webhook events
 
@@ -146,12 +146,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\WebhooksApi();
+$apiInstance = new TransferZero\Api\WebhooksApi();
 
 try {
     $result = $apiInstance->getWebhookEvents();
@@ -174,7 +174,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\BitPesa\Model\WebhookDefinitionEventListResponse**](../Model/WebhookDefinitionEventListResponse.md)
+[**\TransferZero\Model\WebhookDefinitionEventListResponse**](../Model/WebhookDefinitionEventListResponse.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-> \BitPesa\Model\WebhookDefinitionListResponse getWebhooks($page, $per)
+> \TransferZero\Model\WebhookDefinitionListResponse getWebhooks($page, $per)
 
 Listing webhooks
 
@@ -202,12 +202,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\WebhooksApi();
+$apiInstance = new TransferZero\Api\WebhooksApi();
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\WebhookDefinitionListResponse**](../Model/WebhookDefinitionListResponse.md)
+[**\TransferZero\Model\WebhookDefinitionListResponse**](../Model/WebhookDefinitionListResponse.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postWebhooks**
-> \BitPesa\Model\WebhookDefinitionResponse postWebhooks($webhook_definition_request)
+> \TransferZero\Model\WebhookDefinitionResponse postWebhooks($webhook_definition_request)
 
 Creating a webhook
 
@@ -264,13 +264,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\WebhooksApi();
-$webhook_definition_request = {"webhook":{"url":"http://myhost.com/for/transaction.paid_in","events":["transaction.paid_in"],"metadata":{"my":"data"}}}; // \BitPesa\Model\WebhookDefinitionRequest | 
+$apiInstance = new TransferZero\Api\WebhooksApi();
+$webhook_definition_request = {"webhook":{"url":"http://myhost.com/for/transaction.paid_in","events":["transaction.paid_in"],"metadata":{"my":"data"}}}; // \TransferZero\Model\WebhookDefinitionRequest | 
 
 try {
     $result = $apiInstance->postWebhooks($webhook_definition_request);
@@ -292,11 +292,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook_definition_request** | [**\BitPesa\Model\WebhookDefinitionRequest**](../Model/WebhookDefinitionRequest.md)|  |
+ **webhook_definition_request** | [**\TransferZero\Model\WebhookDefinitionRequest**](../Model/WebhookDefinitionRequest.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\WebhookDefinitionResponse**](../Model/WebhookDefinitionResponse.md)
+[**\TransferZero\Model\WebhookDefinitionResponse**](../Model/WebhookDefinitionResponse.md)
 
 ### Authorization
 

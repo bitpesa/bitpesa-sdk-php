@@ -1,6 +1,6 @@
-# BitPesa\PaymentMethodsApi
+# TransferZero\PaymentMethodsApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **paymentMethodsIn**
-> \BitPesa\Model\PaymentMethodListResponse paymentMethodsIn()
+> \TransferZero\Model\PaymentMethodListResponse paymentMethodsIn()
 
 This method returns possible payin methods.
 
@@ -23,12 +23,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\PaymentMethodsApi();
+$apiInstance = new TransferZero\Api\PaymentMethodsApi();
 
 try {
     $result = $apiInstance->paymentMethodsIn();
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\BitPesa\Model\PaymentMethodListResponse**](../Model/PaymentMethodListResponse.md)
+[**\TransferZero\Model\PaymentMethodListResponse**](../Model/PaymentMethodListResponse.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **paymentMethodsOut**
-> \BitPesa\Model\PaymentMethodListResponse paymentMethodsOut()
+> \TransferZero\Model\PaymentMethodListResponse paymentMethodsOut()
 
 This method returns possible payout methods.
 
@@ -79,12 +79,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\PaymentMethodsApi();
+$apiInstance = new TransferZero\Api\PaymentMethodsApi();
 
 try {
     $result = $apiInstance->paymentMethodsOut();
@@ -107,7 +107,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\BitPesa\Model\PaymentMethodListResponse**](../Model/PaymentMethodListResponse.md)
+[**\TransferZero\Model\PaymentMethodListResponse**](../Model/PaymentMethodListResponse.md)
 
 ### Authorization
 

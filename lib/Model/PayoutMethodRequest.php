@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PayoutMethodRequest Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,7 +57,7 @@ class PayoutMethodRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payout_method' => '\BitPesa\Model\PayoutMethod'
+        'payout_method' => '\TransferZero\Model\PayoutMethod'
     ];
 
     /**
@@ -207,7 +207,7 @@ class PayoutMethodRequest implements ModelInterface, ArrayAccess
     /**
      * Gets payout_method
      *
-     * @return \BitPesa\Model\PayoutMethod|null
+     * @return \TransferZero\Model\PayoutMethod|null
      */
     public function getPayoutMethod()
     {
@@ -217,7 +217,7 @@ class PayoutMethodRequest implements ModelInterface, ArrayAccess
     /**
      * Sets payout_method
      *
-     * @param \BitPesa\Model\PayoutMethod|null $payout_method payout_method
+     * @param \TransferZero\Model\PayoutMethod|null $payout_method payout_method
      *
      * @return $this
      */

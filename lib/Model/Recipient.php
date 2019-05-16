@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * Recipient Class Doc Comment
  *
  * @category Class
  * @description The recipient describes the amount, the currency and the destination where the money should be sent.
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -60,16 +60,16 @@ class Recipient implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'requested_amount' => 'float',
         'requested_currency' => 'string',
-        'payout_method' => '\BitPesa\Model\PayoutMethod',
+        'payout_method' => '\TransferZero\Model\PayoutMethod',
         'metadata' => 'object',
         'created_at' => '\DateTime',
         'editable' => 'bool',
         'input_usd_amount' => 'float',
         'may_cancel' => 'bool',
         'state_reason' => 'string',
-        'state' => '\BitPesa\Model\RecipientState',
+        'state' => '\TransferZero\Model\RecipientState',
         'transaction_id' => 'string',
-        'transaction_state' => '\BitPesa\Model\TransactionState',
+        'transaction_state' => '\TransferZero\Model\TransactionState',
         'exchange_rate' => 'float',
         'fee_fractional' => 'float',
         'input_amount' => 'float',
@@ -77,7 +77,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'output_amount' => 'float',
         'output_currency' => 'string',
         'id' => 'string',
-        'errors' => 'map[string,\BitPesa\Model\ValidationErrorDescription[]]'
+        'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
     ];
 
     /**
@@ -379,7 +379,7 @@ class Recipient implements ModelInterface, ArrayAccess
     /**
      * Gets payout_method
      *
-     * @return \BitPesa\Model\PayoutMethod
+     * @return \TransferZero\Model\PayoutMethod
      */
     public function getPayoutMethod()
     {
@@ -389,7 +389,7 @@ class Recipient implements ModelInterface, ArrayAccess
     /**
      * Sets payout_method
      *
-     * @param \BitPesa\Model\PayoutMethod $payout_method payout_method
+     * @param \TransferZero\Model\PayoutMethod $payout_method payout_method
      *
      * @return $this
      */
@@ -547,7 +547,7 @@ class Recipient implements ModelInterface, ArrayAccess
     /**
      * Gets state
      *
-     * @return \BitPesa\Model\RecipientState|null
+     * @return \TransferZero\Model\RecipientState|null
      */
     public function getState()
     {
@@ -557,7 +557,7 @@ class Recipient implements ModelInterface, ArrayAccess
     /**
      * Sets state
      *
-     * @param \BitPesa\Model\RecipientState|null $state state
+     * @param \TransferZero\Model\RecipientState|null $state state
      *
      * @return $this
      */
@@ -595,7 +595,7 @@ class Recipient implements ModelInterface, ArrayAccess
     /**
      * Gets transaction_state
      *
-     * @return \BitPesa\Model\TransactionState|null
+     * @return \TransferZero\Model\TransactionState|null
      */
     public function getTransactionState()
     {
@@ -605,7 +605,7 @@ class Recipient implements ModelInterface, ArrayAccess
     /**
      * Sets transaction_state
      *
-     * @param \BitPesa\Model\TransactionState|null $transaction_state transaction_state
+     * @param \TransferZero\Model\TransactionState|null $transaction_state transaction_state
      *
      * @return $this
      */
@@ -787,7 +787,7 @@ class Recipient implements ModelInterface, ArrayAccess
     /**
      * Gets errors
      *
-     * @return map[string,\BitPesa\Model\ValidationErrorDescription[]]|null
+     * @return map[string,\TransferZero\Model\ValidationErrorDescription[]]|null
      */
     public function getErrors()
     {
@@ -797,7 +797,7 @@ class Recipient implements ModelInterface, ArrayAccess
     /**
      * Sets errors
      *
-     * @param map[string,\BitPesa\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
+     * @param map[string,\TransferZero\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
      *
      * @return $this
      */

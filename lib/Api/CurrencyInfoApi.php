@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Api;
+namespace TransferZero\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use BitPesa\ApiException;
-use BitPesa\Configuration;
-use BitPesa\HeaderSelector;
-use BitPesa\ObjectSerializer;
+use TransferZero\ApiException;
+use TransferZero\Configuration;
+use TransferZero\HeaderSelector;
+use TransferZero\ObjectSerializer;
 
 /**
  * CurrencyInfoApi Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -126,9 +126,9 @@ class CurrencyInfoApi
      * Getting a list of possible requested currencies
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\CurrencyListResponse
+     * @return \TransferZero\Model\CurrencyListResponse
      */
     public function infoCurrencies()
     {
@@ -142,13 +142,13 @@ class CurrencyInfoApi
      * Getting a list of possible requested currencies
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\CurrencyListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\CurrencyListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function infoCurrenciesWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\CurrencyListResponse';
+        $returnType = '\TransferZero\Model\CurrencyListResponse';
         $request = $this->infoCurrenciesRequest();
 
         try {
@@ -212,7 +212,7 @@ class CurrencyInfoApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\CurrencyListResponse',
+                        '\TransferZero\Model\CurrencyListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -252,7 +252,7 @@ class CurrencyInfoApi
      */
     public function infoCurrenciesAsyncWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\CurrencyListResponse';
+        $returnType = '\TransferZero\Model\CurrencyListResponse';
         $request = $this->infoCurrenciesRequest();
 
         return $this->client
@@ -396,9 +396,9 @@ class CurrencyInfoApi
      * Getting a list of possible input currencies
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\CurrencyExchangeListResponse
+     * @return \TransferZero\Model\CurrencyExchangeListResponse
      */
     public function infoCurrenciesIn()
     {
@@ -412,13 +412,13 @@ class CurrencyInfoApi
      * Getting a list of possible input currencies
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\CurrencyExchangeListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\CurrencyExchangeListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function infoCurrenciesInWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\CurrencyExchangeListResponse';
+        $returnType = '\TransferZero\Model\CurrencyExchangeListResponse';
         $request = $this->infoCurrenciesInRequest();
 
         try {
@@ -482,7 +482,7 @@ class CurrencyInfoApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\CurrencyExchangeListResponse',
+                        '\TransferZero\Model\CurrencyExchangeListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -522,7 +522,7 @@ class CurrencyInfoApi
      */
     public function infoCurrenciesInAsyncWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\CurrencyExchangeListResponse';
+        $returnType = '\TransferZero\Model\CurrencyExchangeListResponse';
         $request = $this->infoCurrenciesInRequest();
 
         return $this->client
@@ -666,9 +666,9 @@ class CurrencyInfoApi
      * Getting a list of possible output currencies
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\CurrencyExchangeListResponse
+     * @return \TransferZero\Model\CurrencyExchangeListResponse
      */
     public function infoCurrenciesOut()
     {
@@ -682,13 +682,13 @@ class CurrencyInfoApi
      * Getting a list of possible output currencies
      *
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\CurrencyExchangeListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\CurrencyExchangeListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function infoCurrenciesOutWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\CurrencyExchangeListResponse';
+        $returnType = '\TransferZero\Model\CurrencyExchangeListResponse';
         $request = $this->infoCurrenciesOutRequest();
 
         try {
@@ -752,7 +752,7 @@ class CurrencyInfoApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\CurrencyExchangeListResponse',
+                        '\TransferZero\Model\CurrencyExchangeListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -792,7 +792,7 @@ class CurrencyInfoApi
      */
     public function infoCurrenciesOutAsyncWithHttpInfo()
     {
-        $returnType = '\BitPesa\Model\CurrencyExchangeListResponse';
+        $returnType = '\TransferZero\Model\CurrencyExchangeListResponse';
         $request = $this->infoCurrenciesOutRequest();
 
         return $this->client
@@ -956,7 +956,7 @@ class CurrencyInfoApi
      *
      * @param object response the object we wish to parse
      * @param boolean returnType The type of the PHP object (true for array, false for object)
-     * 
+     *
      * @return object|array The deserialized PHP object
      * @throws ApiException If it fails to deserialize response body
      */
@@ -968,7 +968,7 @@ class CurrencyInfoApi
         try {
             return ObjectSerializer::deserialize(
                 $response,
-                "\\BitPesa\\Model\\{$returnType}"
+                "\\TransferZero\\Model\\{$returnType}"
             );
         } catch (ApiException $e) {
             throw new ApiException(

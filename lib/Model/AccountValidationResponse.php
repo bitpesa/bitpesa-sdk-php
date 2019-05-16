@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * AccountValidationResponse Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,8 +57,8 @@ class AccountValidationResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'object' => '\BitPesa\Model\AccountValidationResult',
-        'meta' => '\BitPesa\Model\AccountValidationError'
+        'object' => '\TransferZero\Model\AccountValidationResult',
+        'meta' => '\TransferZero\Model\AccountValidationError'
     ];
 
     /**
@@ -213,7 +213,7 @@ class AccountValidationResponse implements ModelInterface, ArrayAccess
     /**
      * Gets object
      *
-     * @return \BitPesa\Model\AccountValidationResult|null
+     * @return \TransferZero\Model\AccountValidationResult|null
      */
     public function getObject()
     {
@@ -223,7 +223,7 @@ class AccountValidationResponse implements ModelInterface, ArrayAccess
     /**
      * Sets object
      *
-     * @param \BitPesa\Model\AccountValidationResult|null $object object
+     * @param \TransferZero\Model\AccountValidationResult|null $object object
      *
      * @return $this
      */
@@ -237,7 +237,7 @@ class AccountValidationResponse implements ModelInterface, ArrayAccess
     /**
      * Gets meta
      *
-     * @return \BitPesa\Model\AccountValidationError|null
+     * @return \TransferZero\Model\AccountValidationError|null
      */
     public function getMeta()
     {
@@ -247,7 +247,7 @@ class AccountValidationResponse implements ModelInterface, ArrayAccess
     /**
      * Sets meta
      *
-     * @param \BitPesa\Model\AccountValidationError|null $meta meta
+     * @param \TransferZero\Model\AccountValidationError|null $meta meta
      *
      * @return $this
      */

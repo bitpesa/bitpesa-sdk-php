@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * RecipientResponse Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,7 +57,7 @@ class RecipientResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'object' => '\BitPesa\Model\Recipient'
+        'object' => '\TransferZero\Model\Recipient'
     ];
 
     /**
@@ -207,7 +207,7 @@ class RecipientResponse implements ModelInterface, ArrayAccess
     /**
      * Gets object
      *
-     * @return \BitPesa\Model\Recipient|null
+     * @return \TransferZero\Model\Recipient|null
      */
     public function getObject()
     {
@@ -217,7 +217,7 @@ class RecipientResponse implements ModelInterface, ArrayAccess
     /**
      * Sets object
      *
-     * @param \BitPesa\Model\Recipient|null $object object
+     * @param \TransferZero\Model\Recipient|null $object object
      *
      * @return $this
      */

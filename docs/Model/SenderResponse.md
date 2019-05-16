@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**object** | [**\BitPesa\Model\Sender**](Sender.md) |  | [optional] 
-**meta** | [**\BitPesa\Model\SenderResponseMeta**](SenderResponseMeta.md) |  | [optional] 
+**object** | [**\TransferZero\Model\Sender**](Sender.md) |  | [optional] 
+**meta** | [**\TransferZero\Model\SenderResponseMeta**](SenderResponseMeta.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

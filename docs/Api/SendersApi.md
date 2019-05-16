@@ -1,6 +1,6 @@
-# BitPesa\SendersApi
+# TransferZero\SendersApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **deleteSender**
-> \BitPesa\Model\SenderResponse deleteSender($sender_id)
+> \TransferZero\Model\SenderResponse deleteSender($sender_id)
 
 Deleting a sender
 
@@ -26,12 +26,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\SendersApi();
+$apiInstance = new TransferZero\Api\SendersApi();
 $sender_id = 'sender_id_example'; // string | ID of the sender to delete.  Example: `/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\SenderResponse**](../Model/SenderResponse.md)
+[**\TransferZero\Model\SenderResponse**](../Model/SenderResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSender**
-> \BitPesa\Model\SenderResponse getSender($sender_id)
+> \TransferZero\Model\SenderResponse getSender($sender_id)
 
 Fetching a sender
 
@@ -86,12 +86,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\SendersApi();
+$apiInstance = new TransferZero\Api\SendersApi();
 $sender_id = 'sender_id_example'; // string | ID of the sender to get.  Example: `/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\SenderResponse**](../Model/SenderResponse.md)
+[**\TransferZero\Model\SenderResponse**](../Model/SenderResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSenders**
-> \BitPesa\Model\SenderListResponse getSenders($page, $per, $created_at_from, $created_at_to, $external_id)
+> \TransferZero\Model\SenderListResponse getSenders($page, $per, $created_at_from, $created_at_to, $external_id)
 
 Listing senders
 
@@ -146,12 +146,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\SendersApi();
+$apiInstance = new TransferZero\Api\SendersApi();
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 $created_at_from = 'created_at_from_example'; // string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\SenderListResponse**](../Model/SenderListResponse.md)
+[**\TransferZero\Model\SenderListResponse**](../Model/SenderListResponse.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **patchSender**
-> \BitPesa\Model\SenderResponse patchSender($sender_id, $sender_request)
+> \TransferZero\Model\SenderResponse patchSender($sender_id, $sender_request)
 
 Updating a sender
 
@@ -214,14 +214,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\SendersApi();
+$apiInstance = new TransferZero\Api\SendersApi();
 $sender_id = 'sender_id_example'; // string | ID of the sender to get.  Example: `/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670`
-$sender_request = new \BitPesa\Model\SenderRequest(); // \BitPesa\Model\SenderRequest | 
+$sender_request = new \TransferZero\Model\SenderRequest(); // \TransferZero\Model\SenderRequest | 
 
 try {
     $result = $apiInstance->patchSender($sender_id, $sender_request);
@@ -244,11 +244,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sender_id** | [**string**](../Model/.md)| ID of the sender to get.  Example: &#x60;/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; |
- **sender_request** | [**\BitPesa\Model\SenderRequest**](../Model/SenderRequest.md)|  |
+ **sender_request** | [**\TransferZero\Model\SenderRequest**](../Model/SenderRequest.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\SenderResponse**](../Model/SenderResponse.md)
+[**\TransferZero\Model\SenderResponse**](../Model/SenderResponse.md)
 
 ### Authorization
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postSenders**
-> \BitPesa\Model\SenderResponse postSenders($sender_request)
+> \TransferZero\Model\SenderResponse postSenders($sender_request)
 
 Creating a sender
 
@@ -276,12 +276,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\SendersApi();
+$apiInstance = new TransferZero\Api\SendersApi();
 $sender_request = {
   "sender": {
     "country": "UG",
@@ -310,7 +310,7 @@ $sender_request = {
       "my": "data"
     }
   }
-}; // \BitPesa\Model\SenderRequest | 
+}; // \TransferZero\Model\SenderRequest | 
 
 try {
     $result = $apiInstance->postSenders($sender_request);
@@ -332,11 +332,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sender_request** | [**\BitPesa\Model\SenderRequest**](../Model/SenderRequest.md)|  |
+ **sender_request** | [**\TransferZero\Model\SenderRequest**](../Model/SenderRequest.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\SenderResponse**](../Model/SenderResponse.md)
+[**\TransferZero\Model\SenderResponse**](../Model/SenderResponse.md)
 
 ### Authorization
 

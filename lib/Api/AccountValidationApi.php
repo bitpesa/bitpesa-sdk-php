@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Api;
+namespace TransferZero\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use BitPesa\ApiException;
-use BitPesa\Configuration;
-use BitPesa\HeaderSelector;
-use BitPesa\ObjectSerializer;
+use TransferZero\ApiException;
+use TransferZero\Configuration;
+use TransferZero\HeaderSelector;
+use TransferZero\ObjectSerializer;
 
 /**
  * AccountValidationApi Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -125,11 +125,11 @@ class AccountValidationApi
      *
      * Validates the existence of a bank account
      *
-     * @param  \BitPesa\Model\AccountValidationRequest $account_validation_request account_validation_request (required)
+     * @param  \TransferZero\Model\AccountValidationRequest $account_validation_request account_validation_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\AccountValidationResponse
+     * @return \TransferZero\Model\AccountValidationResponse
      */
     public function postAccountValidations($account_validation_request)
     {
@@ -142,15 +142,15 @@ class AccountValidationApi
      *
      * Validates the existence of a bank account
      *
-     * @param  \BitPesa\Model\AccountValidationRequest $account_validation_request (required)
+     * @param  \TransferZero\Model\AccountValidationRequest $account_validation_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\AccountValidationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\AccountValidationResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function postAccountValidationsWithHttpInfo($account_validation_request)
     {
-        $returnType = '\BitPesa\Model\AccountValidationResponse';
+        $returnType = '\TransferZero\Model\AccountValidationResponse';
         $request = $this->postAccountValidationsRequest($account_validation_request);
 
         try {
@@ -214,7 +214,7 @@ class AccountValidationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\AccountValidationResponse',
+                        '\TransferZero\Model\AccountValidationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -222,7 +222,7 @@ class AccountValidationApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\AccountValidationResponse',
+                        '\TransferZero\Model\AccountValidationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -237,7 +237,7 @@ class AccountValidationApi
      *
      * Validates the existence of a bank account
      *
-     * @param  \BitPesa\Model\AccountValidationRequest $account_validation_request (required)
+     * @param  \TransferZero\Model\AccountValidationRequest $account_validation_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -257,14 +257,14 @@ class AccountValidationApi
      *
      * Validates the existence of a bank account
      *
-     * @param  \BitPesa\Model\AccountValidationRequest $account_validation_request (required)
+     * @param  \TransferZero\Model\AccountValidationRequest $account_validation_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postAccountValidationsAsyncWithHttpInfo($account_validation_request)
     {
-        $returnType = '\BitPesa\Model\AccountValidationResponse';
+        $returnType = '\TransferZero\Model\AccountValidationResponse';
         $request = $this->postAccountValidationsRequest($account_validation_request);
 
         return $this->client
@@ -307,7 +307,7 @@ class AccountValidationApi
     /**
      * Create request for operation 'postAccountValidations'
      *
-     * @param  \BitPesa\Model\AccountValidationRequest $account_validation_request (required)
+     * @param  \TransferZero\Model\AccountValidationRequest $account_validation_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -438,7 +438,7 @@ class AccountValidationApi
      *
      * @param object response the object we wish to parse
      * @param boolean returnType The type of the PHP object (true for array, false for object)
-     * 
+     *
      * @return object|array The deserialized PHP object
      * @throws ApiException If it fails to deserialize response body
      */
@@ -450,7 +450,7 @@ class AccountValidationApi
         try {
             return ObjectSerializer::deserialize(
                 $response,
-                "\\BitPesa\\Model\\{$returnType}"
+                "\\TransferZero\\Model\\{$returnType}"
             );
         } catch (ApiException $e) {
             throw new ApiException(

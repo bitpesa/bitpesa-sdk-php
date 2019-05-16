@@ -1,6 +1,6 @@
-# BitPesa\DocumentsApi
+# TransferZero\DocumentsApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getDocument**
-> \BitPesa\Model\DocumentResponse getDocument($document_id)
+> \TransferZero\Model\DocumentResponse getDocument($document_id)
 
 Fetching a document
 
@@ -24,12 +24,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\DocumentsApi();
+$apiInstance = new TransferZero\Api\DocumentsApi();
 $document_id = 'document_id_example'; // string | ID of the document to get.  Example: `/v1/documents/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\DocumentResponse**](../Model/DocumentResponse.md)
+[**\TransferZero\Model\DocumentResponse**](../Model/DocumentResponse.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDocuments**
-> \BitPesa\Model\DocumentListResponse getDocuments($page, $per)
+> \TransferZero\Model\DocumentListResponse getDocuments($page, $per)
 
 Getting a list of documents
 
@@ -84,12 +84,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\DocumentsApi();
+$apiInstance = new TransferZero\Api\DocumentsApi();
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\DocumentListResponse**](../Model/DocumentListResponse.md)
+[**\TransferZero\Model\DocumentListResponse**](../Model/DocumentListResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postDocuments**
-> \BitPesa\Model\DocumentResponse postDocuments($document_request)
+> \TransferZero\Model\DocumentResponse postDocuments($document_request)
 
 Creating a document
 
@@ -146,13 +146,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\DocumentsApi();
-$document_request = new \BitPesa\Model\DocumentRequest(); // \BitPesa\Model\DocumentRequest | 
+$apiInstance = new TransferZero\Api\DocumentsApi();
+$document_request = new \TransferZero\Model\DocumentRequest(); // \TransferZero\Model\DocumentRequest | 
 
 try {
     $result = $apiInstance->postDocuments($document_request);
@@ -174,11 +174,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document_request** | [**\BitPesa\Model\DocumentRequest**](../Model/DocumentRequest.md)|  |
+ **document_request** | [**\TransferZero\Model\DocumentRequest**](../Model/DocumentRequest.md)|  |
 
 ### Return type
 
-[**\BitPesa\Model\DocumentResponse**](../Model/DocumentResponse.md)
+[**\TransferZero\Model\DocumentResponse**](../Model/DocumentResponse.md)
 
 ### Authorization
 

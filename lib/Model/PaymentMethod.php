@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PaymentMethod Class Doc Comment
  *
  * @category Class
  * @description Describes an available payment provider
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -63,7 +63,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess
         'otc_permitted' => 'bool',
         'details' => 'string[]',
         'default' => 'bool',
-        'fields' => 'map[string,\BitPesa\Model\FieldDescription]'
+        'fields' => 'map[string,\TransferZero\Model\FieldDescription]'
     ];
 
     /**
@@ -358,7 +358,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess
     /**
      * Gets fields
      *
-     * @return map[string,\BitPesa\Model\FieldDescription]|null
+     * @return map[string,\TransferZero\Model\FieldDescription]|null
      */
     public function getFields()
     {
@@ -368,7 +368,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess
     /**
      * Sets fields
      *
-     * @param map[string,\BitPesa\Model\FieldDescription]|null $fields The fields needed for payments with this payment method with details on validation requirements
+     * @param map[string,\TransferZero\Model\FieldDescription]|null $fields The fields needed for payments with this payment method with details on validation requirements
      *
      * @return $this
      */

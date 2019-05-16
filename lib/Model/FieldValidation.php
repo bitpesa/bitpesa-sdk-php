@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * FieldValidation Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -58,7 +58,7 @@ class FieldValidation implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'presence' => 'bool',
-        'inclusion' => '\BitPesa\Model\FieldSelectValidation',
+        'inclusion' => '\TransferZero\Model\FieldSelectValidation',
         'format' => 'object'
     ];
 
@@ -243,7 +243,7 @@ class FieldValidation implements ModelInterface, ArrayAccess
     /**
      * Gets inclusion
      *
-     * @return \BitPesa\Model\FieldSelectValidation|null
+     * @return \TransferZero\Model\FieldSelectValidation|null
      */
     public function getInclusion()
     {
@@ -253,7 +253,7 @@ class FieldValidation implements ModelInterface, ArrayAccess
     /**
      * Sets inclusion
      *
-     * @param \BitPesa\Model\FieldSelectValidation|null $inclusion inclusion
+     * @param \TransferZero\Model\FieldSelectValidation|null $inclusion inclusion
      *
      * @return $this
      */

@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PaymentMethodOpposite Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -62,8 +62,8 @@ class PaymentMethodOpposite implements ModelInterface, ArrayAccess
         'otc_permitted' => 'bool',
         'details' => 'string[]',
         'default' => 'bool',
-        'fields' => 'map[string,\BitPesa\Model\FieldDescription]',
-        'opposites' => '\BitPesa\Model\PaymentMethod[]'
+        'fields' => 'map[string,\TransferZero\Model\FieldDescription]',
+        'opposites' => '\TransferZero\Model\PaymentMethod[]'
     ];
 
     /**
@@ -363,7 +363,7 @@ class PaymentMethodOpposite implements ModelInterface, ArrayAccess
     /**
      * Gets fields
      *
-     * @return map[string,\BitPesa\Model\FieldDescription]|null
+     * @return map[string,\TransferZero\Model\FieldDescription]|null
      */
     public function getFields()
     {
@@ -373,7 +373,7 @@ class PaymentMethodOpposite implements ModelInterface, ArrayAccess
     /**
      * Sets fields
      *
-     * @param map[string,\BitPesa\Model\FieldDescription]|null $fields The fields needed for payments with this payment method with details on validation requirements
+     * @param map[string,\TransferZero\Model\FieldDescription]|null $fields The fields needed for payments with this payment method with details on validation requirements
      *
      * @return $this
      */
@@ -387,7 +387,7 @@ class PaymentMethodOpposite implements ModelInterface, ArrayAccess
     /**
      * Gets opposites
      *
-     * @return \BitPesa\Model\PaymentMethod[]|null
+     * @return \TransferZero\Model\PaymentMethod[]|null
      */
     public function getOpposites()
     {
@@ -397,7 +397,7 @@ class PaymentMethodOpposite implements ModelInterface, ArrayAccess
     /**
      * Sets opposites
      *
-     * @param \BitPesa\Model\PaymentMethod[]|null $opposites List of all providers that can be used in conjunction with the main provider
+     * @param \TransferZero\Model\PaymentMethod[]|null $opposites List of all providers that can be used in conjunction with the main provider
      *
      * @return $this
      */

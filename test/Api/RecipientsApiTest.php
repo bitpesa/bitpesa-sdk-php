@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,18 +26,18 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace BitPesa;
+namespace TransferZero;
 
-use \BitPesa\Configuration;
-use \BitPesa\ApiException;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\Configuration;
+use \TransferZero\ApiException;
+use \TransferZero\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
  * RecipientsApiTest Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

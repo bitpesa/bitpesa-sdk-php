@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * TransactionWebhook Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -59,7 +59,7 @@ class TransactionWebhook implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'webhook' => 'string',
         'event' => 'string',
-        'object' => '\BitPesa\Model\Transaction'
+        'object' => '\TransferZero\Model\Transaction'
     ];
 
     /**
@@ -276,7 +276,7 @@ class TransactionWebhook implements ModelInterface, ArrayAccess
     /**
      * Gets object
      *
-     * @return \BitPesa\Model\Transaction
+     * @return \TransferZero\Model\Transaction
      */
     public function getObject()
     {
@@ -286,7 +286,7 @@ class TransactionWebhook implements ModelInterface, ArrayAccess
     /**
      * Sets object
      *
-     * @param \BitPesa\Model\Transaction $object object
+     * @param \TransferZero\Model\Transaction $object object
      *
      * @return $this
      */

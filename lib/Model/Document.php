@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * Document Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -66,7 +66,7 @@ class Document implements ModelInterface, ArrayAccess
         'side' => 'string',
         'issuing_country' => 'string',
         'id' => 'string',
-        'errors' => 'map[string,\BitPesa\Model\ValidationErrorDescription[]]'
+        'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
     ];
 
     /**
@@ -79,7 +79,7 @@ class Document implements ModelInterface, ArrayAccess
         'upload_file_name' => null,
         'metadata' => null,
         'upload_content_type' => null,
-        'upload_file_size' => null,
+        'upload_file_size' => 'int32',
         'category' => null,
         'side' => null,
         'issuing_country' => null,
@@ -515,7 +515,7 @@ class Document implements ModelInterface, ArrayAccess
     /**
      * Gets errors
      *
-     * @return map[string,\BitPesa\Model\ValidationErrorDescription[]]|null
+     * @return map[string,\TransferZero\Model\ValidationErrorDescription[]]|null
      */
     public function getErrors()
     {
@@ -525,7 +525,7 @@ class Document implements ModelInterface, ArrayAccess
     /**
      * Sets errors
      *
-     * @param map[string,\BitPesa\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
+     * @param map[string,\TransferZero\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
      *
      * @return $this
      */

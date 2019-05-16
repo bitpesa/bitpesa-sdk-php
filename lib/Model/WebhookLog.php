@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * WebhookLog Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -59,7 +59,7 @@ class WebhookLog implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'id' => 'string',
         'message' => 'string',
-        'metadata' => '\BitPesa\Model\WebhookLogMetadata',
+        'metadata' => '\TransferZero\Model\WebhookLogMetadata',
         'created_at' => 'string',
         'parent_id' => 'string',
         'parent_type' => 'string'
@@ -285,7 +285,7 @@ class WebhookLog implements ModelInterface, ArrayAccess
     /**
      * Gets metadata
      *
-     * @return \BitPesa\Model\WebhookLogMetadata|null
+     * @return \TransferZero\Model\WebhookLogMetadata|null
      */
     public function getMetadata()
     {
@@ -295,7 +295,7 @@ class WebhookLog implements ModelInterface, ArrayAccess
     /**
      * Sets metadata
      *
-     * @param \BitPesa\Model\WebhookLogMetadata|null $metadata metadata
+     * @param \TransferZero\Model\WebhookLogMetadata|null $metadata metadata
      *
      * @return $this
      */

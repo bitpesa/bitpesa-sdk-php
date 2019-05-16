@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * Transaction Class Doc Comment
  *
  * @category Class
  * @description The template of transactions are the following: &#x60;&#x60;&#x60;JSON {   \&quot;input_currency\&quot;: // currency to pay in,   \&quot;sender\&quot;:{     // details of the sender   },   \&quot;recipients\&quot;:[     {         \&quot;requested_amount\&quot;: // the amount to pay out,         \&quot;requested_currency\&quot;: // the currency of the amount,         \&quot;payout_method\&quot;:{           \&quot;type\&quot;: // method of the payout,           \&quot;details\&quot;:{               // details of the recipient           }         }     }   ],   \&quot;metadata\&quot;: // optional metadata } &#x60;&#x60;&#x60;
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -59,12 +59,12 @@ class Transaction implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'input_currency' => 'string',
-        'payin_methods' => '\BitPesa\Model\PayinMethod[]',
+        'payin_methods' => '\TransferZero\Model\PayinMethod[]',
         'metadata' => 'object',
-        'sender' => '\BitPesa\Model\Sender',
-        'recipients' => '\BitPesa\Model\Recipient[]',
-        'traits' => '\BitPesa\Model\TransactionTraits',
-        'state' => '\BitPesa\Model\TransactionState',
+        'sender' => '\TransferZero\Model\Sender',
+        'recipients' => '\TransferZero\Model\Recipient[]',
+        'traits' => '\TransferZero\Model\TransactionTraits',
+        'state' => '\TransferZero\Model\TransactionState',
         'input_amount' => 'float',
         'payin_reference' => 'string',
         'paid_amount' => 'float',
@@ -73,7 +73,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'expires_at' => '\DateTime',
         'external_id' => 'string',
         'id' => 'string',
-        'errors' => 'map[string,\BitPesa\Model\ValidationErrorDescription[]]'
+        'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
     ];
 
     /**
@@ -331,7 +331,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Gets payin_methods
      *
-     * @return \BitPesa\Model\PayinMethod[]|null
+     * @return \TransferZero\Model\PayinMethod[]|null
      */
     public function getPayinMethods()
     {
@@ -341,7 +341,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Sets payin_methods
      *
-     * @param \BitPesa\Model\PayinMethod[]|null $payin_methods Allows setting alternative collections, where funding the transaction is done through alternative means and not via account balance.  For more information please see [Collections from senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation
+     * @param \TransferZero\Model\PayinMethod[]|null $payin_methods Allows setting alternative collections, where funding the transaction is done through alternative means and not via account balance.  For more information please see [Collections from senders](https://github.com/transferzero/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation
      *
      * @return $this
      */
@@ -379,7 +379,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Gets sender
      *
-     * @return \BitPesa\Model\Sender
+     * @return \TransferZero\Model\Sender
      */
     public function getSender()
     {
@@ -389,7 +389,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Sets sender
      *
-     * @param \BitPesa\Model\Sender $sender sender
+     * @param \TransferZero\Model\Sender $sender sender
      *
      * @return $this
      */
@@ -403,7 +403,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Gets recipients
      *
-     * @return \BitPesa\Model\Recipient[]
+     * @return \TransferZero\Model\Recipient[]
      */
     public function getRecipients()
     {
@@ -413,7 +413,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Sets recipients
      *
-     * @param \BitPesa\Model\Recipient[] $recipients The details of where the payment should go. although transactions can support paying out multiple recipients, usually one is provided.
+     * @param \TransferZero\Model\Recipient[] $recipients The details of where the payment should go. although transactions can support paying out multiple recipients, usually one is provided.
      *
      * @return $this
      */
@@ -427,7 +427,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Gets traits
      *
-     * @return \BitPesa\Model\TransactionTraits|null
+     * @return \TransferZero\Model\TransactionTraits|null
      */
     public function getTraits()
     {
@@ -437,7 +437,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Sets traits
      *
-     * @param \BitPesa\Model\TransactionTraits|null $traits traits
+     * @param \TransferZero\Model\TransactionTraits|null $traits traits
      *
      * @return $this
      */
@@ -451,7 +451,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Gets state
      *
-     * @return \BitPesa\Model\TransactionState|null
+     * @return \TransferZero\Model\TransactionState|null
      */
     public function getState()
     {
@@ -461,7 +461,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Sets state
      *
-     * @param \BitPesa\Model\TransactionState|null $state state
+     * @param \TransferZero\Model\TransactionState|null $state state
      *
      * @return $this
      */
@@ -667,7 +667,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Gets errors
      *
-     * @return map[string,\BitPesa\Model\ValidationErrorDescription[]]|null
+     * @return map[string,\TransferZero\Model\ValidationErrorDescription[]]|null
      */
     public function getErrors()
     {
@@ -677,7 +677,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Sets errors
      *
-     * @param map[string,\BitPesa\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
+     * @param map[string,\TransferZero\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
      *
      * @return $this
      */

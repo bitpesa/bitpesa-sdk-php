@@ -4,15 +4,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Api;
+namespace TransferZero\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use BitPesa\ApiException;
-use BitPesa\Configuration;
-use BitPesa\HeaderSelector;
-use BitPesa\ObjectSerializer;
+use TransferZero\ApiException;
+use TransferZero\Configuration;
+use TransferZero\HeaderSelector;
+use TransferZero\ObjectSerializer;
 
 /**
  * DocumentsApi Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -127,9 +127,9 @@ class DocumentsApi
      *
      * @param  string $document_id ID of the document to get.  Example: &#x60;/v1/documents/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\DocumentResponse
+     * @return \TransferZero\Model\DocumentResponse
      */
     public function getDocument($document_id)
     {
@@ -144,13 +144,13 @@ class DocumentsApi
      *
      * @param  string $document_id ID of the document to get.  Example: &#x60;/v1/documents/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDocumentWithHttpInfo($document_id)
     {
-        $returnType = '\BitPesa\Model\DocumentResponse';
+        $returnType = '\TransferZero\Model\DocumentResponse';
         $request = $this->getDocumentRequest($document_id);
 
         try {
@@ -214,7 +214,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\DocumentResponse',
+                        '\TransferZero\Model\DocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -256,7 +256,7 @@ class DocumentsApi
      */
     public function getDocumentAsyncWithHttpInfo($document_id)
     {
-        $returnType = '\BitPesa\Model\DocumentResponse';
+        $returnType = '\TransferZero\Model\DocumentResponse';
         $request = $this->getDocumentRequest($document_id);
 
         return $this->client
@@ -417,9 +417,9 @@ class DocumentsApi
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\DocumentListResponse
+     * @return \TransferZero\Model\DocumentListResponse
      */
     public function getDocuments($page = null, $per = null)
     {
@@ -435,13 +435,13 @@ class DocumentsApi
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\DocumentListResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\DocumentListResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDocumentsWithHttpInfo($page = null, $per = null)
     {
-        $returnType = '\BitPesa\Model\DocumentListResponse';
+        $returnType = '\TransferZero\Model\DocumentListResponse';
         $request = $this->getDocumentsRequest($page, $per);
 
         try {
@@ -505,7 +505,7 @@ class DocumentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\DocumentListResponse',
+                        '\TransferZero\Model\DocumentListResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -549,7 +549,7 @@ class DocumentsApi
      */
     public function getDocumentsAsyncWithHttpInfo($page = null, $per = null)
     {
-        $returnType = '\BitPesa\Model\DocumentListResponse';
+        $returnType = '\TransferZero\Model\DocumentListResponse';
         $request = $this->getDocumentsRequest($page, $per);
 
         return $this->client
@@ -702,11 +702,11 @@ class DocumentsApi
      *
      * Creating a document
      *
-     * @param  \BitPesa\Model\DocumentRequest $document_request document_request (required)
+     * @param  \TransferZero\Model\DocumentRequest $document_request document_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \BitPesa\Model\DocumentResponse
+     * @return \TransferZero\Model\DocumentResponse
      */
     public function postDocuments($document_request)
     {
@@ -719,15 +719,15 @@ class DocumentsApi
      *
      * Creating a document
      *
-     * @param  \BitPesa\Model\DocumentRequest $document_request (required)
+     * @param  \TransferZero\Model\DocumentRequest $document_request (required)
      *
-     * @throws \BitPesa\ApiException on non-2xx response
+     * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \BitPesa\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TransferZero\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function postDocumentsWithHttpInfo($document_request)
     {
-        $returnType = '\BitPesa\Model\DocumentResponse';
+        $returnType = '\TransferZero\Model\DocumentResponse';
         $request = $this->postDocumentsRequest($document_request);
 
         try {
@@ -791,7 +791,7 @@ class DocumentsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\DocumentResponse',
+                        '\TransferZero\Model\DocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -799,7 +799,7 @@ class DocumentsApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody()->getContents(),
-                        '\BitPesa\Model\DocumentResponse',
+                        '\TransferZero\Model\DocumentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -814,7 +814,7 @@ class DocumentsApi
      *
      * Creating a document
      *
-     * @param  \BitPesa\Model\DocumentRequest $document_request (required)
+     * @param  \TransferZero\Model\DocumentRequest $document_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -834,14 +834,14 @@ class DocumentsApi
      *
      * Creating a document
      *
-     * @param  \BitPesa\Model\DocumentRequest $document_request (required)
+     * @param  \TransferZero\Model\DocumentRequest $document_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function postDocumentsAsyncWithHttpInfo($document_request)
     {
-        $returnType = '\BitPesa\Model\DocumentResponse';
+        $returnType = '\TransferZero\Model\DocumentResponse';
         $request = $this->postDocumentsRequest($document_request);
 
         return $this->client
@@ -884,7 +884,7 @@ class DocumentsApi
     /**
      * Create request for operation 'postDocuments'
      *
-     * @param  \BitPesa\Model\DocumentRequest $document_request (required)
+     * @param  \TransferZero\Model\DocumentRequest $document_request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1015,7 +1015,7 @@ class DocumentsApi
      *
      * @param object response the object we wish to parse
      * @param boolean returnType The type of the PHP object (true for array, false for object)
-     * 
+     *
      * @return object|array The deserialized PHP object
      * @throws ApiException If it fails to deserialize response body
      */
@@ -1027,7 +1027,7 @@ class DocumentsApi
         try {
             return ObjectSerializer::deserialize(
                 $response,
-                "\\BitPesa\\Model\\{$returnType}"
+                "\\TransferZero\\Model\\{$returnType}"
             );
         } catch (ApiException $e) {
             throw new ApiException(

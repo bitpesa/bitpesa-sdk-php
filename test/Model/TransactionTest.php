@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace BitPesa;
+namespace TransferZero;
 
 use PHPUnit\Framework\TestCase;
 
@@ -36,7 +36,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description The template of transactions are the following: &#x60;&#x60;&#x60;JSON {   \&quot;input_currency\&quot;: // currency to pay in,   \&quot;sender\&quot;:{     // details of the sender   },   \&quot;recipients\&quot;:[     {         \&quot;requested_amount\&quot;: // the amount to pay out,         \&quot;requested_currency\&quot;: // the currency of the amount,         \&quot;payout_method\&quot;:{           \&quot;type\&quot;: // method of the payout,           \&quot;details\&quot;:{               // details of the recipient           }         }     }   ],   \&quot;metadata\&quot;: // optional metadata } &#x60;&#x60;&#x60;
- * @package     BitPesa
+ * @package     TransferZero
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */

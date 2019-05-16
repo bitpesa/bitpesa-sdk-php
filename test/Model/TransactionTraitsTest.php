@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace BitPesa;
+namespace TransferZero;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,8 +35,8 @@ use PHPUnit\Framework\TestCase;
  * TransactionTraitsTest Class Doc Comment
  *
  * @category    Class
- * @description Additional features that are enabled on the transaction. For more details please see [Additional features](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md) in our API documentation
- * @package     BitPesa
+ * @description Additional features that are enabled on the transaction. For more details please see [Additional features](https://github.com/transferzero/api-documentation/blob/master/additional-features.md) in our API documentation
+ * @package     TransferZero
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */

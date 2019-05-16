@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * PayoutMethodDetailsXOFMobile Class Doc Comment
  *
  * @category Class
  * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;774044436\&quot;     # local or international Senegalese format   \&quot;mobile_provider\&quot;: \&quot;orange\&quot;, # \&quot;orange\&quot; or \&quot;tigo\&quot; }
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -61,7 +61,7 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'phone_number' => 'string',
-        'mobile_provider' => '\BitPesa\Model\PayoutMethodMobileProviderEnum'
+        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum'
     ];
 
     /**
@@ -310,7 +310,7 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
     /**
      * Gets mobile_provider
      *
-     * @return \BitPesa\Model\PayoutMethodMobileProviderEnum
+     * @return \TransferZero\Model\PayoutMethodMobileProviderEnum
      */
     public function getMobileProvider()
     {
@@ -320,7 +320,7 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
     /**
      * Sets mobile_provider
      *
-     * @param \BitPesa\Model\PayoutMethodMobileProviderEnum $mobile_provider mobile_provider
+     * @param \TransferZero\Model\PayoutMethodMobileProviderEnum $mobile_provider mobile_provider
      *
      * @return $this
      */

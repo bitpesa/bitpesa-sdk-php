@@ -5,15 +5,15 @@
  * PHP version 5
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
 
 /**
- * BitPesa API
+ * TransferZero API
  *
- * Reference documentation for the BitPesa API V1
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace BitPesa\Model;
+namespace TransferZero\Model;
 
 use \ArrayAccess;
-use \BitPesa\ObjectSerializer;
+use \TransferZero\ObjectSerializer;
 
 /**
  * WebhookDefinitionRequest Class Doc Comment
  *
  * @category Class
- * @package  BitPesa
+ * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,7 +57,7 @@ class WebhookDefinitionRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'webhook' => '\BitPesa\Model\WebhookDefinition'
+        'webhook' => '\TransferZero\Model\WebhookDefinition'
     ];
 
     /**
@@ -207,7 +207,7 @@ class WebhookDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Gets webhook
      *
-     * @return \BitPesa\Model\WebhookDefinition|null
+     * @return \TransferZero\Model\WebhookDefinition|null
      */
     public function getWebhook()
     {
@@ -217,7 +217,7 @@ class WebhookDefinitionRequest implements ModelInterface, ArrayAccess
     /**
      * Sets webhook
      *
-     * @param \BitPesa\Model\WebhookDefinition|null $webhook webhook
+     * @param \TransferZero\Model\WebhookDefinition|null $webhook webhook
      *
      * @return $this
      */

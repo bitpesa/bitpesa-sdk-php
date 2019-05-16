@@ -1,6 +1,6 @@
-# BitPesa\APILogsApi
+# TransferZero\APILogsApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getApiLog**
-> \BitPesa\Model\ApiLogResponse getApiLog($api_log_id)
+> \TransferZero\Model\ApiLogResponse getApiLog($api_log_id)
 
 Fetch an individual API log
 
@@ -23,12 +23,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\APILogsApi();
+$apiInstance = new TransferZero\Api\APILogsApi();
 $api_log_id = 'api_log_id_example'; // string | ID of the API log to retrieve  Example: `/v1/api_logs/00485ce9-532b-45e7-8518-7e5582242407`
 
 try {
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\ApiLogResponse**](../Model/ApiLogResponse.md)
+[**\TransferZero\Model\ApiLogResponse**](../Model/ApiLogResponse.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getApiLogs**
-> \BitPesa\Model\ApiLogListResponse getApiLogs($page, $per, $created_at_from, $created_at_to)
+> \TransferZero\Model\ApiLogListResponse getApiLogs($page, $per, $created_at_from, $created_at_to)
 
 Fetch a list of API logs
 
@@ -83,12 +83,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
-BitPesa\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.bitpesa.co/v1")
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
-$apiInstance = new BitPesa\Api\APILogsApi();
+$apiInstance = new TransferZero\Api\APILogsApi();
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 $created_at_from = 'created_at_from_example'; // string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\BitPesa\Model\ApiLogListResponse**](../Model/ApiLogListResponse.md)
+[**\TransferZero\Model\ApiLogListResponse**](../Model/ApiLogListResponse.md)
 
 ### Authorization
 
